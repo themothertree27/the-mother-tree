@@ -4,6 +4,7 @@ import Hero from '../components/Hero';
 import MembershipTiers from '../components/MembershipTiers';
 import Footer from '../components/Footer';
 import { Leaf, Heart, TreeDeciduous, Mountain, Sprout, Coffee, Mic, BookOpen, Home, Users, PenTool, Sun, Utensils, Music } from 'lucide-react';
+
 const Index = () => {
   useEffect(() => {
     const animateElements = () => {
@@ -24,6 +25,7 @@ const Index = () => {
     };
     animateElements();
   }, []);
+
   return <div className="flex flex-col min-h-screen">
       <Header />
       <Hero />
@@ -267,14 +269,7 @@ const Index = () => {
             
             <div className="text-center p-4">
               <div className="mx-auto rounded-full w-12 h-12 flex items-center justify-center bg-nature-soil/10 mb-3">
-                <Users className="w-6 h-6 text-nature-soil" />
-              </div>
-              <h4 className="font-medium mb-1">Event Space</h4>
-            </div>
-            
-            <div className="text-center p-4">
-              <div className="mx-auto rounded-full w-12 h-12 flex items-center justify-center bg-nature-sky/10 mb-3">
-                <BookOpen className="w-6 h-6 text-nature-sky" />
+                <BookOpen className="w-6 h-6 text-nature-soil" />
               </div>
               <h4 className="font-medium mb-1">Holistic Practice Areas</h4>
             </div>
@@ -300,3 +295,4 @@ const Index = () => {
     </div>;
 };
 export default Index;
+
