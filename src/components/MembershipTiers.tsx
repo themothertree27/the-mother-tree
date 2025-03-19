@@ -7,7 +7,7 @@ const MembershipTiers = () => {
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-nature-leaf/5"></div>
         <div className="absolute top-1/3 -left-20 h-64 w-64 rounded-full bg-nature-sky/5"></div>
-        <div className="absolute -bottom-10 right-1/4 h-52 w-52 rounded-full bg-nature-sunlight/10"></div>
+        
       </div>
       
       {/* Content */}
@@ -42,10 +42,7 @@ const MembershipTiers = () => {
         </div>
         
         <div className="mt-20 text-center animate-scroll-in">
-          <p className="text-gray-500 max-w-2xl mx-auto mb-8">
-            All memberships support our mission to nurture connections between people and nature.
-            Join us in creating a more sustainable, conscious community.
-          </p>
+          
           
         </div>
       </div>
