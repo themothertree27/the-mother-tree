@@ -28,7 +28,9 @@ const Header = () => {
       <div className="container mx-auto px-6 flex items-center justify-between">
         <div className="flex items-center space-x-2">
           <Leaf className="h-8 w-8 text-nature-leaf" />
-          <span className="font-serif text-xl font-medium tracking-tight">The Mother Tree</span>
+          <span className="font-serif text-xl font-medium tracking-tight">
+            <span className="text-nature-leaf">The</span> Mother Tree
+          </span>
         </div>
         
         <nav className="hidden md:flex items-center space-x-8">
