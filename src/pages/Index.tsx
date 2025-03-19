@@ -4,7 +4,6 @@ import Hero from '../components/Hero';
 import MembershipTiers from '../components/MembershipTiers';
 import Footer from '../components/Footer';
 import { Leaf, Heart, TreeDeciduous, Mountain, Sprout } from 'lucide-react';
-
 const Index = () => {
   useEffect(() => {
     const animateElements = () => {
@@ -25,7 +24,6 @@ const Index = () => {
     };
     animateElements();
   }, []);
-
   return <div className="flex flex-col min-h-screen">
       <Header />
       <Hero />
@@ -128,9 +126,7 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a href="#membership" className="px-8 py-4 rounded-full bg-nature-leaf text-white font-medium transform transition duration-300 hover:shadow-xl hover:translate-y-[-2px]">The Giving-Back Tree</a>
               
-              <a href="#contact" className="px-8 py-4 rounded-full border border-gray-200 hover:border-nature-leaf hover:text-nature-leaf transition-all duration-300">
-                Contact Us
-              </a>
+              
             </div>
           </div>
         </div>
@@ -153,5 +149,4 @@ const Index = () => {
       </a>
     </div>;
 };
-
 export default Index;
