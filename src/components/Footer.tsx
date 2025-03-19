@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Leaf, Mail, Instagram, Twitter } from 'lucide-react';
 
@@ -10,7 +9,7 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-6">
               <Leaf className="h-6 w-6 text-nature-leaf" />
-              <span className="font-serif text-xl font-medium">The Mother Tree</span>
+              <span className="font-serif text-xl font-medium text-nature-leaf">The Mother Tree</span>
             </div>
             <p className="text-gray-600 mb-6 max-w-md">
               Connecting humanity with nature through community, education, and mindful practices. Our roots run deep, our branches reach wide.
@@ -51,7 +50,7 @@ const Footer = () => {
         
         <div className="pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} The Mother Tree. All rights reserved.
+            &copy; {new Date().getFullYear()} <span className="text-nature-leaf">The Mother Tree</span>. All rights reserved.
           </p>
           <div className="flex space-x-6">
             <a href="#" className="text-gray-500 hover:text-nature-leaf transition-colors duration-300 text-sm">Terms</a>

@@ -60,7 +60,7 @@ const Hero = () => {
           </div>
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-medium tracking-tight mb-6">
-            Join The <span className="text-nature-leaf">Mother Tree</span> Community
+            Join <span className="text-nature-leaf">The Mother Tree</span> Community
           </h1>
           
           <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto">

@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
@@ -155,7 +154,7 @@ const Index = () => {
               Join Our Community
             </div>
             <h2 className="text-3xl md:text-5xl font-serif font-medium tracking-tight mb-6">
-              Begin Your Journey With Us Today
+              Begin Your Journey With <span className="text-nature-leaf">The Mother Tree</span> Today
             </h2>
             <p className="text-gray-600 mb-10 max-w-2xl mx-auto">
               Take the first step towards a more connected, purposeful relationship with nature and a community of like-minded individuals.
