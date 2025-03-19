@@ -4,6 +4,7 @@ import Hero from '../components/Hero';
 import MembershipTiers from '../components/MembershipTiers';
 import Footer from '../components/Footer';
 import { Leaf, Heart, TreeDeciduous, Mountain, Sprout } from 'lucide-react';
+
 const Index = () => {
   useEffect(() => {
     const animateElements = () => {
@@ -24,6 +25,7 @@ const Index = () => {
     };
     animateElements();
   }, []);
+
   return <div className="flex flex-col min-h-screen">
       <Header />
       <Hero />
@@ -121,7 +123,7 @@ const Index = () => {
           <div className="max-w-4xl mx-auto text-center animate-scroll-in">
             <div className="inline-flex items-center justify-center rounded-full bg-nature-sunlight/20 px-3 py-1 text-sm font-medium text-nature-soil mb-4">Grow Our Community</div>
             <h2 className="text-3xl md:text-5xl font-serif font-medium tracking-tight mb-6">
-              Begin Your Journey With <span className="text-nature-leaf">The Mother Tree</span> Today
+              Help Grow <span className="text-nature-leaf">The Mother Tree</span> Today
             </h2>
             <p className="text-gray-600 mb-10 max-w-2xl mx-auto">
               Take the first step towards a more connected, purposeful relationship with nature and a community of like-minded individuals.
@@ -155,4 +157,5 @@ const Index = () => {
       </a>
     </div>;
 };
+
 export default Index;
