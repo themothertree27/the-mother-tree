@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import Hero from '../components/Hero';
 import MembershipTiers from '../components/MembershipTiers';
 import Footer from '../components/Footer';
-import { Leaf, Heart, TreeDeciduous, Mountain, Sprout } from 'lucide-react';
+import { Leaf, Heart, TreeDeciduous, Mountain, Sprout, Coffee, Mic, BookOpen, Home, Users, PenTool, Sun, Utensils, MusicNote, BookText } from 'lucide-react';
 
 const Index = () => {
   useEffect(() => {
@@ -112,6 +112,149 @@ const Index = () => {
               
               <div className="absolute -top-6 -right-6 w-12 h-12 rounded-full bg-nature-sky/20"></div>
               <div className="absolute -bottom-6 -left-6 w-16 h-16 rounded-full bg-nature-leaf/20"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Spaces & Features Section */}
+      <section id="spaces" className="section-padding relative overflow-hidden bg-gradient-to-b from-white to-nature-leaf/5">
+        <div className="container mx-auto">
+          <div className="max-w-4xl mx-auto text-center mb-12 animate-scroll-in">
+            <div className="inline-flex items-center justify-center rounded-full bg-nature-soil/10 px-3 py-1 text-sm font-medium text-nature-soil mb-4">
+              Our Space
+            </div>
+            <h2 className="text-3xl md:text-4xl font-serif font-medium tracking-tight mb-6">
+              What is <span className="text-nature-leaf">The Mother Tree</span>?
+            </h2>
+            <p className="text-gray-600 mx-auto max-w-2xl">
+              The Mother Tree is a vibrant Membership Community Center that serves as a nurturing environment for creativity, wellness, education, and social enterprise.
+            </p>
+          </div>
+          
+          {/* Main Features */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 animate-scroll-in" style={{ transitionDelay: '0.2s' }}>
+            <div className="p-6 rounded-xl bg-white shadow-md hover:shadow-xl transition-all">
+              <div className="rounded-full w-12 h-12 flex items-center justify-center bg-nature-leaf/10 mb-4">
+                <Home className="w-6 h-6 text-nature-leaf" />
+              </div>
+              <h3 className="text-xl font-medium mb-2">Membership Community Center</h3>
+              <p className="text-gray-600">A physical space where people gather to connect, collaborate, and create meaningful relationships.</p>
+            </div>
+            
+            <div className="p-6 rounded-xl bg-white shadow-md hover:shadow-xl transition-all">
+              <div className="rounded-full w-12 h-12 flex items-center justify-center bg-nature-bark/10 mb-4">
+                <Users className="w-6 h-6 text-nature-bark" />
+              </div>
+              <h3 className="text-xl font-medium mb-2">Event Venue</h3>
+              <p className="text-gray-600">A beautiful space for hosting workshops, talks, performances, and community gatherings.</p>
+            </div>
+            
+            <div className="p-6 rounded-xl bg-white shadow-md hover:shadow-xl transition-all">
+              <div className="rounded-full w-12 h-12 flex items-center justify-center bg-nature-soil/10 mb-4">
+                <Heart className="w-6 h-6 text-nature-soil" />
+              </div>
+              <h3 className="text-xl font-medium mb-2">Holistic & Wellness Space</h3>
+              <p className="text-gray-600">A sanctuary for mind, body, and spirit practices that promote wellbeing and personal growth.</p>
+            </div>
+            
+            <div className="p-6 rounded-xl bg-white shadow-md hover:shadow-xl transition-all">
+              <div className="rounded-full w-12 h-12 flex items-center justify-center bg-nature-sky/10 mb-4">
+                <TreeDeciduous className="w-6 h-6 text-nature-sky" />
+              </div>
+              <h3 className="text-xl font-medium mb-2">Ecological Education Workshop</h3>
+              <p className="text-gray-600">A learning environment dedicated to sustainability, permaculture, and earth stewardship.</p>
+            </div>
+            
+            <div className="p-6 rounded-xl bg-white shadow-md hover:shadow-xl transition-all">
+              <div className="rounded-full w-12 h-12 flex items-center justify-center bg-nature-leaf/10 mb-4">
+                <PenTool className="w-6 h-6 text-nature-leaf" />
+              </div>
+              <h3 className="text-xl font-medium mb-2">Artist Co-working Lounge</h3>
+              <p className="text-gray-600">A shared workspace designed for creators to develop their craft and collaborate with peers.</p>
+            </div>
+            
+            <div className="p-6 rounded-xl bg-white shadow-md hover:shadow-xl transition-all">
+              <div className="rounded-full w-12 h-12 flex items-center justify-center bg-nature-bark/10 mb-4">
+                <Sprout className="w-6 h-6 text-nature-bark" />
+              </div>
+              <h3 className="text-xl font-medium mb-2">Social Enterprise Accelerator</h3>
+              <p className="text-gray-600">A platform that supports mission-driven entrepreneurs who aim to create positive social impact.</p>
+            </div>
+          </div>
+          
+          <h3 className="text-2xl font-serif font-medium text-center mb-8 animate-scroll-in" style={{ transitionDelay: '0.3s' }}>Our Three-Floor Shared Space Features</h3>
+          
+          {/* Space Features */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 animate-scroll-in" style={{ transitionDelay: '0.4s' }}>
+            <div className="text-center p-4">
+              <div className="mx-auto rounded-full w-12 h-12 flex items-center justify-center bg-nature-sunlight/10 mb-3">
+                <Sun className="w-6 h-6 text-nature-sunlight" />
+              </div>
+              <h4 className="font-medium mb-1">Rooftop Garden & Patio</h4>
+            </div>
+            
+            <div className="text-center p-4">
+              <div className="mx-auto rounded-full w-12 h-12 flex items-center justify-center bg-nature-leaf/10 mb-3">
+                <BookOpen className="w-6 h-6 text-nature-leaf" />
+              </div>
+              <h4 className="font-medium mb-1">Library</h4>
+            </div>
+            
+            <div className="text-center p-4">
+              <div className="mx-auto rounded-full w-12 h-12 flex items-center justify-center bg-nature-bark/10 mb-3">
+                <Mic className="w-6 h-6 text-nature-bark" />
+              </div>
+              <h4 className="font-medium mb-1">Recording Studio</h4>
+            </div>
+            
+            <div className="text-center p-4">
+              <div className="mx-auto rounded-full w-12 h-12 flex items-center justify-center bg-nature-soil/10 mb-3">
+                <Utensils className="w-6 h-6 text-nature-soil" />
+              </div>
+              <h4 className="font-medium mb-1">Communal Kitchen</h4>
+            </div>
+            
+            <div className="text-center p-4">
+              <div className="mx-auto rounded-full w-12 h-12 flex items-center justify-center bg-nature-sky/10 mb-3">
+                <PenTool className="w-6 h-6 text-nature-sky" />
+              </div>
+              <h4 className="font-medium mb-1">Artist Residency</h4>
+            </div>
+            
+            <div className="text-center p-4">
+              <div className="mx-auto rounded-full w-12 h-12 flex items-center justify-center bg-nature-sunlight/10 mb-3">
+                <Coffee className="w-6 h-6 text-nature-sunlight" />
+              </div>
+              <h4 className="font-medium mb-1">Café</h4>
+            </div>
+            
+            <div className="text-center p-4">
+              <div className="mx-auto rounded-full w-12 h-12 flex items-center justify-center bg-nature-leaf/10 mb-3">
+                <MusicNote className="w-6 h-6 text-nature-leaf" />
+              </div>
+              <h4 className="font-medium mb-1">Artist Lounge</h4>
+            </div>
+            
+            <div className="text-center p-4">
+              <div className="mx-auto rounded-full w-12 h-12 flex items-center justify-center bg-nature-bark/10 mb-3">
+                <Heart className="w-6 h-6 text-nature-bark" />
+              </div>
+              <h4 className="font-medium mb-1">Meditation Areas</h4>
+            </div>
+            
+            <div className="text-center p-4">
+              <div className="mx-auto rounded-full w-12 h-12 flex items-center justify-center bg-nature-soil/10 mb-3">
+                <Users className="w-6 h-6 text-nature-soil" />
+              </div>
+              <h4 className="font-medium mb-1">Event Space</h4>
+            </div>
+            
+            <div className="text-center p-4">
+              <div className="mx-auto rounded-full w-12 h-12 flex items-center justify-center bg-nature-sky/10 mb-3">
+                <BookText className="w-6 h-6 text-nature-sky" />
+              </div>
+              <h4 className="font-medium mb-1">Holistic Practice Areas</h4>
             </div>
           </div>
         </div>
