@@ -54,13 +54,15 @@ const Hero = () => {
         <Leaf className="absolute text-nature-leaf top-1/2 right-1/3 h-24 w-24 animate-float" style={{
           animationDelay: '3s'
         }} />
-        
-        {/* Added large tree logo in the background */}
-        <TreeDeciduous className="absolute text-nature-leaf/20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px]" />
       </div>
 
       {/* Content */}
       <div className="container mx-auto px-6 h-full flex flex-col justify-center items-center text-center relative z-10">
+        {/* Tree logo as the main visual element */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <TreeDeciduous className="text-nature-leaf/15 h-[400px] w-[400px]" />
+        </div>
+        
         <div ref={elementsRef} className="stagger-animation max-w-4xl">
           <div className="inline-flex items-center justify-center rounded-full bg-nature-leaf/10 px-3 py-1 text-sm font-medium text-nature-leaf mb-6">
             <span>Find Your Roots</span>
