@@ -4,6 +4,7 @@ import Hero from '../components/Hero';
 import MembershipTiers from '../components/MembershipTiers';
 import Footer from '../components/Footer';
 import { Leaf, Heart, TreeDeciduous, Mountain, Sprout } from 'lucide-react';
+
 const Index = () => {
   useEffect(() => {
     // Intersection Observer for scroll animations
@@ -25,6 +26,7 @@ const Index = () => {
     };
     animateElements();
   }, []);
+
   return <div className="flex flex-col min-h-screen">
       <Header />
       <Hero />
@@ -90,19 +92,19 @@ const Index = () => {
               <div className="absolute inset-0 grid grid-cols-2 grid-rows-2 gap-4">
                 <div className="relative rounded-2xl overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-nature-leaf/30 to-transparent"></div>
-                  <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Forest" className="w-full h-full object-cover" />
+                  <img src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Rainforest Light" className="w-full h-full object-cover" />
                 </div>
                 <div className="relative rounded-2xl overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-bl from-nature-bark/30 to-transparent"></div>
-                  <img src="https://images.unsplash.com/photo-1519331379826-f10be5486c6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Community" className="w-full h-full object-cover" />
+                  <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nature Workspace" className="w-full h-full object-cover" />
                 </div>
                 <div className="relative rounded-2xl overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-tr from-nature-soil/30 to-transparent"></div>
-                  <img src="https://images.unsplash.com/photo-1475483768296-6163e08872a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Meditation" className="w-full h-full object-cover" />
+                  <img src="https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Forest Meditation" className="w-full h-full object-cover" />
                 </div>
                 <div className="relative rounded-2xl overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-tl from-nature-sky/30 to-transparent"></div>
-                  <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Growth" className="w-full h-full object-cover" />
+                  <img src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Spiritual Forest" className="w-full h-full object-cover" />
                 </div>
               </div>
               
@@ -162,4 +164,5 @@ const Index = () => {
       </a>
     </div>;
 };
+
 export default Index;
