@@ -96,7 +96,7 @@ const Index = () => {
                 </div>
                 <div className="relative rounded-2xl overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-bl from-nature-bark/30 to-transparent"></div>
-                  <img src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Giant Redwood Tree Snow" className="w-full h-full object-cover" />
+                  <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Snowy Forest" className="w-full h-full object-cover" />
                 </div>
                 <div className="relative rounded-2xl overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-tr from-nature-soil/30 to-transparent"></div>
