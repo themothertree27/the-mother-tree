@@ -1,8 +1,10 @@
+
 import React, { useEffect, useRef } from 'react';
 import { TreeDeciduous } from 'lucide-react';
 const Hero = () => {
   const parallaxRef = useRef<HTMLDivElement>(null);
   const elementsRef = useRef<HTMLDivElement>(null);
+  
   useEffect(() => {
     // Parallax effect on scroll
     const handleScroll = () => {
@@ -33,6 +35,7 @@ const Hero = () => {
       window.removeEventListener('scroll', handleScrollAnimation);
     };
   }, []);
+  
   return <section className="relative h-screen overflow-hidden pt-20">
       {/* Empty parallax ref div (decorative elements removed) */}
       <div ref={parallaxRef} className="absolute inset-0 z-0"></div>
@@ -65,7 +68,9 @@ const Hero = () => {
       
       {/* Bottom decorative element */}
       <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white to-transparent"></div>
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+      
+      {/* Scroll to explore - CENTERED AND LOWERED */}
+      <div className="absolute bottom-5 left-0 right-0 mx-auto flex justify-center animate-bounce">
         <div className="flex flex-col items-center">
           <span className="text-sm text-gray-500 mb-2">Scroll to explore</span>
           <div className="w-6 h-10 border-2 border-gray-300 rounded-full flex justify-center items-start p-1">
