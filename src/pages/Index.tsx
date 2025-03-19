@@ -4,6 +4,7 @@ import Hero from '../components/Hero';
 import MembershipTiers from '../components/MembershipTiers';
 import Footer from '../components/Footer';
 import { Leaf, Heart, TreeDeciduous, Mountain, Sprout } from 'lucide-react';
+
 const Index = () => {
   useEffect(() => {
     const animateElements = () => {
@@ -37,8 +38,10 @@ const Index = () => {
               <div className="inline-flex items-center justify-center rounded-full bg-nature-leaf/10 px-3 py-1 text-sm font-medium text-nature-leaf mb-4">
                 Our Purpose
               </div>
-              <h2 className="md:text-4xl font-serif font-medium tracking-tight mb-6 text-2xl">Rooted in Nature, 
-Growing in Community</h2>
+              <h2 className="md:text-4xl font-serif font-medium tracking-tight mb-6 text-2xl">
+                Rooted in Nature<br />
+                Growing in Community
+              </h2>
               <p className="mb-6 text-left text-gray-600">Rooted in the power of presence, The Mother Tree plants the dreaming seed in each of us, helping us find our truest selves, reconnecting us back to nature, and creating a community dedicated to art, activism, and ancestral wisdom. The Mother Tree is our way home.</p>
               <p className="text-gray-600 mb-8">The Mother Tree represents the interconnected network that sustains old growth forests. Like these natural systems, our community thrives through connection, mutual support, and the sharing of resources. The Mother Tree is a convergence of culture and trust, where ideas and creations of a better today begin to grow.</p>
               
@@ -126,8 +129,6 @@ Growing in Community</h2>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a href="#membership" className="px-8 py-4 rounded-full bg-nature-leaf text-white font-medium transform transition duration-300 hover:shadow-xl hover:translate-y-[-2px]">The Giving-Back Tree</a>
-              
-              
             </div>
           </div>
         </div>
@@ -150,4 +151,5 @@ Growing in Community</h2>
       </a>
     </div>;
 };
+
 export default Index;
