@@ -1,8 +1,6 @@
-
 import React from 'react';
 import MembershipCard from './MembershipCard';
 import { Leaf, TreeDeciduous, TreePine } from 'lucide-react';
-
 const MembershipTiers = () => {
   return <section id="membership" className="section-padding relative overflow-hidden bg-gray-50/50">
       {/* Background decorative elements */}
@@ -25,73 +23,21 @@ const MembershipTiers = () => {
           <div className="animate-scroll-in" style={{
           transitionDelay: '0.2s'
         }}>
-            <MembershipCard 
-              tier="LEVEL 1" 
-              name="Be-leave'rs" 
-              price="$222 one-time" 
-              description="Your first step into our community, with essentials to begin your journey." 
-              benefits={[
-                "Physical welcome package", 
-                "Monthly community newsletter", 
-                "Access to online community forum", 
-                "Early access to events", 
-                "10% discount on workshops"
-              ]} 
-              accentColor="text-nature-leaf" 
-              iconColor="bg-nature-leaf/10" 
-              bgGradient="bg-gradient-to-br from-nature-leaf/90 to-nature-leaf" 
-              icon={<Leaf className="h-6 w-6 text-nature-leaf" />} 
-            />
+            <MembershipCard tier="LEVEL 1" name="Be-leave'rs" price="$222 one-time" description="Your first step into our community, with essentials to begin your journey." benefits={["Physical welcome package", "Monthly community newsletter", "Access to online community forum", "Early access to events", "10% discount on workshops"]} accentColor="text-nature-leaf" iconColor="bg-nature-leaf/10" bgGradient="bg-gradient-to-br from-nature-leaf/90 to-nature-leaf" icon={<Leaf className="h-6 w-6 text-nature-leaf" />} />
           </div>
           
           {/* Tier 2: Rooted Membership */}
           <div className="animate-scroll-in" style={{
           transitionDelay: '0.4s'
         }}>
-            <MembershipCard 
-              tier="LEVEL 2" 
-              name="Rooted Membership" 
-              price="$777 annually" 
-              description="Deepen your connection with exclusive benefits and enhanced support." 
-              benefits={[
-                "All Be-leave'rs benefits", 
-                "Seasonal care packages", 
-                "Private member events", 
-                "Priority registration for workshops", 
-                "Quarterly 1:1 guidance sessions", 
-                "25% discount on all programs"
-              ]} 
-              accentColor="text-nature-bark" 
-              iconColor="bg-nature-bark/10" 
-              bgGradient="bg-gradient-to-br from-nature-bark/90 to-nature-bark" 
-              icon={<TreeDeciduous className="h-6 w-6 text-nature-bark" />} 
-              popular={true} 
-            />
+            <MembershipCard tier="LEVEL 2" name="Rooted Membership" price="$777 annually" description="Deepen your connection with exclusive benefits and enhanced support." benefits={["All Be-leave'rs benefits", "Seasonal care packages", "Private member events", "Priority registration for workshops", "Quarterly 1:1 guidance sessions", "25% discount on all programs"]} accentColor="text-nature-bark" iconColor="bg-nature-bark/10" bgGradient="bg-gradient-to-br from-nature-bark/90 to-nature-bark" icon={<TreeDeciduous className="h-6 w-6 text-nature-bark" />} popular={true} />
           </div>
           
           {/* Tier 3: The Mother Board */}
           <div className="animate-scroll-in" style={{
           transitionDelay: '0.6s'
         }}>
-            <MembershipCard 
-              tier="LEVEL 3" 
-              name="The Mother Board" 
-              price="$1111+ donation" 
-              description="Become a guardian of our mission with the highest level of connection and influence." 
-              benefits={[
-                "All Rooted Membership benefits", 
-                "VIP retreat invitations", 
-                "Advisory board membership", 
-                "Personalized mentorship", 
-                "Recognition at events & online", 
-                "Unlimited access to all content", 
-                "First access to special initiatives"
-              ]} 
-              accentColor="text-nature-soil" 
-              iconColor="bg-nature-soil/10" 
-              bgGradient="bg-gradient-to-br from-nature-soil/90 to-nature-soil" 
-              icon={<TreePine className="h-6 w-6 text-nature-soil" />} 
-            />
+            <MembershipCard tier="LEVEL 3" name="The Mother Board" price="$1111+ donation" description="Become a guardian of our mission with the highest level of connection and influence." benefits={["All Rooted Membership benefits", "VIP retreat invitations", "Advisory board membership", "Personalized mentorship", "Recognition at events & online", "Unlimited access to all content", "First access to special initiatives"]} accentColor="text-nature-soil" iconColor="bg-nature-soil/10" bgGradient="bg-gradient-to-br from-nature-soil/90 to-nature-soil" icon={<TreePine className="h-6 w-6 text-nature-soil" />} />
           </div>
         </div>
         
@@ -100,12 +46,9 @@ const MembershipTiers = () => {
             All memberships support our mission to nurture connections between people and nature.
             Join us in creating a more sustainable, conscious community.
           </p>
-          <button className="px-8 py-4 rounded-full bg-white border border-gray-200 text-gray-800 font-medium hover:border-nature-leaf hover:text-nature-leaf transition-all duration-300">
-            Compare All Features
-          </button>
+          
         </div>
       </div>
     </section>;
 };
-
 export default MembershipTiers;
