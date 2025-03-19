@@ -55,9 +55,16 @@ const Hero = () => {
             <span>Find Your Roots</span>
           </div>
           
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-medium tracking-tight mb-6">
-            <span className="text-gray-600">Welcome to</span> <span className="text-nature-leaf">The Mother Tree</span>
-          </h1>
+          {isMobile ? (
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-medium tracking-tight mb-6">
+              <span className="text-gray-600 block">Welcome to</span>
+              <span className="text-nature-leaf block">The Mother Tree</span>
+            </h1>
+          ) : (
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-medium tracking-tight mb-6">
+              <span className="text-gray-600">Welcome to</span> <span className="text-nature-leaf">The Mother Tree</span>
+            </h1>
+          )}
           
           <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto">A Rewilding Community, For Nature-Empowered Co-Creation</p>
           
