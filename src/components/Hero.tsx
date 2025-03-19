@@ -1,11 +1,8 @@
-
 import React, { useEffect, useRef } from 'react';
 import { TreeDeciduous } from 'lucide-react';
-
 const Hero = () => {
   const parallaxRef = useRef<HTMLDivElement>(null);
   const elementsRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     // Parallax effect on scroll
     const handleScroll = () => {
@@ -26,19 +23,16 @@ const Hero = () => {
         }
       });
     };
-
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('scroll', handleScrollAnimation);
 
     // Trigger once on load
     handleScrollAnimation();
-
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('scroll', handleScrollAnimation);
     };
   }, []);
-
   return <section className="relative h-screen overflow-hidden pt-20">
       {/* Empty parallax ref div (decorative elements removed) */}
       <div ref={parallaxRef} className="absolute inset-0 z-0"></div>
@@ -64,9 +58,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="#membership" className="px-8 py-4 rounded-full bg-nature-leaf text-white font-medium button-effect transform transition duration-300 hover:shadow-xl hover:scale-105">The Giving-Back Tree</a>
             
-            <a href="#about" className="px-8 py-4 rounded-full border border-gray-200 hover:border-nature-leaf hover:text-nature-leaf transition-all duration-300">
-              Learn More
-            </a>
+            
           </div>
         </div>
       </div>
@@ -83,5 +75,4 @@ const Hero = () => {
       </div>
     </section>;
 };
-
 export default Hero;
