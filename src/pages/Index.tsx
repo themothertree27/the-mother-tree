@@ -57,7 +57,7 @@ const Index = () => {
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">Community</h4>
-                    <p className="text-sm text-gray-500">Inspiring the power of togetherness</p>
+                    <p className="text-sm text-gray-500">Power of togetherness</p>
                   </div>
                 </div>
                 
@@ -67,7 +67,7 @@ const Index = () => {
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">Digging</h4>
-                    <p className="text-sm text-gray-500">Continuous seeking for our truths</p>
+                    <p className="text-sm text-gray-500">Continuous truth-seeking</p>
                   </div>
                 </div>
                 
