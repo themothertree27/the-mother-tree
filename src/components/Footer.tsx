@@ -27,7 +27,7 @@ const Footer = () => {
               <li><a href="#" className="text-gray-600 hover:text-nature-leaf transition-colors duration-300">Be-leave'rs</a></li>
               <li><a href="#" className="text-gray-600 hover:text-nature-leaf transition-colors duration-300">Rooted Membership</a></li>
               <li><a href="#" className="text-gray-600 hover:text-nature-leaf transition-colors duration-300">The Mother Board</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-nature-leaf transition-colors duration-300">Gift Memberships</a></li>
+              
             </ul>
           </div>
           
