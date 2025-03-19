@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
@@ -6,7 +5,6 @@ import MembershipTiers from '../components/MembershipTiers';
 import ConnectWithUs from '../components/ConnectWithUs';
 import Footer from '../components/Footer';
 import { Leaf, Heart, TreeDeciduous, Mountain, Sprout, Coffee, Mic, BookOpen, Home, Users, PenTool, Sun, Utensils, Music } from 'lucide-react';
-
 const Index = () => {
   useEffect(() => {
     const animateElements = () => {
@@ -27,7 +25,6 @@ const Index = () => {
     };
     animateElements();
   }, []);
-
   return <div className="flex flex-col min-h-screen">
       <Header />
       <Hero />
@@ -241,12 +238,7 @@ const Index = () => {
               <h4 className="font-medium mb-1">Communal Kitchen</h4>
             </div>
             
-            <div className="text-center p-4">
-              <div className="mx-auto rounded-full w-12 h-12 flex items-center justify-center bg-nature-sky/10 mb-3">
-                <PenTool className="w-6 h-6 text-nature-sky" />
-              </div>
-              <h4 className="font-medium mb-1">Artist Residency</h4>
-            </div>
+            
             
             <div className="text-center p-4">
               <div className="mx-auto rounded-full w-12 h-12 flex items-center justify-center bg-nature-sunlight/10 mb-3">
