@@ -7,7 +7,6 @@ import { Leaf, Heart, TreeDeciduous, Mountain, Sprout } from 'lucide-react';
 
 const Index = () => {
   useEffect(() => {
-    // Intersection Observer for scroll animations
     const animateElements = () => {
       const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -96,7 +95,7 @@ const Index = () => {
                 </div>
                 <div className="relative rounded-2xl overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-bl from-nature-bark/30 to-transparent"></div>
-                  <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nature Workspace" className="w-full h-full object-cover" />
+                  <img src="https://images.unsplash.com/photo-1547393947-59a28e4c3cb3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Old Growth Forest Snow" className="w-full h-full object-cover" />
                 </div>
                 <div className="relative rounded-2xl overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-tr from-nature-soil/30 to-transparent"></div>
@@ -108,7 +107,6 @@ const Index = () => {
                 </div>
               </div>
               
-              {/* Decorative elements */}
               <div className="absolute -top-6 -right-6 w-12 h-12 rounded-full bg-nature-sky/20"></div>
               <div className="absolute -bottom-6 -left-6 w-16 h-16 rounded-full bg-nature-leaf/20"></div>
             </div>
@@ -116,10 +114,8 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Membership Tiers Section */}
       <MembershipTiers />
       
-      {/* Call to Action */}
       <section className="section-padding relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-nature-leaf/5 to-white"></div>
         
@@ -150,7 +146,6 @@ const Index = () => {
       
       <Footer />
       
-      {/* Return-to-top button */}
       <a href="#" className="fixed bottom-6 right-6 p-3 rounded-full bg-white shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-110 z-50" onClick={e => {
       e.preventDefault();
       window.scrollTo({
