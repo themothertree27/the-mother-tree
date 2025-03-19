@@ -39,7 +39,7 @@ const Index = () => {
               </div>
               <h2 className="text-3xl md:text-4xl font-serif font-medium tracking-tight mb-6">Rooted in Nature, Growing in Community</h2>
               <p className="mb-6 text-left text-gray-600">Rooted in the power of presence, The Mother Tree plants the dreaming seed in each of us, helping us find our truest selves, reconnecting us back to nature, and creating a community dedicated to art, activism, and ancestral wisdom.</p>
-              <p className="text-gray-600 mb-8">The Mother Tree represents the interconnected network that sustains old growth forests. Like these natural systems, our community thrives through connection, mutual support, and the sharing of resources. We believe in nurturing relationships between people and the natural world, creating spaces for growth, learning, and collective creation.</p>
+              <p className="text-gray-600 mb-8">The Mother Tree represents the interconnected network that sustains old growth forests. Like these natural systems, our community thrives through connection, mutual support, and the sharing of resources. </p>
               
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex items-start space-x-3">
@@ -68,7 +68,7 @@ const Index = () => {
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">Digging</h4>
-                    <p className="text-sm text-gray-500">Continuous learning path</p>
+                    <p className="text-sm text-gray-500">Continuous seeking for our truths</p>
                   </div>
                 </div>
                 
