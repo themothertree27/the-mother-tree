@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
@@ -209,7 +210,7 @@ const Index = () => {
         }}>Our Four-Floor Shared Space Features</h3>
           
           {/* Space Features */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 animate-scroll-in" style={{
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 animate-scroll-in" style={{
           transitionDelay: '0.4s'
         }}>
             <div className="text-center p-4">
