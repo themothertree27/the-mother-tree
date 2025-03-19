@@ -39,7 +39,7 @@ const Hero = () => {
     };
   }, []);
   
-  return <section className="relative h-screen overflow-hidden pt-20">
+  return <section className="relative h-screen overflow-hidden pt-10">
       {/* Empty parallax ref div (decorative elements removed) */}
       <div ref={parallaxRef} className="absolute inset-0 z-0"></div>
 
