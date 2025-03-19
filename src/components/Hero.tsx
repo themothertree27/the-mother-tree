@@ -1,9 +1,12 @@
 
 import React, { useEffect, useRef } from 'react';
 import { TreeDeciduous } from 'lucide-react';
+import { useIsMobile } from '../hooks/use-mobile';
+
 const Hero = () => {
   const parallaxRef = useRef<HTMLDivElement>(null);
   const elementsRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
   
   useEffect(() => {
     // Parallax effect on scroll
@@ -44,7 +47,7 @@ const Hero = () => {
       <div className="container mx-auto px-6 h-full flex flex-col justify-center items-center text-center relative z-10">
         {/* Tree logo as the main visual element - ADJUSTED SIZE */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <TreeDeciduous className="text-nature-leaf/15 h-[600px] w-[600px]" />
+          <TreeDeciduous className={`text-nature-leaf/15 ${isMobile ? 'h-[400px] w-[400px]' : 'h-[600px] w-[600px]'}`} />
         </div>
         
         <div ref={elementsRef} className="stagger-animation max-w-4xl">
