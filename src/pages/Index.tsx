@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
@@ -116,8 +115,7 @@ const Index = () => {
         </div>
       </section>
       
-      <MembershipTiers />
-      
+      {/* Help Grow Section - Moved above MembershipTiers */}
       <section className="section-padding relative overflow-hidden">
         <div className="container mx-auto relative z-10">
           <div className="max-w-4xl mx-auto text-center animate-scroll-in">
@@ -137,6 +135,8 @@ const Index = () => {
           </div>
         </div>
       </section>
+      
+      <MembershipTiers />
       
       <Footer />
       
