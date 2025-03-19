@@ -1,9 +1,11 @@
 
 import React, { useEffect, useRef } from 'react';
 import { TreeDeciduous, Leaf, Cloud } from 'lucide-react';
+
 const Hero = () => {
   const parallaxRef = useRef<HTMLDivElement>(null);
   const elementsRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     // Parallax effect on scroll
     const handleScroll = () => {
@@ -24,31 +26,37 @@ const Hero = () => {
         }
       });
     };
+
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('scroll', handleScrollAnimation);
 
     // Trigger once on load
     handleScrollAnimation();
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('scroll', handleScrollAnimation);
     };
   }, []);
+
   return <section className="relative h-screen overflow-hidden pt-20">
       {/* Decorative elements (background) */}
       <div ref={parallaxRef} className="absolute inset-0 z-0 opacity-10">
         <Cloud className="absolute text-nature-sky top-1/4 left-1/4 h-64 w-64 animate-float" style={{
-        animationDelay: '0s'
-      }} />
+          animationDelay: '0s'
+        }} />
         <Cloud className="absolute text-nature-sky top-1/3 right-1/4 h-40 w-40 animate-float" style={{
-        animationDelay: '1s'
-      }} />
+          animationDelay: '1s'
+        }} />
         <Leaf className="absolute text-nature-leaf bottom-1/4 left-1/3 h-32 w-32 animate-float" style={{
-        animationDelay: '2s'
-      }} />
+          animationDelay: '2s'
+        }} />
         <Leaf className="absolute text-nature-leaf top-1/2 right-1/3 h-24 w-24 animate-float" style={{
-        animationDelay: '3s'
-      }} />
+          animationDelay: '3s'
+        }} />
+        
+        {/* Added large tree logo in the background */}
+        <TreeDeciduous className="absolute text-nature-leaf/20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px]" />
       </div>
 
       {/* Content */}
@@ -86,4 +94,5 @@ const Hero = () => {
       </div>
     </section>;
 };
+
 export default Hero;
