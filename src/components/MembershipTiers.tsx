@@ -1,8 +1,9 @@
+
 import React from 'react';
 import MembershipCard from './MembershipCard';
 import { Leaf, TreeDeciduous, TreePine } from 'lucide-react';
 const MembershipTiers = () => {
-  return <section id="membership" className="section-padding relative overflow-hidden bg-gray-50/50">
+  return <section id="membership" className="section-padding pb-10 relative overflow-hidden bg-gray-50/50">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-nature-leaf/5"></div>
@@ -12,7 +13,7 @@ const MembershipTiers = () => {
       
       {/* Content */}
       <div className="container mx-auto relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16 animate-scroll-in">
+        <div className="text-center max-w-3xl mx-auto mb-12 animate-scroll-in">
           <div className="inline-flex items-center justify-center rounded-full bg-nature-leaf/10 px-3 py-1 text-sm font-medium text-nature-leaf mb-4">Giving Options</div>
           <h2 className="text-3xl md:text-4xl font-serif font-medium tracking-tight mb-4">Choose Your Seed</h2>
           <p className="text-left text-gray-600">We kindly ask to support us in any which way you can. Whether its through financial means or showing up with a hammer when its ready to build, The Mother Tree is not possible without your help! Below are the various levels of contributions we are asking during this 'Seed Money' fundraising round of Family & Friends.</p>
@@ -41,7 +42,7 @@ const MembershipTiers = () => {
           </div>
         </div>
         
-        <div className="mt-20 text-center animate-scroll-in">
+        <div className="mt-10 text-center animate-scroll-in">
           
           
         </div>
