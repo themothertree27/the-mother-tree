@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import Hero from '../components/Hero';
 import MembershipTiers from '../components/MembershipTiers';
 import Footer from '../components/Footer';
-import { Leaf, Heart, TreeDeciduous, Mountain, Sprout, Coffee, Mic, BookOpen, Home, Users, PenTool, Sun, Utensils, MusicNote, BookText } from 'lucide-react';
+import { Leaf, Heart, TreeDeciduous, Mountain, Sprout, Coffee, Mic, BookOpen, Home, Users, PenTool, Sun, Utensils, Music } from 'lucide-react';
 
 const Index = () => {
   useEffect(() => {
@@ -231,7 +231,7 @@ const Index = () => {
             
             <div className="text-center p-4">
               <div className="mx-auto rounded-full w-12 h-12 flex items-center justify-center bg-nature-leaf/10 mb-3">
-                <MusicNote className="w-6 h-6 text-nature-leaf" />
+                <Music className="w-6 h-6 text-nature-leaf" />
               </div>
               <h4 className="font-medium mb-1">Artist Lounge</h4>
             </div>
@@ -252,7 +252,7 @@ const Index = () => {
             
             <div className="text-center p-4">
               <div className="mx-auto rounded-full w-12 h-12 flex items-center justify-center bg-nature-sky/10 mb-3">
-                <BookText className="w-6 h-6 text-nature-sky" />
+                <BookOpen className="w-6 h-6 text-nature-sky" />
               </div>
               <h4 className="font-medium mb-1">Holistic Practice Areas</h4>
             </div>
