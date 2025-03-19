@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
@@ -96,7 +95,7 @@ const Index = () => {
                 </div>
                 <div className="relative rounded-2xl overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-bl from-nature-bark/30 to-transparent"></div>
-                  <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Snowy Forest" className="w-full h-full object-cover" />
+                  <img src="https://images.unsplash.com/photo-1418985991508-e47386d96a71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Winter Snow Forest" className="w-full h-full object-cover" />
                 </div>
                 <div className="relative rounded-2xl overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-tr from-nature-soil/30 to-transparent"></div>
