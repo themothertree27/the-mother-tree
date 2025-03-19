@@ -1,9 +1,11 @@
+
 import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import MembershipTiers from '../components/MembershipTiers';
 import Footer from '../components/Footer';
 import { Leaf, Heart, TreeDeciduous, Mountain, Sprout } from 'lucide-react';
+
 const Index = () => {
   useEffect(() => {
     const animateElements = () => {
@@ -24,12 +26,14 @@ const Index = () => {
     };
     animateElements();
   }, []);
+
   return <div className="flex flex-col min-h-screen">
       <Header />
       <Hero />
       
       {/* About Section */}
       <section id="about" className="section-padding relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-nature-leaf/5 to-white"></div>
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="animate-scroll-in">
@@ -115,8 +119,6 @@ const Index = () => {
       <MembershipTiers />
       
       <section className="section-padding relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-nature-leaf/5 to-white"></div>
-        
         <div className="container mx-auto relative z-10">
           <div className="max-w-4xl mx-auto text-center animate-scroll-in">
             <div className="inline-flex items-center justify-center rounded-full bg-nature-sunlight/20 px-3 py-1 text-sm font-medium text-nature-soil mb-4">Grow Our Community</div>
@@ -151,4 +153,5 @@ const Index = () => {
       </a>
     </div>;
 };
+
 export default Index;
