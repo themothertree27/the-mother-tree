@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { TreeDeciduous, Leaf, Cloud } from 'lucide-react';
+import { TreeDeciduous } from 'lucide-react';
 
 const Hero = () => {
   const parallaxRef = useRef<HTMLDivElement>(null);
@@ -40,21 +40,8 @@ const Hero = () => {
   }, []);
 
   return <section className="relative h-screen overflow-hidden pt-20">
-      {/* Decorative elements (background) */}
-      <div ref={parallaxRef} className="absolute inset-0 z-0 opacity-10">
-        <Cloud className="absolute text-nature-sky top-1/4 left-1/4 h-64 w-64 animate-float" style={{
-          animationDelay: '0s'
-        }} />
-        <Cloud className="absolute text-nature-sky top-1/3 right-1/4 h-40 w-40 animate-float" style={{
-          animationDelay: '1s'
-        }} />
-        <Leaf className="absolute text-nature-leaf bottom-1/4 left-1/3 h-32 w-32 animate-float" style={{
-          animationDelay: '2s'
-        }} />
-        <Leaf className="absolute text-nature-leaf top-1/2 right-1/3 h-24 w-24 animate-float" style={{
-          animationDelay: '3s'
-        }} />
-      </div>
+      {/* Empty parallax ref div (decorative elements removed) */}
+      <div ref={parallaxRef} className="absolute inset-0 z-0"></div>
 
       {/* Content */}
       <div className="container mx-auto px-6 h-full flex flex-col justify-center items-center text-center relative z-10">
