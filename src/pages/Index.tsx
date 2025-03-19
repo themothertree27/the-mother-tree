@@ -1,7 +1,9 @@
+
 import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import MembershipTiers from '../components/MembershipTiers';
+import ConnectWithUs from '../components/ConnectWithUs';
 import Footer from '../components/Footer';
 import { Leaf, Heart, TreeDeciduous, Mountain, Sprout, Coffee, Mic, BookOpen, Home, Users, PenTool, Sun, Utensils, Music } from 'lucide-react';
 
@@ -279,6 +281,8 @@ const Index = () => {
       
       <MembershipTiers />
       
+      <ConnectWithUs />
+      
       <Footer />
       
       <a href="#" className="fixed bottom-6 right-6 p-3 rounded-full bg-white shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-110 z-50" onClick={e => {
@@ -295,4 +299,3 @@ const Index = () => {
     </div>;
 };
 export default Index;
-
