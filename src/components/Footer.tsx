@@ -1,5 +1,6 @@
+
 import React from 'react';
-import { Leaf, Mail, Instagram, Twitter } from 'lucide-react';
+import { TreeDeciduous, Mail, Instagram, Twitter } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -8,7 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-6">
-              <Leaf className="h-6 w-6 text-nature-leaf" />
+              <TreeDeciduous className="h-6 w-6 text-nature-leaf" />
               <span className="font-serif text-xl font-medium text-nature-leaf">The Mother Tree</span>
             </div>
             <p className="text-gray-600 mb-6 max-w-md">
