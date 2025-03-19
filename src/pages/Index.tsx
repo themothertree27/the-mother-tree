@@ -1,11 +1,9 @@
-
 import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import MembershipTiers from '../components/MembershipTiers';
 import Footer from '../components/Footer';
 import { Leaf, Heart, TreeDeciduous, Mountain, Sprout, Coffee, Mic, BookOpen, Home, Users, PenTool, Sun, Utensils, Music } from 'lucide-react';
-
 const Index = () => {
   useEffect(() => {
     const animateElements = () => {
@@ -151,7 +149,9 @@ const Index = () => {
           </div>
           
           {/* Main Features */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 animate-scroll-in" style={{ transitionDelay: '0.2s' }}>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 animate-scroll-in" style={{
+          transitionDelay: '0.2s'
+        }}>
             <div className="p-6 rounded-xl bg-white shadow-md hover:shadow-xl transition-all">
               <div className="rounded-full w-12 h-12 flex items-center justify-center bg-nature-leaf/10 mb-4">
                 <Home className="w-6 h-6 text-nature-leaf" />
@@ -201,10 +201,14 @@ const Index = () => {
             </div>
           </div>
           
-          <h3 className="text-2xl font-serif font-medium text-center mb-8 animate-scroll-in" style={{ transitionDelay: '0.3s' }}>Our Three-Floor Shared Space Features</h3>
+          <h3 className="text-2xl font-serif font-medium text-center mb-8 animate-scroll-in" style={{
+          transitionDelay: '0.3s'
+        }}>Our Four-Floor Shared Space Features</h3>
           
           {/* Space Features */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 animate-scroll-in" style={{ transitionDelay: '0.4s' }}>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 animate-scroll-in" style={{
+          transitionDelay: '0.4s'
+        }}>
             <div className="text-center p-4">
               <div className="mx-auto rounded-full w-12 h-12 flex items-center justify-center bg-nature-sunlight/10 mb-3">
                 <Sun className="w-6 h-6 text-nature-sunlight" />
@@ -295,5 +299,4 @@ const Index = () => {
       </a>
     </div>;
 };
-
 export default Index;
