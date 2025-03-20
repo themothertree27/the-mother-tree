@@ -45,7 +45,7 @@ const MembershipTiers = () => {
             <MembershipCard 
               tier="LEVEL 2" 
               name="Rooted Membership" 
-              price="$777 annually" 
+              price="$777 annual membership" 
               description="Deepen your connection with exclusive benefits and enhanced support." 
               benefits={["All Be-leave'rs benefits", "Seasonal care packages", "Private member events", "Priority registration for workshops", "Quarterly 1:1 guidance sessions", "25% discount on all programs"]} 
               accentColor="text-nature-soil" 
