@@ -17,6 +17,7 @@ interface MembershipCardProps {
   buttonText?: string;
   buttonIcon?: React.ReactNode;
   buttonBgColor?: string;
+  clarificationText?: string;
 }
 
 const MembershipCard: React.FC<MembershipCardProps> = ({
@@ -33,7 +34,8 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
   popular = false,
   buttonText,
   buttonIcon,
-  buttonBgColor
+  buttonBgColor,
+  clarificationText
 }) => {
   return <div className={`membership-card group z-10 ${popular ? 'scale-105 shadow-xl' : ''}`}>
       {popular && <div className="absolute top-0 right-0 bg-nature-leaf text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-xl z-20">Popular</div>}
@@ -94,6 +96,12 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
                 <span>{buttonText || `Choose ${name}`}</span>
               </div>
             </button>
+            
+            {clarificationText && (
+              <div className="text-xs text-gray-500 text-center mt-2">
+                {clarificationText}
+              </div>
+            )}
           </div>
         </div>
       </div>
