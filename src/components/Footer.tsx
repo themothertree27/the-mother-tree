@@ -1,5 +1,7 @@
+
 import React from 'react';
 import { TreeDeciduous, Mail, Instagram, Twitter } from 'lucide-react';
+
 const Footer = () => {
   return <footer id="contact" className="bg-white pt-20 pb-10 border-t border-gray-100">
       <div className="container mx-auto px-6">
@@ -9,12 +11,12 @@ const Footer = () => {
               <TreeDeciduous className="h-6 w-6 text-nature-leaf" />
               <span className="font-serif text-xl font-medium text-nature-leaf">The Mother Tree</span>
             </div>
-            <p className="text-gray-600 mb-6 max-w-md">Our vision is to regrow a forest of Mother Trees, inspiring communities across the world that empower co-creation and collaboration for the posterity of our people and the planet.</p>
+            <p className="text-gray-600 mb-6 max-w-md">Our vision is to regrow a forest of Mother Trees, inspiring communities across the world that empower co-creation and collaboration for the posterity of our people and the planet.</p>
             <div className="flex space-x-4">
               <a href="#" className="p-2 rounded-full bg-gray-100 text-gray-600 hover:bg-nature-leaf hover:text-white transition-colors duration-300">
                 <Mail className="h-5 w-5" />
               </a>
-              <a href="#" className="p-2 rounded-full bg-gray-100 text-gray-600 hover:bg-nature-leaf hover:text-white transition-colors duration-300">
+              <a href="https://www.instagram.com/themothertree.nyc/?igsh=MWo2bjFoemxsNWdndA%3D%3D&utm_source=qr#" className="p-2 rounded-full bg-gray-100 text-gray-600 hover:bg-nature-leaf hover:text-white transition-colors duration-300">
                 <Instagram className="h-5 w-5" />
               </a>
               
@@ -55,4 +57,5 @@ const Footer = () => {
       </div>
     </footer>;
 };
+
 export default Footer;
