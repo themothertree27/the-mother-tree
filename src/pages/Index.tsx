@@ -69,8 +69,8 @@ const Index = () => {
                 </div>
                 
                 <div className="flex items-start space-x-3">
-                  <div className="p-2 rounded-full bg-red-500/10">
-                    <Sprout className="h-5 w-5 text-red-500" />
+                  <div className="p-2 rounded-full bg-nature-soil/10">
+                    <Sprout className="h-5 w-5 text-nature-soil" />
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">Digging</h4>
@@ -302,3 +302,4 @@ Wellness Space</h3>
     </div>;
 };
 export default Index;
+
