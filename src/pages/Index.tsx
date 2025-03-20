@@ -273,9 +273,11 @@ Wellness Space</h3>
           {/* Business Plan Button */}
           <div className="mt-12 text-center animate-scroll-in" style={{ transitionDelay: '0.5s' }}>
             <p className="text-lg mb-4">Want to read The Mother Tree Business Plan?</p>
-            <Button variant="default" className="bg-nature-leaf hover:bg-nature-leaf/90">
-              Explore <ArrowRight className="ml-1" />
-            </Button>
+            <a href="https://drive.google.com/file/d/1Gon6yF8sttEzuuKQnDIBHZiClTiNGw6j/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+              <Button variant="default" className="bg-nature-leaf hover:bg-nature-leaf/90">
+                Explore <ArrowRight className="ml-1" />
+              </Button>
+            </a>
           </div>
         </div>
       </section>
