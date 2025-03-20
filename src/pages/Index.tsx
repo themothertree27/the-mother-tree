@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
@@ -228,17 +227,17 @@ const Index = () => {
             </div>
             
             <div className="text-center p-4">
-              <div className="mx-auto rounded-full w-12 h-12 flex items-center justify-center bg-nature-bark/10 mb-3">
-                <Mic className="w-6 h-6 text-nature-bark" />
+              <div className="mx-auto rounded-full w-12 h-12 flex items-center justify-center bg-nature-sky/10 mb-3">
+                <Mic className="w-6 h-6 text-nature-sky" />
               </div>
               <h4 className="font-medium mb-1">Recording Studio</h4>
             </div>
             
             <div className="text-center p-4">
-              <div className="mx-auto rounded-full w-12 h-12 flex items-center justify-center bg-nature-soil/10 mb-3">
-                <Utensils className="w-6 h-6 text-nature-soil" />
+              <div className="mx-auto rounded-full w-12 h-12 flex items-center justify-center bg-nature-sky/10 mb-3">
+                <Music className="w-6 h-6 text-nature-sky" />
               </div>
-              <h4 className="font-medium mb-1">Communal Kitchen</h4>
+              <h4 className="font-medium mb-1">Artist Lounge</h4>
             </div>
             
             <div className="text-center p-4">
@@ -249,17 +248,17 @@ const Index = () => {
             </div>
             
             <div className="text-center p-4">
-              <div className="mx-auto rounded-full w-12 h-12 flex items-center justify-center bg-nature-leaf/10 mb-3">
-                <Music className="w-6 h-6 text-nature-leaf" />
-              </div>
-              <h4 className="font-medium mb-1">Artist Lounge</h4>
-            </div>
-            
-            <div className="text-center p-4">
               <div className="mx-auto rounded-full w-12 h-12 flex items-center justify-center bg-nature-bark/10 mb-3">
                 <Heart className="w-6 h-6 text-nature-bark" />
               </div>
               <h4 className="font-medium mb-1">Meditation Areas</h4>
+            </div>
+            
+            <div className="text-center p-4">
+              <div className="mx-auto rounded-full w-12 h-12 flex items-center justify-center bg-nature-soil/10 mb-3">
+                <Utensils className="w-6 h-6 text-nature-soil" />
+              </div>
+              <h4 className="font-medium mb-1">Communal Kitchen</h4>
             </div>
             
             <div className="text-center p-4">
