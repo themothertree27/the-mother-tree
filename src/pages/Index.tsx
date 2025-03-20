@@ -189,8 +189,8 @@ Wellness Space</h3>
             </div>
             
             <div className="p-6 rounded-xl bg-white shadow-md hover:shadow-xl transition-all">
-              <div className="rounded-full w-12 h-12 flex items-center justify-center bg-nature-leaf/10 mb-4">
-                <PenTool className="w-6 h-6 text-nature-leaf" />
+              <div className="rounded-full w-12 h-12 flex items-center justify-center bg-nature-sky/10 mb-4">
+                <PenTool className="w-6 h-6 text-nature-sky" />
               </div>
               <h3 className="text-xl font-medium mb-2">Artist Co-creation Lounge & Studio</h3>
               <p className="text-gray-600">A shared workspace designed for creators to develop their craft and collaborate with peers.</p>
