@@ -1,7 +1,7 @@
 
 import React from 'react';
 import MembershipCard from './MembershipCard';
-import { Leaf, TreePine, Sprout } from 'lucide-react';
+import { Leaf, TreePine, Sprout, X } from 'lucide-react';
 
 const MembershipTiers = () => {
   return <section id="membership" className="section-padding pb-10 relative overflow-hidden bg-gray-50/50">
@@ -39,7 +39,23 @@ const MembershipTiers = () => {
           <div className="animate-scroll-in" style={{
           transitionDelay: '0.6s'
         }}>
-            <MembershipCard tier="LEVEL 3" name="The Mother Board" price="$1111+ investment" description="Become a guardian of our mission with the highest level of connection and influence." benefits={["All Rooted Membership benefits", "VIP retreat invitations", "Advisory board membership", "Personalized mentorship", "Recognition at events & online", "Unlimited access to all content", "First access to special initiatives"]} accentColor="text-nature-leaf" iconColor="bg-nature-leaf/10" bgGradient="bg-gradient-to-br from-nature-leaf/90 to-nature-leaf" icon={<TreePine />} buttonIcon={<TreePine />} />
+            <MembershipCard 
+              tier="LEVEL 3" 
+              name="The Mother Board" 
+              price="$1111+ investment" 
+              description="If you ain't making your Momma or Momma Earth proud, what are you doing?! The Mother Tree is not only our chance to build something that our Mothers will be proud of, it will be something they will be A PART OF! At this level of giving, your Mother* will be invited to become an honorary board member. Together, they will be known as the Mother Board, whose divine guidance, direction, and belief will lead The Mother Tree to much success and bring us all one step closer to the Matriarchy."
+              benefits={[
+                "Equity of The Mother Tree", 
+                "Invitation for a mother-figure in your life to be an honorary board member", 
+                "Legacy Donor"
+              ]} 
+              exclusions={["Does not include Rooted Membership"]}
+              accentColor="text-nature-leaf" 
+              iconColor="bg-nature-leaf/10" 
+              bgGradient="bg-gradient-to-br from-nature-leaf/90 to-nature-leaf" 
+              icon={<TreePine />} 
+              buttonIcon={<TreePine />} 
+            />
           </div>
         </div>
         

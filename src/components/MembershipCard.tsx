@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Check } from 'lucide-react';
+import { Check, X } from 'lucide-react';
 
 interface MembershipCardProps {
   tier: string;
@@ -8,6 +8,7 @@ interface MembershipCardProps {
   price: string;
   description: string;
   benefits: string[];
+  exclusions?: string[];
   accentColor: string;
   iconColor: string;
   bgGradient: string;
@@ -24,6 +25,7 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
   price,
   description,
   benefits,
+  exclusions,
   accentColor,
   iconColor,
   bgGradient,
@@ -68,6 +70,11 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
             {benefits.map((benefit, index) => <div key={index} className="flex items-start">
                 <Check className={`h-5 w-5 mr-2 shrink-0 ${accentColor}`} />
                 <span className="text-sm">{benefit}</span>
+              </div>)}
+            
+            {exclusions && exclusions.map((exclusion, index) => <div key={`exclusion-${index}`} className="flex items-start">
+                <X className="h-5 w-5 mr-2 shrink-0 text-red-500" />
+                <span className="text-sm text-red-500">{exclusion}</span>
               </div>)}
           </div>
           
