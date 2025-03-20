@@ -34,7 +34,7 @@ const MembershipTiers = () => {
               accentColor="text-[#C4A484]" 
               iconColor="bg-[#C4A484]/10" 
               bgGradient="bg-gradient-to-br from-[#C4A484]/90 to-[#C4A484]" 
-              icon={<Leaf className="h-6 w-6 text-[#C4A484]" />} 
+              icon={<Leaf />} 
               buttonText="Be-leave"
             />
           </div>
@@ -52,7 +52,7 @@ const MembershipTiers = () => {
               accentColor="text-nature-soil" 
               iconColor="bg-nature-soil/10" 
               bgGradient="bg-gradient-to-br from-nature-soil/90 to-nature-soil" 
-              icon={<TreeDeciduous className="h-6 w-6 text-nature-soil" />} 
+              icon={<TreeDeciduous />} 
               popular={true} 
             />
           </div>
@@ -70,7 +70,7 @@ const MembershipTiers = () => {
               accentColor="text-nature-leaf" 
               iconColor="bg-nature-leaf/10" 
               bgGradient="bg-gradient-to-br from-nature-leaf/90 to-nature-leaf" 
-              icon={<TreePine className="h-6 w-6 text-nature-leaf" />} 
+              icon={<TreePine />} 
             />
           </div>
         </div>

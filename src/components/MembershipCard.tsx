@@ -45,7 +45,7 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
               </h3>
             </div>
             <div className={`p-3 rounded-full ${iconColor}`}>
-              {icon}
+              {React.cloneElement(icon as React.ReactElement, { className: "h-6 w-6 text-white" })}
             </div>
           </div>
           
