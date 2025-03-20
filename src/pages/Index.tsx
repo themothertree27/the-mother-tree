@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
@@ -120,8 +119,8 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Spaces & Features Section */}
-      <section id="spaces" className="section-padding relative overflow-hidden bg-gradient-to-b from-white to-nature-leaf/5">
+      {/* Spaces & Features Section - Reduced top padding */}
+      <section id="spaces" className="pb-20 pt-10 px-6 md:px-12 lg:px-24 relative overflow-hidden bg-gradient-to-b from-white to-nature-leaf/5">
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto text-center mb-12 animate-scroll-in">
             <div className="inline-flex items-center justify-center rounded-full bg-nature-soil/10 px-3 py-1 text-sm font-medium text-nature-soil mb-4">
