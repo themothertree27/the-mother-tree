@@ -272,7 +272,7 @@ Wellness Space</h3>
           <div className="max-w-4xl mx-auto text-center animate-scroll-in">
             <div className="inline-flex items-center justify-center rounded-full bg-nature-sunlight/20 px-3 py-1 text-sm font-medium text-nature-soil mb-4">Grow Our Community</div>
             <h2 className="text-3xl md:text-5xl font-serif font-medium tracking-tight mb-6">
-              Help Grow <span className="text-nature-leaf">The Mother Tree</span> Today
+              Help Grow <span className="text-nature-leaf">The Mother Tree</span>
             </h2>
             <p className="text-gray-600 mb-8 max-w-2xl mx-auto">All levels of giving support our mission to nurture connections between people and the natural world. Thank you for joining us in creating a more sustainable, conscious community.</p>
             
