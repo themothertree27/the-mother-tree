@@ -276,7 +276,7 @@ Wellness Space</h3>
             <p className="text-gray-600 mb-8 max-w-2xl mx-auto">All levels of giving support our mission to nurture connections between people and the natural world. Thank you for joining us in creating a more sustainable, conscious community.</p>
             
             <p className="text-lg mb-4">Check out our Mycelium Roots Campaign Strategy</p>
-            <a href="https://www.canva.com/design/DAGeMrGUVyc/eUlA_SdYnQ4WE9WC3q6wzA/view?utm_content=DAGeMrGUVyc&utm_campaign=designshare&utm_medium=link&utm_source=editor" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.canva.com/design/DAGiGvPJRPQ/yjS8URyxxNsprdj9hglhMg/view?utm_content=DAGiGvPJRPQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hefd7476819" target="_blank" rel="noopener noreferrer">
               <Button variant="default" className="bg-nature-leaf hover:bg-nature-leaf/90">
                 Explore <ArrowRight className="ml-1" />
               </Button>
