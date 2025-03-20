@@ -8,7 +8,7 @@ const MembershipTiers = () => {
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-nature-leaf/5"></div>
-        <div className="absolute top-1/3 -left-20 h-64 w-64 rounded-full bg-nature-sky/5"></div>
+        <div className="absolute top-1/3 -left-20 h-64 w-64 rounded-full bg-nature-soil/5"></div>
         
       </div>
       
@@ -29,12 +29,13 @@ const MembershipTiers = () => {
               tier="LEVEL 1" 
               name="Be-leave'rs" 
               price="$222+ one-time donation" 
-              description="Your first step into our community, with essentials to begin your journey." 
-              benefits={["Physical welcome package", "Monthly community newsletter", "Access to online community forum", "Early access to events", "10% discount on workshops"]} 
+              description="This level of giving is for those who may not be in NYC, but still want to support the project. A donation at this amount (or more) will have your name etched in eternity, up in the canopy on up-cycled metal leaves." 
+              benefits={["Legacy Donor"]} 
               accentColor="text-[#C4A484]" 
               iconColor="bg-[#C4A484]/10" 
               bgGradient="bg-gradient-to-br from-[#C4A484]/90 to-[#C4A484]" 
               icon={<Leaf className="h-6 w-6 text-[#C4A484]" />} 
+              buttonText="Be-leave"
             />
           </div>
           

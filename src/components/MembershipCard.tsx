@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Check } from 'lucide-react';
 interface MembershipCardProps {
@@ -11,6 +12,7 @@ interface MembershipCardProps {
   bgGradient: string;
   icon: React.ReactNode;
   popular?: boolean;
+  buttonText?: string;
 }
 const MembershipCard: React.FC<MembershipCardProps> = ({
   tier,
@@ -22,7 +24,8 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
   iconColor,
   bgGradient,
   icon,
-  popular = false
+  popular = false,
+  buttonText
 }) => {
   return <div className={`membership-card group z-10 ${popular ? 'scale-105 shadow-xl' : ''}`}>
       {popular}
@@ -64,7 +67,7 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
           
           <div className="mt-8">
             <button className={`w-full py-3 rounded-full font-medium text-white transition-all duration-300 transform hover:scale-105 ${popular ? 'bg-nature-leaf hover:shadow-lg hover:shadow-nature-leaf/20' : `${accentColor.replace('text', 'bg')} hover:opacity-90`}`}>
-              Choose {name}
+              {buttonText || `Choose ${name}`}
             </button>
           </div>
         </div>
