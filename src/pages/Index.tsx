@@ -4,7 +4,9 @@ import Hero from '../components/Hero';
 import MembershipTiers from '../components/MembershipTiers';
 import ConnectWithUs from '../components/ConnectWithUs';
 import Footer from '../components/Footer';
-import { Leaf, Heart, TreeDeciduous, Mountain, Sprout, Coffee, Mic, BookOpen, Home, Users, PenTool, Sun, Utensils, Music } from 'lucide-react';
+import { Leaf, Heart, TreeDeciduous, Mountain, Sprout, Coffee, Mic, BookOpen, Home, Users, PenTool, Sun, Utensils, Music, ArrowRight } from 'lucide-react';
+import { Button } from '../components/ui/button';
+
 const Index = () => {
   useEffect(() => {
     const animateElements = () => {
@@ -266,6 +268,14 @@ Wellness Space</h3>
               </div>
               <h4 className="font-medium mb-1">Communal Kitchen</h4>
             </div>
+          </div>
+          
+          {/* Business Plan Button */}
+          <div className="mt-12 text-center animate-scroll-in" style={{ transitionDelay: '0.5s' }}>
+            <p className="text-lg mb-4">Want to read The Mother Tree Business Plan?</p>
+            <Button variant="default" className="bg-nature-leaf hover:bg-nature-leaf/90">
+              Explore <ArrowRight className="ml-1" />
+            </Button>
           </div>
         </div>
       </section>
