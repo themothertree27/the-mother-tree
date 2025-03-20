@@ -37,7 +37,7 @@ const ConnectWithUs = () => {
             Stay Connected
           </div>
           <h2 className="text-3xl md:text-4xl font-serif font-medium tracking-tight mb-4">
-            Join Our Community
+            Join <span className="text-nature-leaf">The Mother Tree</span>
           </h2>
           <p className="text-gray-600 mb-8">
             Subscribe to our newsletter to receive updates about The Mother Tree community, upcoming events, and ways to get involved.
