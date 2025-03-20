@@ -14,6 +14,7 @@ interface MembershipCardProps {
   icon: React.ReactNode;
   popular?: boolean;
   buttonText?: string;
+  buttonIcon?: React.ReactNode;
 }
 
 const MembershipCard: React.FC<MembershipCardProps> = ({
@@ -27,7 +28,8 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
   bgGradient,
   icon,
   popular = false,
-  buttonText
+  buttonText,
+  buttonIcon
 }) => {
   return <div className={`membership-card group z-10 ${popular ? 'scale-105 shadow-xl' : ''}`}>
       {popular && <div className="absolute top-0 right-0 bg-nature-leaf text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-xl z-20">Popular</div>}
@@ -77,7 +79,10 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
                     : `${accentColor.replace('text', 'bg')} hover:opacity-90`
               }`}
             >
-              {buttonText || `Choose ${name}`}
+              <div className="flex items-center justify-center gap-2">
+                {buttonIcon && React.cloneElement(buttonIcon as React.ReactElement, { className: "h-5 w-5 text-white" })}
+                <span>{buttonText || `Choose ${name}`}</span>
+              </div>
             </button>
           </div>
         </div>
