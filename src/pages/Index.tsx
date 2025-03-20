@@ -208,20 +208,20 @@ const Index = () => {
           transitionDelay: '0.3s'
         }}>Our Four-Floor Shared Space Features</h3>
           
-          {/* Space Features */}
+          {/* Space Features - Rearranged and recolored as requested */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 animate-scroll-in" style={{
           transitionDelay: '0.4s'
         }}>
             <div className="text-center p-4">
-              <div className="mx-auto rounded-full w-12 h-12 flex items-center justify-center bg-nature-sunlight/10 mb-3">
-                <Sun className="w-6 h-6 text-nature-sunlight" />
+              <div className="mx-auto rounded-full w-12 h-12 flex items-center justify-center bg-black/10 mb-3">
+                <Sun className="w-6 h-6 text-black" />
               </div>
               <h4 className="font-medium mb-1">Rooftop Garden & Patio</h4>
             </div>
             
             <div className="text-center p-4">
-              <div className="mx-auto rounded-full w-12 h-12 flex items-center justify-center bg-nature-leaf/10 mb-3">
-                <BookOpen className="w-6 h-6 text-nature-leaf" />
+              <div className="mx-auto rounded-full w-12 h-12 flex items-center justify-center bg-black/10 mb-3">
+                <BookOpen className="w-6 h-6 text-black" />
               </div>
               <h4 className="font-medium mb-1">Library</h4>
             </div>
@@ -241,13 +241,6 @@ const Index = () => {
             </div>
             
             <div className="text-center p-4">
-              <div className="mx-auto rounded-full w-12 h-12 flex items-center justify-center bg-nature-sunlight/10 mb-3">
-                <Coffee className="w-6 h-6 text-nature-sunlight" />
-              </div>
-              <h4 className="font-medium mb-1">Café</h4>
-            </div>
-            
-            <div className="text-center p-4">
               <div className="mx-auto rounded-full w-12 h-12 flex items-center justify-center bg-nature-bark/10 mb-3">
                 <Heart className="w-6 h-6 text-nature-bark" />
               </div>
@@ -255,17 +248,24 @@ const Index = () => {
             </div>
             
             <div className="text-center p-4">
-              <div className="mx-auto rounded-full w-12 h-12 flex items-center justify-center bg-nature-soil/10 mb-3">
-                <Utensils className="w-6 h-6 text-nature-soil" />
+              <div className="mx-auto rounded-full w-12 h-12 flex items-center justify-center bg-red-500/10 mb-3">
+                <BookOpen className="w-6 h-6 text-red-500" />
               </div>
-              <h4 className="font-medium mb-1">Communal Kitchen</h4>
+              <h4 className="font-medium mb-1">Holistic Practice Areas</h4>
             </div>
             
             <div className="text-center p-4">
-              <div className="mx-auto rounded-full w-12 h-12 flex items-center justify-center bg-nature-soil/10 mb-3">
-                <BookOpen className="w-6 h-6 text-nature-soil" />
+              <div className="mx-auto rounded-full w-12 h-12 flex items-center justify-center bg-green-500/10 mb-3">
+                <Coffee className="w-6 h-6 text-green-500" />
               </div>
-              <h4 className="font-medium mb-1">Holistic Practice Areas</h4>
+              <h4 className="font-medium mb-1">Café</h4>
+            </div>
+            
+            <div className="text-center p-4">
+              <div className="mx-auto rounded-full w-12 h-12 flex items-center justify-center bg-green-500/10 mb-3">
+                <Utensils className="w-6 h-6 text-green-500" />
+              </div>
+              <h4 className="font-medium mb-1">Communal Kitchen</h4>
             </div>
           </div>
         </div>
