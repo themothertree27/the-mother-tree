@@ -273,7 +273,14 @@ Wellness Space</h3>
             <h2 className="text-3xl md:text-5xl font-serif font-medium tracking-tight mb-6">
               Help Grow <span className="text-nature-leaf">The Mother Tree</span> Today
             </h2>
-            <p className="text-gray-600 mb-10 max-w-2xl mx-auto">All levels of giving support our mission to nurture connections between people and the natural world. Thank you for joining us in creating a more sustainable, conscious community.</p>
+            <p className="text-gray-600 mb-8 max-w-2xl mx-auto">All levels of giving support our mission to nurture connections between people and the natural world. Thank you for joining us in creating a more sustainable, conscious community.</p>
+            
+            <p className="text-lg mb-4">Check out our Mycelium Roots Campaign Strategy</p>
+            <a href="https://www.canva.com/design/DAGeMrGUVyc/eUlA_SdYnQ4WE9WC3q6wzA/view?utm_content=DAGeMrGUVyc&utm_campaign=designshare&utm_medium=link&utm_source=editor" target="_blank" rel="noopener noreferrer">
+              <Button variant="default" className="bg-nature-leaf hover:bg-nature-leaf/90">
+                Explore <ArrowRight className="ml-1" />
+              </Button>
+            </a>
           </div>
         </div>
       </section>
