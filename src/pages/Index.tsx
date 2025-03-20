@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
@@ -6,8 +7,11 @@ import ConnectWithUs from '../components/ConnectWithUs';
 import Footer from '../components/Footer';
 import { Leaf, Heart, TreeDeciduous, Mountain, Sprout, Coffee, Mic, BookOpen, Home, Users, PenTool, Sun, Utensils, Music, ArrowRight } from 'lucide-react';
 import { Button } from '../components/ui/button';
+import { useIsMobile } from '../hooks/use-mobile';
 
 const Index = () => {
+  const isMobile = useIsMobile();
+
   useEffect(() => {
     const animateElements = () => {
       const observer = new IntersectionObserver(entries => {
@@ -271,9 +275,16 @@ Wellness Space</h3>
         <div className="container mx-auto relative z-10">
           <div className="max-w-4xl mx-auto text-center animate-scroll-in">
             <div className="inline-flex items-center justify-center rounded-full bg-nature-sunlight/20 px-3 py-1 text-sm font-medium text-nature-soil mb-4">Grow Our Community</div>
-            <h2 className="text-3xl md:text-5xl font-serif font-medium tracking-tight mb-6">
-              Help Grow <span className="text-nature-leaf">The Mother Tree</span>
-            </h2>
+            {isMobile ? (
+              <h2 className="text-3xl md:text-5xl font-serif font-medium tracking-tight mb-6">
+                Help Grow<br />
+                <span className="text-nature-leaf block">The Mother Tree</span>
+              </h2>
+            ) : (
+              <h2 className="text-3xl md:text-5xl font-serif font-medium tracking-tight mb-6">
+                Help Grow <span className="text-nature-leaf">The Mother Tree</span>
+              </h2>
+            )}
             <p className="text-gray-600 mb-8 max-w-2xl mx-auto">All levels of giving support our mission to nurture connections between people and the natural world. Thank you for joining us in creating a more sustainable, conscious community.</p>
             
             <p className="text-lg mb-4">Check out our Mycelium Roots Campaign Strategy</p>
