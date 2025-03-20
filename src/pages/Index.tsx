@@ -172,10 +172,10 @@ const Index = () => {
             </div>
             
             <div className="p-6 rounded-xl bg-white shadow-md hover:shadow-xl transition-all">
-              <div className="rounded-full w-12 h-12 flex items-center justify-center bg-nature-soil/10 mb-4">
-                <Heart className="w-6 h-6 text-nature-soil" />
+              <div className="rounded-full w-12 h-12 flex items-center justify-center bg-red-500/10 mb-4">
+                <Heart className="w-6 h-6 text-red-500" />
               </div>
-              <h3 className="text-xl font-medium mb-2">Holistic & 
+              <h3 className="text-xl font-medium mb-2">Holistic & 
 Wellness Space</h3>
               <p className="text-gray-600">A sanctuary for mind, body, and spirit practices that promote wellbeing and personal growth.</p>
             </div>
@@ -302,4 +302,3 @@ Wellness Space</h3>
     </div>;
 };
 export default Index;
-
