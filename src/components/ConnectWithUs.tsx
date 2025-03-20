@@ -1,18 +1,24 @@
+
 import React, { useState } from 'react';
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Send, Check } from 'lucide-react';
+
 const ConnectWithUs = () => {
   const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
       // In a real implementation, you would send this to your backend
       console.log('Email submitted:', email);
+      console.log('Phone submitted:', phone);
       setIsSubmitted(true);
       setEmail('');
+      setPhone('');
 
       // Reset the success message after 3 seconds
       setTimeout(() => {
@@ -20,6 +26,7 @@ const ConnectWithUs = () => {
       }, 3000);
     }
   };
+
   return <section id="connect" className="section-padding bg-nature-leaf/5 relative overflow-hidden">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-20 -right-20 h-64 w-64 rounded-full bg-nature-leaf/10"></div>
@@ -48,6 +55,19 @@ const ConnectWithUs = () => {
                   </Button>
                 </div>
               </div>
+              
+              <div className="space-y-2">
+                <Label htmlFor="phone" className="text-left block">Phone number (optional)</Label>
+                <Input 
+                  id="phone" 
+                  type="tel" 
+                  placeholder="(123) 456-7890" 
+                  value={phone} 
+                  onChange={e => setPhone(e.target.value)}
+                  className="w-full"
+                />
+              </div>
+              
               {isSubmitted && <p className="text-nature-leaf text-sm mt-2">
                   Thank you for subscribing! We'll be in touch soon.
                 </p>}
@@ -60,4 +80,5 @@ const ConnectWithUs = () => {
       </div>
     </section>;
 };
+
 export default ConnectWithUs;
