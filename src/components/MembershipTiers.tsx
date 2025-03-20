@@ -28,7 +28,7 @@ const MembershipTiers = () => {
             <MembershipCard 
               tier="LEVEL 1" 
               name="Be-leave'rs" 
-              price="$222 one-time" 
+              price="$222+ one-time donation" 
               description="Your first step into our community, with essentials to begin your journey." 
               benefits={["Physical welcome package", "Monthly community newsletter", "Access to online community forum", "Early access to events", "10% discount on workshops"]} 
               accentColor="text-[#C4A484]" 
