@@ -21,7 +21,7 @@ const MembershipTiers = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-          {/* Tier 1: Be-leave'rs - Changed to light brown/tan */}
+          {/* Tier 1: Be-leave'rs - Changed to light brown */}
           <div className="animate-scroll-in" style={{
           transitionDelay: '0.2s'
         }}>
@@ -31,14 +31,14 @@ const MembershipTiers = () => {
               price="$222 one-time" 
               description="Your first step into our community, with essentials to begin your journey." 
               benefits={["Physical welcome package", "Monthly community newsletter", "Access to online community forum", "Early access to events", "10% discount on workshops"]} 
-              accentColor="text-nature-sunlight" 
-              iconColor="bg-nature-sunlight/10" 
-              bgGradient="bg-gradient-to-br from-nature-sunlight/90 to-nature-sunlight" 
-              icon={<Leaf className="h-6 w-6 text-nature-sunlight" />} 
+              accentColor="text-[#C4A484]" 
+              iconColor="bg-[#C4A484]/10" 
+              bgGradient="bg-gradient-to-br from-[#C4A484]/90 to-[#C4A484]" 
+              icon={<Leaf className="h-6 w-6 text-[#C4A484]" />} 
             />
           </div>
           
-          {/* Tier 2: Rooted Membership - Changed to brown */}
+          {/* Tier 2: Rooted Membership - Brown */}
           <div className="animate-scroll-in" style={{
           transitionDelay: '0.4s'
         }}>
@@ -56,7 +56,7 @@ const MembershipTiers = () => {
             />
           </div>
           
-          {/* Tier 3: The Mother Board - Changed to green */}
+          {/* Tier 3: The Mother Board - Green */}
           <div className="animate-scroll-in" style={{
           transitionDelay: '0.6s'
         }}>
