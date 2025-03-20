@@ -51,7 +51,7 @@ const Hero = () => {
         </div>
         
         <div ref={elementsRef} className="stagger-animation max-w-4xl">
-          <div className="inline-flex items-center justify-center rounded-full bg-nature-leaf/10 px-3 py-1 text-sm font-medium text-nature-leaf mb-6 mt-6">
+          <div className={`inline-flex items-center justify-center rounded-full bg-nature-leaf/10 px-3 py-1 text-sm font-medium text-nature-leaf mb-6 ${isMobile ? 'mt-16' : 'mt-6'}`}>
             <span>Find Your Roots</span>
           </div>
           
