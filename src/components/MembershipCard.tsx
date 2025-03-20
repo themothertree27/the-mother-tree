@@ -68,7 +68,15 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
           </div>
           
           <div className="mt-8">
-            <button className={`w-full py-3 rounded-full font-medium text-white transition-all duration-300 transform hover:scale-105 ${popular ? 'bg-nature-leaf hover:shadow-lg hover:shadow-nature-leaf/20' : `${accentColor.replace('text', 'bg')} hover:opacity-90`}`}>
+            <button 
+              className={`w-full py-3 rounded-full font-medium text-white transition-all duration-300 transform hover:scale-105 ${
+                popular 
+                  ? 'bg-nature-leaf hover:shadow-lg hover:shadow-nature-leaf/20' 
+                  : tier === "LEVEL 1" 
+                    ? 'bg-[#C4A484] hover:shadow-lg hover:shadow-[#C4A484]/20' 
+                    : `${accentColor.replace('text', 'bg')} hover:opacity-90`
+              }`}
+            >
               {buttonText || `Choose ${name}`}
             </button>
           </div>
