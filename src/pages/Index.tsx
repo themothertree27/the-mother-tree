@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
@@ -130,10 +129,16 @@ const Index = () => {
             <div className="inline-flex items-center justify-center rounded-full bg-nature-soil/10 px-3 py-1 text-sm font-medium text-nature-soil mb-4">
               Our Space
             </div>
-            <h2 className="text-3xl md:text-4xl font-serif font-medium tracking-tight mb-6">
-              What is<br />
-              <span className="text-nature-leaf">The Mother Tree?</span>
-            </h2>
+            {isMobile ? (
+              <h2 className="text-3xl md:text-4xl font-serif font-medium tracking-tight mb-6">
+                What is<br />
+                <span className="text-nature-leaf">The Mother Tree?</span>
+              </h2>
+            ) : (
+              <h2 className="text-3xl md:text-4xl font-serif font-medium tracking-tight mb-6">
+                What is <span className="text-nature-leaf">The Mother Tree?</span>
+              </h2>
+            )}
             <p className="text-gray-600 mx-auto max-w-2xl">
               The Mother Tree is a vibrant Membership Community Center that serves as a nurturing environment for creativity, wellness, education, and social enterprise.
             </p>
