@@ -48,8 +48,8 @@ const MembershipTiers = () => {
               tier="LEVEL 2" 
               name="Rooted Membership" 
               price="$777 annual membership" 
-              description="Deepen your connection with exclusive benefits and enhanced support." 
-              benefits={["All Be-leave'rs benefits", "Seasonal care packages", "Private member events", "Priority registration for workshops", "Quarterly 1:1 guidance sessions", "25% discount on all programs"]} 
+              description="We want the Mother Tree to be watered by the very people who planted it. Rooted in the ethos of community, we will be co-operatively-funded-and-sustained by our members. What we do with our profits will be collectively decided upon by those with Rooted membership, where we'll invest back into the community and all of our members' dreams." 
+              benefits={["Annual membership", "Exclusive perks", "Vote in monthly meetings for where profit should be allocated", "Legacy Donor"]} 
               accentColor="text-nature-soil" 
               iconColor="bg-nature-soil/10" 
               bgGradient="bg-gradient-to-br from-nature-soil/90 to-nature-soil" 
@@ -87,4 +87,3 @@ const MembershipTiers = () => {
 };
 
 export default MembershipTiers;
-
