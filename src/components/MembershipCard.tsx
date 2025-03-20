@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Check } from 'lucide-react';
+
 interface MembershipCardProps {
   tier: string;
   name: string;
@@ -14,6 +15,7 @@ interface MembershipCardProps {
   popular?: boolean;
   buttonText?: string;
 }
+
 const MembershipCard: React.FC<MembershipCardProps> = ({
   tier,
   name,
@@ -74,4 +76,5 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
       </div>
     </div>;
 };
+
 export default MembershipCard;
