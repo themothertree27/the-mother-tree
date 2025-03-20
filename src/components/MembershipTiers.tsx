@@ -1,7 +1,7 @@
 
 import React from 'react';
 import MembershipCard from './MembershipCard';
-import { Leaf, TreeDeciduous, TreePine } from 'lucide-react';
+import { Leaf, TreePine, Sprout } from 'lucide-react';
 
 const MembershipTiers = () => {
   return <section id="membership" className="section-padding pb-10 relative overflow-hidden bg-gray-50/50">
@@ -53,9 +53,9 @@ const MembershipTiers = () => {
               accentColor="text-nature-soil" 
               iconColor="bg-nature-soil/10" 
               bgGradient="bg-gradient-to-br from-nature-soil/90 to-nature-soil" 
-              icon={<TreeDeciduous />} 
+              icon={<Sprout />} 
               popular={true}
-              buttonIcon={<TreeDeciduous />}
+              buttonIcon={<Sprout />}
             />
           </div>
           
@@ -87,3 +87,4 @@ const MembershipTiers = () => {
 };
 
 export default MembershipTiers;
+
