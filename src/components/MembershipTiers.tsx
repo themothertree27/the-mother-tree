@@ -56,6 +56,8 @@ const MembershipTiers = () => {
               icon={<Sprout />} 
               popular={true}
               buttonIcon={<Sprout />}
+              buttonText="Rooted"
+              buttonBgColor="bg-nature-soil"
             />
           </div>
           

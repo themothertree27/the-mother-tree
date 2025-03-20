@@ -15,6 +15,7 @@ interface MembershipCardProps {
   popular?: boolean;
   buttonText?: string;
   buttonIcon?: React.ReactNode;
+  buttonBgColor?: string;
 }
 
 const MembershipCard: React.FC<MembershipCardProps> = ({
@@ -29,7 +30,8 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
   icon,
   popular = false,
   buttonText,
-  buttonIcon
+  buttonIcon,
+  buttonBgColor
 }) => {
   return <div className={`membership-card group z-10 ${popular ? 'scale-105 shadow-xl' : ''}`}>
       {popular && <div className="absolute top-0 right-0 bg-nature-leaf text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-xl z-20">Popular</div>}
@@ -72,14 +74,15 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
           <div className="mt-8">
             <button 
               className={`w-full py-3 rounded-full font-medium text-white transition-all duration-300 transform hover:scale-105 ${
-                popular 
-                  ? 'bg-nature-leaf hover:shadow-lg hover:shadow-nature-leaf/20' 
-                  : tier === "LEVEL 1" 
-                    ? 'bg-[#C4A484] hover:shadow-lg hover:shadow-[#C4A484]/20' 
-                    : `${accentColor.replace('text', 'bg')} hover:opacity-90`
-              }`}
+                buttonBgColor ? buttonBgColor : 
+                  popular 
+                    ? 'bg-nature-leaf hover:shadow-lg hover:shadow-nature-leaf/20' 
+                    : tier === "LEVEL 1" 
+                      ? 'bg-[#C4A484] hover:shadow-lg hover:shadow-[#C4A484]/20' 
+                      : `${accentColor.replace('text', 'bg')} hover:opacity-90`
+              } hover:shadow-lg`}
             >
-              <div className="flex items-center justify-center gap-2">
+              <div className="flex items-center justify-center gap-1">
                 {buttonIcon && React.cloneElement(buttonIcon as React.ReactElement, { className: "h-5 w-5 text-white" })}
                 <span>{buttonText || `Choose ${name}`}</span>
               </div>
