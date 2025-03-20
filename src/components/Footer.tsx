@@ -1,8 +1,34 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import { TreeDeciduous, Mail, Instagram, Twitter } from 'lucide-react';
+import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
+import { useToast } from '@/components/ui/use-toast';
 
 const Footer = () => {
+  const { toast } = useToast();
+  const [copying, setCopying] = useState(false);
+  
+  const handleCopyEmail = () => {
+    const email = "finding@themothertreenyc.org";
+    navigator.clipboard.writeText(email)
+      .then(() => {
+        setCopying(true);
+        toast({
+          title: "Email copied to clipboard",
+          description: email,
+          duration: 2000,
+        });
+        setTimeout(() => setCopying(false), 1000);
+      })
+      .catch(err => {
+        toast({
+          title: "Failed to copy",
+          description: "Please copy manually: finding@themothertreenyc.org",
+          variant: "destructive"
+        });
+      });
+  };
+
   return <footer id="contact" className="bg-white pt-20 pb-10 border-t border-gray-100">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
@@ -13,9 +39,16 @@ const Footer = () => {
             </div>
             <p className="text-gray-600 mb-6 max-w-md">Our vision is to regrow a forest of Mother Trees, inspiring communities across the world that empower co-creation and collaboration for the posterity of our people and the planet.</p>
             <div className="flex space-x-4">
-              <a href="#" className="p-2 rounded-full bg-gray-100 text-gray-600 hover:bg-nature-leaf hover:text-white transition-colors duration-300">
+              <button 
+                onClick={handleCopyEmail}
+                className={cn(
+                  "p-2 rounded-full text-gray-600 transition-colors duration-300",
+                  copying ? "bg-nature-leaf text-white" : "bg-gray-100 hover:bg-nature-leaf hover:text-white" 
+                )}
+                title="Click to copy finding@themothertreenyc.org"
+              >
                 <Mail className="h-5 w-5" />
-              </a>
+              </button>
               <a href="https://www.instagram.com/themothertree.nyc/?igsh=MWo2bjFoemxsNWdndA%3D%3D&utm_source=qr#" className="p-2 rounded-full bg-gray-100 text-gray-600 hover:bg-nature-leaf hover:text-white transition-colors duration-300">
                 <Instagram className="h-5 w-5" />
               </a>
