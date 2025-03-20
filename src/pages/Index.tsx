@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
@@ -6,7 +5,6 @@ import MembershipTiers from '../components/MembershipTiers';
 import ConnectWithUs from '../components/ConnectWithUs';
 import Footer from '../components/Footer';
 import { Leaf, Heart, TreeDeciduous, Mountain, Sprout, Coffee, Mic, BookOpen, Home, Users, PenTool, Sun, Utensils, Music } from 'lucide-react';
-
 const Index = () => {
   useEffect(() => {
     const animateElements = () => {
@@ -27,7 +25,6 @@ const Index = () => {
     };
     animateElements();
   }, []);
-
   return <div className="flex flex-col min-h-screen">
       <Header />
       <Hero />
@@ -168,7 +165,7 @@ const Index = () => {
               <div className="rounded-full w-12 h-12 flex items-center justify-center bg-nature-bark/10 mb-4">
                 <Users className="w-6 h-6 text-nature-bark" />
               </div>
-              <h3 className="text-xl font-medium mb-2">Event Venue</h3>
+              <h3 className="text-xl font-medium mb-2">Event Venue & Private Rental Space</h3>
               <p className="text-gray-600">A beautiful space for hosting workshops, talks, performances, and community gatherings.</p>
             </div>
             
@@ -176,7 +173,8 @@ const Index = () => {
               <div className="rounded-full w-12 h-12 flex items-center justify-center bg-nature-soil/10 mb-4">
                 <Heart className="w-6 h-6 text-nature-soil" />
               </div>
-              <h3 className="text-xl font-medium mb-2">Holistic & Wellness Space</h3>
+              <h3 className="text-xl font-medium mb-2">Holistic & 
+Wellness Space</h3>
               <p className="text-gray-600">A sanctuary for mind, body, and spirit practices that promote wellbeing and personal growth.</p>
             </div>
             
@@ -192,7 +190,7 @@ const Index = () => {
               <div className="rounded-full w-12 h-12 flex items-center justify-center bg-nature-leaf/10 mb-4">
                 <PenTool className="w-6 h-6 text-nature-leaf" />
               </div>
-              <h3 className="text-xl font-medium mb-2">Artist Co-working Lounge</h3>
+              <h3 className="text-xl font-medium mb-2">Artist Co-creation Lounge & Studio</h3>
               <p className="text-gray-600">A shared workspace designed for creators to develop their craft and collaborate with peers.</p>
             </div>
             
