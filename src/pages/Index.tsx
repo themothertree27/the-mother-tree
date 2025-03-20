@@ -127,7 +127,8 @@ const Index = () => {
               Our Space
             </div>
             <h2 className="text-3xl md:text-4xl font-serif font-medium tracking-tight mb-6">
-              What is <span className="text-nature-leaf">The Mother Tree</span>?
+              What is<br />
+              <span className="text-nature-leaf">The Mother Tree?</span>
             </h2>
             <p className="text-gray-600 mx-auto max-w-2xl">
               The Mother Tree is a vibrant Membership Community Center that serves as a nurturing environment for creativity, wellness, education, and social enterprise.
