@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
@@ -114,23 +115,6 @@ const Index = () => {
               
               <div className="absolute -top-6 -right-6 w-12 h-12 rounded-full bg-nature-sky/20"></div>
               <div className="absolute -bottom-6 -left-6 w-16 h-16 rounded-full bg-nature-leaf/20"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Help Grow Section - Moved before Spaces & Features Section */}
-      <section className="section-padding relative overflow-hidden">
-        <div className="container mx-auto relative z-10">
-          <div className="max-w-4xl mx-auto text-center animate-scroll-in">
-            <div className="inline-flex items-center justify-center rounded-full bg-nature-sunlight/20 px-3 py-1 text-sm font-medium text-nature-soil mb-4">Grow Our Community</div>
-            <h2 className="text-3xl md:text-5xl font-serif font-medium tracking-tight mb-6">
-              Help Grow <span className="text-nature-leaf">The Mother Tree</span> Today
-            </h2>
-            <p className="text-gray-600 mb-10 max-w-2xl mx-auto">All levels of giving support our mission to nurture connections between people and the natural world. Thank you for joining us in creating a more sustainable, conscious community.</p>
-            
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href="#membership" className="px-8 py-4 rounded-full bg-nature-leaf text-white font-medium transform transition duration-300 hover:shadow-xl hover:translate-y-[-2px]">The Giving-Back Tree</a>
             </div>
           </div>
         </div>
@@ -278,6 +262,19 @@ Wellness Space</h3>
                 Explore <ArrowRight className="ml-1" />
               </Button>
             </a>
+          </div>
+        </div>
+      </section>
+      
+      {/* Help Grow Section - Moved before Membership Tiers Section */}
+      <section className="section-padding relative overflow-hidden">
+        <div className="container mx-auto relative z-10">
+          <div className="max-w-4xl mx-auto text-center animate-scroll-in">
+            <div className="inline-flex items-center justify-center rounded-full bg-nature-sunlight/20 px-3 py-1 text-sm font-medium text-nature-soil mb-4">Grow Our Community</div>
+            <h2 className="text-3xl md:text-5xl font-serif font-medium tracking-tight mb-6">
+              Help Grow <span className="text-nature-leaf">The Mother Tree</span> Today
+            </h2>
+            <p className="text-gray-600 mb-10 max-w-2xl mx-auto">All levels of giving support our mission to nurture connections between people and the natural world. Thank you for joining us in creating a more sustainable, conscious community.</p>
           </div>
         </div>
       </section>
