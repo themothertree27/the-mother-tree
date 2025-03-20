@@ -55,7 +55,8 @@ const MembershipTiers = () => {
               bgGradient="bg-gradient-to-br from-nature-leaf/90 to-nature-leaf" 
               icon={<TreePine />} 
               buttonIcon={<TreePine />}
-              clarificationText={<>*<sup>Mother/Mother-Figure</sup></>}
+              buttonText="The Mother Board"
+              clarificationText="*Mother/Mother-Figure"
             />
           </div>
         </div>

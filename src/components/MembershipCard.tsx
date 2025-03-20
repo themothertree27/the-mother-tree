@@ -91,7 +91,7 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
                       : `${accentColor.replace('text', 'bg')} hover:opacity-90`
               } hover:shadow-lg`}
             >
-              <div className="flex items-center justify-center gap-1">
+              <div className="flex items-center justify-center gap-2">
                 {buttonIcon && React.cloneElement(buttonIcon as React.ReactElement, { className: "h-5 w-5 text-white" })}
                 <span>{buttonText || `Choose ${name}`}</span>
               </div>
