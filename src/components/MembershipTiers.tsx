@@ -63,7 +63,7 @@ const MembershipTiers = () => {
             <MembershipCard 
               tier="LEVEL 3" 
               name="The Mother Board" 
-              price="$1111+ donation" 
+              price="$1111+ investment" 
               description="Become a guardian of our mission with the highest level of connection and influence." 
               benefits={["All Rooted Membership benefits", "VIP retreat invitations", "Advisory board membership", "Personalized mentorship", "Recognition at events & online", "Unlimited access to all content", "First access to special initiatives"]} 
               accentColor="text-nature-leaf" 
