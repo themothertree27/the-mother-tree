@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { TreeDeciduous } from 'lucide-react';
 const Header = () => {
@@ -31,7 +32,7 @@ const Header = () => {
           </a>
         </nav>
         
-        <button className="px-5 py-2 rounded-full bg-nature-leaf text-white text-sm font-medium transform transition duration-300 hover:shadow-lg hover:scale-105">Connect</button>
+        <a href="#connect" className="px-5 py-2 rounded-full bg-nature-leaf text-white text-sm font-medium transform transition duration-300 hover:shadow-lg hover:scale-105">Connect</a>
       </div>
     </header>;
 };
