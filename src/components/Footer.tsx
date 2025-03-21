@@ -71,7 +71,7 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} <span className="text-nature-leaf">The Mother Tree</span>. All rights reserved.
           </p>
           <div className="flex space-x-6">
-            <a href="#" className="text-gray-500 hover:text-nature-leaf transition-colors duration-300 text-sm">Terms</a>
+            
             
             
           </div>
