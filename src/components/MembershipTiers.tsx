@@ -1,8 +1,6 @@
-
 import React from 'react';
 import MembershipCard from './MembershipCard';
 import { Leaf, TreePine, Sprout, X } from 'lucide-react';
-
 const MembershipTiers = () => {
   return <section id="membership" className="section-padding pb-10 relative overflow-hidden bg-gray-50/50">
       {/* Background decorative elements */}
@@ -17,7 +15,7 @@ const MembershipTiers = () => {
         <div className="text-center max-w-3xl mx-auto mb-12 animate-scroll-in">
           <div className="inline-flex items-center justify-center rounded-full bg-nature-leaf/10 px-3 py-1 text-sm font-medium text-nature-leaf mb-4">Giving Options</div>
           <h2 className="text-3xl md:text-4xl font-serif font-medium tracking-tight mb-4">Choose Your Seed</h2>
-          <p className="text-left text-gray-600">We kindly ask to support us in any which way you can. Whether its through financial means or showing up with a hammer when its ready to build, The Mother Tree is not possible without your help! Below are the various levels of contributions we are asking during this 'Seed Money' fundraising round of Family & Friends. Please and thank you. Tiocfaidh ár lá ☘️</p>
+          <p className="text-left text-gray-600">We kindly ask to support us in any which way you can. Whether its through financial means or showing up with a hammer when it's time to build, The Mother Tree is not possible without your help! Below are the various levels of contributions we are asking during this 'Seed Money' fundraising round of Family & Friends. We provided these three levels to simplify the process,  but feel free to give whatever amount you are fiscally able to and feel called to do so. Please and thank you. Tiocfaidh ár lá ☘️</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
@@ -39,25 +37,7 @@ const MembershipTiers = () => {
           <div className="animate-scroll-in" style={{
           transitionDelay: '0.6s'
         }}>
-            <MembershipCard 
-              tier="LEVEL 3" 
-              name="The Mother Board" 
-              price="$1111+ investment" 
-              description="If you ain't making your Momma or Momma Earth proud, what are you doing?! The Mother Tree is not only our chance to build something that our Mothers will be proud of, it will be something they will be A PART OF! At this level of giving, your Mother* will be invited to become an honorary board member. Together, they will be known as the Mother Board, whose divine guidance, direction, and belief will lead The Mother Tree to much success and bring us all one step closer to the Matriarchy."
-              benefits={[
-                "Equity of The Mother Tree through a SAFE investment", 
-                "Invitation for a mother-figure in your life to be an honorary board member", 
-                "Legacy Donor"
-              ]} 
-              exclusions={["Does not include Rooted Membership"]}
-              accentColor="text-nature-leaf" 
-              iconColor="bg-nature-leaf/10" 
-              bgGradient="bg-gradient-to-br from-nature-leaf/90 to-nature-leaf" 
-              icon={<TreePine />} 
-              buttonIcon={<TreePine />}
-              buttonText="The Mother Board"
-              clarificationText="*Mother/Mother-Figure"
-            />
+            <MembershipCard tier="LEVEL 3" name="The Mother Board" price="$1111+ investment" description="If you ain't making your Momma or Momma Earth proud, what are you doing?! The Mother Tree is not only our chance to build something that our Mothers will be proud of, it will be something they will be A PART OF! At this level of giving, your Mother* will be invited to become an honorary board member. Together, they will be known as the Mother Board, whose divine guidance, direction, and belief will lead The Mother Tree to much success and bring us all one step closer to the Matriarchy." benefits={["Equity of The Mother Tree through a SAFE investment", "Invitation for a mother-figure in your life to be an honorary board member", "Legacy Donor"]} exclusions={["Does not include Rooted Membership"]} accentColor="text-nature-leaf" iconColor="bg-nature-leaf/10" bgGradient="bg-gradient-to-br from-nature-leaf/90 to-nature-leaf" icon={<TreePine />} buttonIcon={<TreePine />} buttonText="The Mother Board" clarificationText="*Mother/Mother-Figure" />
           </div>
         </div>
         
@@ -68,5 +48,4 @@ const MembershipTiers = () => {
       </div>
     </section>;
 };
-
 export default MembershipTiers;
