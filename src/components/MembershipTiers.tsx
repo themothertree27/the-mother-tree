@@ -45,7 +45,7 @@ const MembershipTiers = () => {
               price="$1111+ investment" 
               description="If you ain't making your Momma or Momma Earth proud, what are you doing?! The Mother Tree is not only our chance to build something that our Mothers will be proud of, it will be something they will be A PART OF! At this level of giving, your Mother* will be invited to become an honorary board member. Together, they will be known as the Mother Board, whose divine guidance, direction, and belief will lead The Mother Tree to much success and bring us all one step closer to the Matriarchy."
               benefits={[
-                "Equity of The Mother Tree", 
+                "Equity of The Mother Tree through a SAFE investment", 
                 "Invitation for a mother-figure in your life to be an honorary board member", 
                 "Legacy Donor"
               ]} 
