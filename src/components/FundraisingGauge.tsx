@@ -19,6 +19,11 @@ const FundraisingGauge = ({
   
   // Format currency values
   const formatCurrency = (amount: number) => {
+    // Special case for goal amount - always show as $1.11M
+    if (amount === 1111111) {
+      return "$1.11M";
+    }
+    
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
