@@ -78,11 +78,11 @@ const ConnectWithUs = () => {
           </form>
         </div>
         
-        {/* Tree rings image - Fellowship of the Rings */}
+        {/* Fellowship of the Rings logo */}
         <div className="mt-12 text-center">
           <img 
-            src="/lovable-uploads/1fb03c24-398c-4c85-9e9a-5b4b2a01de95.png" 
-            alt="The Mother Tree and The Fellowship of the Rings" 
+            src="/lovable-uploads/2302ae9a-b8bf-4677-9423-e2b87cafcb61.png" 
+            alt="The Fellowship of the Rings" 
             className="mx-auto w-full md:w-3/4 md:max-w-lg"
           />
         </div>
