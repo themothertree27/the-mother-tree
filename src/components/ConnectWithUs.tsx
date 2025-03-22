@@ -4,7 +4,6 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Send, Check } from 'lucide-react';
-import FundraisingGauge from './FundraisingGauge';
 
 const ConnectWithUs = () => {
   const [email, setEmail] = useState('');
@@ -85,15 +84,6 @@ const ConnectWithUs = () => {
             src="/lovable-uploads/1fb03c24-398c-4c85-9e9a-5b4b2a01de95.png" 
             alt="The Mother Tree and The Fellowship of the Rings" 
             className="mx-auto w-full md:w-3/4 md:max-w-lg"
-          />
-        </div>
-        
-        {/* Fundraising Gauge */}
-        <div className="mt-16 max-w-4xl mx-auto animate-scroll-in">
-          <FundraisingGauge 
-            currentAmount={122000} 
-            goalAmount={1111111} 
-            checkpoints={[272000, 727000]} 
           />
         </div>
       </div>

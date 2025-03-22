@@ -1,6 +1,9 @@
+
 import React from 'react';
 import MembershipCard from './MembershipCard';
 import { Leaf, TreePine, Sprout, X } from 'lucide-react';
+import FundraisingGauge from './FundraisingGauge';
+
 const MembershipTiers = () => {
   return <section id="membership" className="section-padding pb-10 relative overflow-hidden bg-gray-50/50">
       {/* Background decorative elements */}
@@ -15,7 +18,7 @@ const MembershipTiers = () => {
         <div className="text-center max-w-3xl mx-auto mb-12 animate-scroll-in">
           <div className="inline-flex items-center justify-center rounded-full bg-nature-leaf/10 px-3 py-1 text-sm font-medium text-nature-leaf mb-4">Giving Options</div>
           <h2 className="text-3xl md:text-4xl font-serif font-medium tracking-tight mb-4">Choose Your Seed</h2>
-          <p className="text-left text-gray-600">We kindly ask to support us in any which way you can. Whether its through financial means or showing up with a hammer when it's time to build, The Mother Tree is not possible without your help! Below are the various levels of contributions we are asking during this 'Seed Money' fundraising round of Family & Friends. We provided these three levels to simplify the process,  but please feel free to give the amount you are fiscally able to and feel called to do so. We will not let you down. Thank you. Tiocfaidh ár lá ☘️</p>
+          <p className="text-left text-gray-600">We kindly ask to support us in any which way you can. Whether its through financial means or showing up with a hammer when it's time to build, The Mother Tree is not possible without your help! Below are the various levels of contributions we are asking during this 'Seed Money' fundraising round of Family & Friends. We provided these three levels to simplify the process,  but please feel free to give the amount you are fiscally able to and feel called to do so. We will not let you down. Thank you. Tiocfaidh ár lá ☘️</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
@@ -41,9 +44,16 @@ const MembershipTiers = () => {
           </div>
         </div>
         
+        {/* Fundraising Gauge - Added below the membership cards */}
+        <div className="mt-16 max-w-4xl mx-auto animate-scroll-in">
+          <FundraisingGauge 
+            currentAmount={122000} 
+            goalAmount={1111111} 
+            checkpoints={[272000, 727000]} 
+          />
+        </div>
+        
         <div className="mt-10 text-center animate-scroll-in">
-          
-          
         </div>
       </div>
     </section>;
