@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Progress } from "@/components/ui/progress";
-import { Leaf, TreeDeciduous, Sprout, DollarSign, Landmark } from 'lucide-react';
+import { Leaf, Moon, Sprout, DollarSign, Landmark } from 'lucide-react';
 
 interface FundraisingGaugeProps {
   currentAmount: number;
@@ -78,9 +77,9 @@ const FundraisingGauge = ({
             </div>
           ))}
           
-          {/* Right decoration (goal) */}
+          {/* Right decoration (goal) - Changed from TreeDeciduous to Moon */}
           <div className="absolute -top-6 right-0">
-            <TreeDeciduous className="h-6 w-6 text-nature-leaf" />
+            <Moon className="h-6 w-6 text-nature-leaf" />
           </div>
           
           {/* Current progress indicator */}
