@@ -83,7 +83,7 @@ const ConnectWithUs = () => {
           <img 
             src="/lovable-uploads/1fb03c24-398c-4c85-9e9a-5b4b2a01de95.png" 
             alt="The Mother Tree and The Fellowship of the Rings" 
-            className="mx-auto max-w-full md:max-w-lg w-3/4"
+            className="mx-auto w-full md:w-3/4 md:max-w-lg"
           />
         </div>
       </div>
