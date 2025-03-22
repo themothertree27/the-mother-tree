@@ -39,7 +39,7 @@ const ConnectWithUs = () => {
             Stay Connected
           </div>
           <h2 className="text-3xl md:text-4xl font-serif font-medium tracking-tight mb-4">
-            Join <span className="text-nature-leaf">The Mother Tree</span>
+            Join <span className="text-nature-leaf">The Mother Tree</span> and <span className="text-nature-leaf">The Fellowship of The Rings</span>
           </h2>
           <p className="text-gray-600 mb-8">Subscribe to stay updated about The Mother Tree community, upcoming events, and ways to get involved.</p>
           
