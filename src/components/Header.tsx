@@ -22,7 +22,7 @@ const Header = () => {
           </span>
         </div>
         
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center justify-center space-x-12">
           <a href="#about" className="text-sm hover:text-nature-leaf transition-colors duration-300">
             About
           </a>
