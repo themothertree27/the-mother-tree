@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Progress } from "@/components/ui/progress";
-import { Leaf, TreeDeciduous, Sprout } from 'lucide-react';
+import { Leaf, TreeDeciduous, Sprout, Flame } from 'lucide-react';
 
 interface FundraisingGaugeProps {
   currentAmount: number;
@@ -87,7 +87,7 @@ const FundraisingGauge = ({
             }}
           >
             <div className="relative">
-              <TreeDeciduous className="h-8 w-8 text-nature-leaf animate-bounce slow" />
+              <Flame className="h-8 w-8 text-nature-leaf animate-bounce slow" />
               <div className="bg-white text-nature-leaf text-xs font-bold px-2 py-1 rounded-md shadow-md absolute -top-7 left-1/2 transform -translate-x-1/2 whitespace-nowrap">
                 {formatCurrency(currentAmount)}
               </div>
