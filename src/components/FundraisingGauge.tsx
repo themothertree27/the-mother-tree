@@ -1,6 +1,7 @@
+
 import React from 'react';
 import { Progress } from "@/components/ui/progress";
-import { Leaf, TreeDeciduous, Sprout, DollarSign } from 'lucide-react';
+import { Leaf, TreeDeciduous, Sprout, DollarSign, Landmark } from 'lucide-react';
 
 interface FundraisingGaugeProps {
   currentAmount: number;
@@ -68,7 +69,12 @@ const FundraisingGauge = ({
               className="absolute -top-6"
               style={{ left: `${position}%`, transform: 'translateX(-50%)' }}
             >
-              <Leaf className="h-6 w-6 text-nature-leaf" />
+              {/* Use a different icon for the first checkpoint ($727K) */}
+              {checkpoints[index] === 727000 ? (
+                <Landmark className="h-6 w-6 text-nature-bark" />
+              ) : (
+                <Leaf className="h-6 w-6 text-nature-leaf" />
+              )}
             </div>
           ))}
           
