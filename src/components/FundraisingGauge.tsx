@@ -1,6 +1,7 @@
+
 import React from 'react';
 import { Progress } from "@/components/ui/progress";
-import { Leaf, TreeDeciduous, Sprout, DollarSign } from 'lucide-react';
+import { Moon, TreeDeciduous, Sprout, DollarSign } from 'lucide-react';
 
 interface FundraisingGaugeProps {
   currentAmount: number;
@@ -68,7 +69,7 @@ const FundraisingGauge = ({
               className="absolute -top-6"
               style={{ left: `${position}%`, transform: 'translateX(-50%)' }}
             >
-              <Leaf className="h-6 w-6 text-nature-leaf" />
+              <Moon className="h-6 w-6 text-nature-leaf" />
             </div>
           ))}
           
