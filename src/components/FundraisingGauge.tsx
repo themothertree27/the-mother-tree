@@ -2,13 +2,11 @@ import React from 'react';
 import { Progress } from "@/components/ui/progress";
 import { Leaf, Moon, Sprout, DollarSign, TreeDeciduous } from 'lucide-react';
 import { useIsMobile } from "@/hooks/use-mobile";
-
 interface FundraisingGaugeProps {
   currentAmount: number;
   goalAmount: number;
   checkpoints: number[];
 }
-
 const FundraisingGauge = ({
   currentAmount,
   goalAmount,
@@ -16,7 +14,6 @@ const FundraisingGauge = ({
 }: FundraisingGaugeProps) => {
   const progressPercentage = Math.min(100, currentAmount / goalAmount * 100);
   const isMobile = useIsMobile();
-
   const formatCurrency = (amount: number) => {
     if (amount === 1111111) {
       return "$1.11M";
@@ -28,9 +25,7 @@ const FundraisingGauge = ({
       notation: amount >= 1000000 ? 'compact' : 'standard'
     }).format(amount);
   };
-
   const checkpointPositions = checkpoints.map(checkpoint => checkpoint / goalAmount * 100);
-
   return <div className="w-full space-y-6">
       <div className="text-center mb-8">
         <h3 className="text-2xl font-serif font-medium mb-2">
@@ -91,16 +86,13 @@ const FundraisingGauge = ({
             </div>)}
           <div>{formatCurrency(goalAmount)}</div>
           
-          {!isMobile && (
-            <div className="absolute right-0 text-xs font-medium text-gray-600 text-center whitespace-nowrap mt-9">
+          {!isMobile && <div className="absolute right-0 text-xs font-medium text-gray-600 text-center whitespace-nowrap mt-9">
               To the Moon!
-            </div>
-          )}
+            </div>}
         </div>
       </div>
       
-      {isMobile && (
-        <div className="mt-24 mx-auto max-w-md bg-white/80 rounded-lg p-4 border border-nature-leaf/20">
+      {isMobile && <div className="mt-24 mx-auto max-w-md bg-white/80 rounded-lg p-4 border border-nature-leaf/20">
           <h4 className="text-center text-sm font-medium mb-3 text-gray-700">Fundraising Milestones</h4>
           <div className="space-y-2">
             <div className="flex items-center gap-3">
@@ -109,16 +101,15 @@ const FundraisingGauge = ({
             </div>
             <div className="flex items-center gap-3">
               <TreeDeciduous className="h-5 w-5 text-nature-leaf" />
-              <span className="text-sm text-gray-600">The Mother Tree Home is Secured!</span>
+              <span className="text-sm text-gray-600">The Mother Tree Home
+is Secured!</span>
             </div>
             <div className="flex items-center gap-3">
               <Moon className="h-5 w-5 text-nature-leaf" />
               <span className="text-sm text-gray-600">To the Moon!</span>
             </div>
           </div>
-        </div>
-      )}
+        </div>}
     </div>;
 };
-
 export default FundraisingGauge;
