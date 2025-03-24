@@ -1,12 +1,15 @@
+
 import React from 'react';
 import { Progress } from "@/components/ui/progress";
 import { Leaf, Moon, Sprout, DollarSign, TreeDeciduous } from 'lucide-react';
 import { useIsMobile } from "@/hooks/use-mobile";
+
 interface FundraisingGaugeProps {
   currentAmount: number;
   goalAmount: number;
   checkpoints: number[];
 }
+
 const FundraisingGauge = ({
   currentAmount,
   goalAmount,
@@ -14,6 +17,7 @@ const FundraisingGauge = ({
 }: FundraisingGaugeProps) => {
   const progressPercentage = Math.min(100, currentAmount / goalAmount * 100);
   const isMobile = useIsMobile();
+
   const formatCurrency = (amount: number) => {
     if (amount === 1111111) {
       return "$1.11M";
@@ -25,9 +29,11 @@ const FundraisingGauge = ({
       notation: amount >= 1000000 ? 'compact' : 'standard'
     }).format(amount);
   };
+
   const checkpointPositions = checkpoints.map(checkpoint => checkpoint / goalAmount * 100);
+
   return <div className="w-full space-y-6">
-      <div className="text-center mb-8">
+      <div className="text-center mb-12">
         <h3 className="text-2xl font-serif font-medium mb-2">
           <span className="text-nature-leaf">Growing</span> Our Forest
         </h3>
@@ -112,4 +118,5 @@ is Secured!</span>
         </div>}
     </div>;
 };
+
 export default FundraisingGauge;
