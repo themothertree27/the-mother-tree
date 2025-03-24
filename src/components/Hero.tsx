@@ -79,8 +79,8 @@ const Hero = () => {
       {/* Bottom decorative element */}
       <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white to-transparent"></div>
       
-      {/* Scroll to explore - CENTERED AND LOWERED */}
-      <div className={`absolute ${isMobile ? 'bottom-2' : 'bottom-5'} left-0 right-0 mx-auto flex justify-center animate-bounce`}>
+      {/* Scroll to explore - POSITION ADJUSTED TO BE LOWER */}
+      <div className={`absolute ${isMobile ? 'bottom-14' : 'bottom-10'} left-0 right-0 mx-auto flex justify-center animate-bounce`}>
         <div className="flex flex-col items-center">
           <span className="text-sm text-gray-500 mb-2">Scroll to explore</span>
           <div className="w-6 h-10 border-2 border-gray-300 rounded-full flex justify-center items-start p-1">
