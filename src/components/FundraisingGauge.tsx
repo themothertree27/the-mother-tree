@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Progress } from "@/components/ui/progress";
 import { Leaf, Moon, Sprout, DollarSign, TreeDeciduous } from 'lucide-react';
@@ -107,7 +106,7 @@ const FundraisingGauge = ({
             <div key={index} className="absolute" style={{ left: `${checkpointPositions[index]}%`, transform: 'translateX(-50%)' }}>
               {formatCurrency(checkpoint)}
               
-              {/* Add "Family & Friends Goal" label below the $272K mark - Moved to bottom */}
+              {/* Add "Family & Friends Goal" label below the $272K mark - Adjusted positioning */}
               {checkpoint === 272000 && (
                 <div className="text-xs font-medium text-gray-600 text-center whitespace-nowrap" style={{ width: '100px', marginLeft: '-50%', marginTop: '4px' }}>
                   Family &amp; Friends Goal
