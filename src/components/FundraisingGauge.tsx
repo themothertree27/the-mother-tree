@@ -2,6 +2,7 @@
 import React from 'react';
 import { Progress } from "@/components/ui/progress";
 import { Leaf, Moon, Sprout, DollarSign, TreeDeciduous } from 'lucide-react';
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface FundraisingGaugeProps {
   currentAmount: number;
@@ -16,6 +17,7 @@ const FundraisingGauge = ({
 }: FundraisingGaugeProps) => {
   // Calculate progress percentage
   const progressPercentage = Math.min(100, currentAmount / goalAmount * 100);
+  const isMobile = useIsMobile();
 
   // Format currency values
   const formatCurrency = (amount: number) => {
@@ -98,7 +100,7 @@ const FundraisingGauge = ({
                 </div>}
               
               {/* Add "The Mother Tree Home is Secured!" label below the $727K mark */}
-              {checkpoint === 727000 && <div className="text-xs font-medium text-gray-600 text-center whitespace-nowrap absolute left-1/2 transform -translate-x-1/2 mt-4">
+              {checkpoint === 727000 && <div className={`text-xs font-medium text-gray-600 text-center whitespace-nowrap absolute left-1/2 transform -translate-x-1/2 ${isMobile ? 'mt-12' : 'mt-4'}`}>
                   The Mother Tree Home is Secured!
                 </div>}
             </div>)}
