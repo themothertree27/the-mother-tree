@@ -44,7 +44,7 @@ const FundraisingGauge = ({
           <span className="text-nature-leaf">Growing</span> Our Forest
         </h3>
         <p className="text-gray-600">
-          Help us reach our fundraising goal of {formatCurrency(goalAmount)}
+          Help us reach our fundraising goal of $727K
         </p>
       </div>
       
