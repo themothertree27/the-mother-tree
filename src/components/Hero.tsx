@@ -69,7 +69,7 @@ const Hero = () => {
           <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">A Rewilding Community, For Nature-Empowered Co-Creation</p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 -mt-2">
-            <a href="#membership" className={`${isMobile ? 'px-4 py-2 text-sm mt-24' : 'px-8 py-4'} rounded-full bg-nature-leaf text-white font-medium button-effect transform transition duration-300 hover:shadow-xl hover:scale-105`}>The Giving-Back Tree</a>
+            <a href="#membership" className={`${isMobile ? 'px-4 py-2 text-sm mt-16' : 'px-8 py-4'} rounded-full bg-nature-leaf text-white font-medium button-effect transform transition duration-300 hover:shadow-xl hover:scale-105`}>The Giving-Back Tree</a>
             
             
           </div>
