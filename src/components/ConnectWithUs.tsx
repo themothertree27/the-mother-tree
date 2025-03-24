@@ -28,12 +28,16 @@ const ConnectWithUs = () => {
     setIsSubmitting(true);
     
     try {
+      console.log("Submitting subscription:", { email, phone });
+      
       // Insert the email into the Supabase database
-      const { error } = await supabase
+      const { data, error } = await supabase
         .from('subscribers')
         .insert([
           { email, phone: phone || null }
         ]);
+      
+      console.log("Subscription response:", { data, error });
       
       if (error) {
         if (error.code === '23505') {
@@ -44,6 +48,7 @@ const ConnectWithUs = () => {
             variant: "default",
           });
         } else {
+          console.error("Supabase error:", error);
           throw error;
         }
       } else {
