@@ -4,26 +4,74 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Send, Check } from 'lucide-react';
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "@/hooks/use-toast";
 
 const ConnectWithUs = () => {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
-      // In a real implementation, you would send this to your backend
-      console.log('Email submitted:', email);
-      console.log('Phone submitted:', phone);
-      setIsSubmitted(true);
-      setEmail('');
-      setPhone('');
+    
+    if (!email) {
+      toast({
+        title: "Email required",
+        description: "Please enter your email address to subscribe.",
+        variant: "destructive",
+      });
+      return;
+    }
+    
+    setIsSubmitting(true);
+    
+    try {
+      // Insert the email into the Supabase database
+      const { error } = await supabase
+        .from('subscribers')
+        .insert([
+          { email, phone: phone || null }
+        ]);
+      
+      if (error) {
+        if (error.code === '23505') {
+          // Unique violation error code - email already exists
+          toast({
+            title: "Already subscribed",
+            description: "This email is already subscribed to our newsletter.",
+            variant: "default",
+          });
+        } else {
+          throw error;
+        }
+      } else {
+        // Success!
+        setIsSubmitted(true);
+        setEmail('');
+        setPhone('');
+        
+        toast({
+          title: "Successfully subscribed!",
+          description: "Thank you for joining The Mother Tree community.",
+          variant: "default",
+        });
 
-      // Reset the success message after 3 seconds
-      setTimeout(() => {
-        setIsSubmitted(false);
-      }, 3000);
+        // Reset the success message after 3 seconds
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 3000);
+      }
+    } catch (error) {
+      console.error('Error saving subscription:', error);
+      toast({
+        title: "Subscription failed",
+        description: "There was an error saving your subscription. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -48,10 +96,23 @@ const ConnectWithUs = () => {
               <div className="space-y-2">
                 <Label htmlFor="email" className="text-left block">Email address</Label>
                 <div className="flex">
-                  <Input id="email" type="email" placeholder="you@example.com" value={email} onChange={e => setEmail(e.target.value)} className="rounded-r-none border-r-0" required />
-                  <Button type="submit" className="rounded-l-none bg-nature-leaf hover:bg-nature-leaf/90">
-                    {isSubmitted ? <Check className="h-4 w-4" /> : <Send className="h-4 w-4" />}
-                    <span className="ml-2">{isSubmitted ? 'Sent!' : 'Subscribe'}</span>
+                  <Input 
+                    id="email" 
+                    type="email" 
+                    placeholder="you@example.com" 
+                    value={email} 
+                    onChange={e => setEmail(e.target.value)} 
+                    className="rounded-r-none border-r-0"
+                    disabled={isSubmitting}
+                    required 
+                  />
+                  <Button 
+                    type="submit" 
+                    className="rounded-l-none bg-nature-leaf hover:bg-nature-leaf/90"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitted ? <Check className="h-4 w-4" /> : isSubmitting ? "Subscribing..." : <Send className="h-4 w-4" />}
+                    <span className="ml-2">{isSubmitted ? 'Sent!' : isSubmitting ? 'Subscribing...' : 'Subscribe'}</span>
                   </Button>
                 </div>
               </div>
@@ -65,12 +126,13 @@ const ConnectWithUs = () => {
                   value={phone} 
                   onChange={e => setPhone(e.target.value)}
                   className="w-full"
+                  disabled={isSubmitting}
                 />
               </div>
               
               {isSubmitted && <p className="text-nature-leaf text-sm mt-2">
                   Thank you for subscribing! We'll be in touch soon.
-                </p>}
+              </p>}
               <p className="text-xs text-gray-500 text-left">
                 By subscribing, you agree to receive emails from The Mother Tree. We respect your privacy and will never share your information.
               </p>
