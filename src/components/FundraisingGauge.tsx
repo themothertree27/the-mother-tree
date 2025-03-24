@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Progress } from "@/components/ui/progress";
 import { Leaf, Moon, Sprout, DollarSign, TreeDeciduous } from 'lucide-react';
@@ -99,8 +98,8 @@ const FundraisingGauge = ({
                   Family &amp; Friends Goal
                 </div>}
               
-              {/* Add "The Mother Tree Home is Secured!" label below the $727K mark */}
-              {checkpoint === 727000 && <div className={`text-xs font-medium text-gray-600 text-center whitespace-nowrap absolute left-1/2 transform -translate-x-1/2 ${isMobile ? 'mt-12' : 'mt-4'}`}>
+              {/* Add "The Mother Tree Home is Secured!" label below the $727K mark - Only show on non-mobile */}
+              {checkpoint === 727000 && !isMobile && <div className="text-xs font-medium text-gray-600 text-center whitespace-nowrap absolute left-1/2 transform -translate-x-1/2 mt-4">
                   The Mother Tree Home is Secured!
                 </div>}
             </div>)}
