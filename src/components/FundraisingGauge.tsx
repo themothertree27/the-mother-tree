@@ -94,8 +94,8 @@ const FundraisingGauge = ({
         }}>
               {formatCurrency(checkpoint)}
               
-              {/* Add "Family & Friends Goal" label below the $272K mark - Perfect alignment */}
-              {checkpoint === 272000 && <div className="text-xs font-medium text-gray-600 text-center whitespace-nowrap absolute left-1/2 transform -translate-x-1/2 mt-4">
+              {/* Add "Family & Friends Goal" label below the $272K mark - Only show on non-mobile */}
+              {checkpoint === 272000 && !isMobile && <div className="text-xs font-medium text-gray-600 text-center whitespace-nowrap absolute left-1/2 transform -translate-x-1/2 mt-4">
                   Family &amp; Friends Goal
                 </div>}
               
