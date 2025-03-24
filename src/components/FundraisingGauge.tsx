@@ -113,7 +113,7 @@ const FundraisingGauge = ({
                 </div>
               )}
               
-              {/* Add "The Mother Tree home is secured" label below the $727K mark */}
+              {/* Add "The Mother Tree Home is Secured!" label below the $727K mark */}
               {checkpoint === 727000 && (
                 <div className="text-xs font-medium text-gray-600 text-center whitespace-nowrap absolute left-1/2 transform -translate-x-1/2 mt-4">
                   The Mother Tree Home is Secured!
@@ -122,6 +122,11 @@ const FundraisingGauge = ({
             </div>
           ))}
           <div>{formatCurrency(goalAmount)}</div>
+          
+          {/* Add "To the Moon!" text below the $1.11M mark */}
+          <div className="text-xs font-medium text-gray-600 text-center whitespace-nowrap absolute right-0 mt-4">
+            To the Moon!
+          </div>
         </div>
       </div>
     </div>
