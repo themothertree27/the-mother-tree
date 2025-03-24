@@ -75,13 +75,6 @@ const FundraisingGauge = ({
               ) : (
                 <Leaf className="h-6 w-6 text-nature-leaf" />
               )}
-              
-              {/* Add "Family & Friends Goal" label below the $272K mark */}
-              {checkpoints[index] === 272000 && (
-                <div className="absolute top-8 whitespace-nowrap text-xs font-medium text-gray-600 text-center" style={{ transform: 'translateX(-50%)', width: '100px', left: '50%' }}>
-                  Family &amp; Friends Goal
-                </div>
-              )}
             </div>
           ))}
           
@@ -113,6 +106,13 @@ const FundraisingGauge = ({
           {checkpoints.map((checkpoint, index) => (
             <div key={index} className="absolute" style={{ left: `${checkpointPositions[index]}%`, transform: 'translateX(-50%)' }}>
               {formatCurrency(checkpoint)}
+              
+              {/* Add "Family & Friends Goal" label below the $272K mark - Moved to bottom */}
+              {checkpoint === 272000 && (
+                <div className="text-xs font-medium text-gray-600 text-center whitespace-nowrap" style={{ width: '100px', marginLeft: '-50%', marginTop: '4px' }}>
+                  Family &amp; Friends Goal
+                </div>
+              )}
             </div>
           ))}
           <div>{formatCurrency(goalAmount)}</div>
