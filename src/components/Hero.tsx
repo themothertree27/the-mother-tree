@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { TreeDeciduous } from 'lucide-react';
 import { useIsMobile } from '../hooks/use-mobile';
@@ -39,7 +38,7 @@ const Hero = () => {
     };
   }, []);
   
-  return <section className="relative h-screen overflow-hidden pt-10">
+  return <section className={`relative ${isMobile ? "h-[90vh] pt-0" : "h-screen pt-10"} overflow-hidden`}>
       {/* Empty parallax ref div (decorative elements removed) */}
       <div ref={parallaxRef} className="absolute inset-0 z-0"></div>
 
@@ -51,7 +50,7 @@ const Hero = () => {
         </div>
         
         <div ref={elementsRef} className="stagger-animation max-w-4xl">
-          <div className={`inline-flex items-center justify-center rounded-full bg-nature-leaf/10 px-3 py-1 text-sm font-medium text-nature-leaf mb-6 ${isMobile ? 'mt-16' : 'mt-6'}`}>
+          <div className={`inline-flex items-center justify-center rounded-full bg-nature-leaf/10 px-3 py-1 text-sm font-medium text-nature-leaf mb-6 ${isMobile ? 'mt-8' : 'mt-6'}`}>
             <span>Find Your Roots</span>
           </div>
           
