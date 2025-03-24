@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 import { TreeDeciduous } from 'lucide-react';
 import { useIsMobile } from '../hooks/use-mobile';
@@ -49,7 +50,7 @@ const Hero = () => {
           <TreeDeciduous className={`text-nature-leaf/15 ${isMobile ? 'h-[500px] w-[500px]' : 'h-[600px] w-[600px]'}`} />
         </div>
         
-        <div ref={elementsRef} className="stagger-animation max-w-4xl">
+        <div ref={elementsRef} className={`stagger-animation max-w-4xl ${isMobile ? 'mt-16' : ''}`}>
           <div className={`inline-flex items-center justify-center rounded-full bg-nature-leaf/10 px-3 py-1 text-sm font-medium text-nature-leaf mb-6 ${isMobile ? 'mt-8' : 'mt-6'}`}>
             <span>Find Your Roots</span>
           </div>
