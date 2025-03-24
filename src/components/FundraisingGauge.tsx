@@ -1,11 +1,14 @@
+
 import React from 'react';
 import { Progress } from "@/components/ui/progress";
 import { Leaf, Moon, Sprout, DollarSign, TreeDeciduous } from 'lucide-react';
+
 interface FundraisingGaugeProps {
   currentAmount: number;
   goalAmount: number;
   checkpoints: number[];
 }
+
 const FundraisingGauge = ({
   currentAmount,
   goalAmount,
@@ -30,6 +33,7 @@ const FundraisingGauge = ({
 
   // Calculate checkpoint positions as percentages
   const checkpointPositions = checkpoints.map(checkpoint => checkpoint / goalAmount * 100);
+
   return <div className="w-full space-y-6">
       <div className="text-center mb-8">
         <h3 className="text-2xl font-serif font-medium mb-2">
@@ -100,10 +104,13 @@ const FundraisingGauge = ({
             </div>)}
           <div>{formatCurrency(goalAmount)}</div>
           
-          {/* Add "To the Moon!" text below the $1.11M mark - Perfectly aligned with other sub-labels */}
-          
+          {/* Add "To the Moon!" text below the $1.11M mark - Aligned with other sub-labels */}
+          <div className="absolute right-0 text-xs font-medium text-gray-600 text-center whitespace-nowrap mt-4">
+            To the Moon!
+          </div>
         </div>
       </div>
     </div>;
 };
+
 export default FundraisingGauge;
