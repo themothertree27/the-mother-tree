@@ -106,10 +106,12 @@ const FundraisingGauge = ({
             </div>)}
           <div>{formatCurrency(goalAmount)}</div>
           
-          {/* Add "To the Moon!" text below the $1.11M mark - Adjusted margin-top */}
-          <div className="absolute right-0 text-xs font-medium text-gray-600 text-center whitespace-nowrap mt-9">
-            To the Moon!
-          </div>
+          {/* Add "To the Moon!" text below the $1.11M mark - Only show on non-mobile */}
+          {!isMobile && (
+            <div className="absolute right-0 text-xs font-medium text-gray-600 text-center whitespace-nowrap mt-9">
+              To the Moon!
+            </div>
+          )}
         </div>
       </div>
     </div>;
