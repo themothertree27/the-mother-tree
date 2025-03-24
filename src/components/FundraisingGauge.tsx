@@ -112,6 +112,13 @@ const FundraisingGauge = ({
                   Family &amp; Friends Goal
                 </div>
               )}
+              
+              {/* Add "The Mother Tree home is secured" label below the $727K mark */}
+              {checkpoint === 727000 && (
+                <div className="text-xs font-medium text-gray-600 text-center whitespace-nowrap absolute left-1/2 transform -translate-x-1/2 mt-4">
+                  The Mother Tree home is secured
+                </div>
+              )}
             </div>
           ))}
           <div>{formatCurrency(goalAmount)}</div>
