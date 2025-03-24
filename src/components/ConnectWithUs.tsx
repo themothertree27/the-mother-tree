@@ -95,26 +95,16 @@ const ConnectWithUs = () => {
             <div className="flex flex-col space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="email" className="text-left block">Email address</Label>
-                <div className="flex">
-                  <Input 
-                    id="email" 
-                    type="email" 
-                    placeholder="you@example.com" 
-                    value={email} 
-                    onChange={e => setEmail(e.target.value)} 
-                    className="rounded-r-none border-r-0"
-                    disabled={isSubmitting}
-                    required 
-                  />
-                  <Button 
-                    type="submit" 
-                    className="rounded-l-none bg-nature-leaf hover:bg-nature-leaf/90"
-                    disabled={isSubmitting}
-                  >
-                    {isSubmitted ? <Check className="h-4 w-4" /> : isSubmitting ? "Subscribing..." : <Send className="h-4 w-4" />}
-                    <span className="ml-2">{isSubmitted ? 'Sent!' : isSubmitting ? 'Subscribing...' : 'Subscribe'}</span>
-                  </Button>
-                </div>
+                <Input 
+                  id="email" 
+                  type="email" 
+                  placeholder="you@example.com" 
+                  value={email} 
+                  onChange={e => setEmail(e.target.value)} 
+                  className="w-full"
+                  disabled={isSubmitting}
+                  required 
+                />
               </div>
               
               <div className="space-y-2">
@@ -128,6 +118,17 @@ const ConnectWithUs = () => {
                   className="w-full"
                   disabled={isSubmitting}
                 />
+              </div>
+              
+              <div className="flex justify-center mt-4">
+                <Button 
+                  type="submit" 
+                  className="bg-nature-leaf hover:bg-nature-leaf/90 w-full sm:w-auto"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitted ? <Check className="h-4 w-4" /> : isSubmitting ? "Subscribing..." : <Send className="h-4 w-4" />}
+                  <span className="ml-2">{isSubmitted ? 'Sent!' : isSubmitting ? 'Subscribing...' : 'Subscribe'}</span>
+                </Button>
               </div>
               
               {isSubmitted && <p className="text-nature-leaf text-sm mt-2">
