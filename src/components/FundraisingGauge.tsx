@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Progress } from "@/components/ui/progress";
 import { Leaf, Moon, Sprout, DollarSign, TreeDeciduous } from 'lucide-react';
@@ -102,8 +103,8 @@ const FundraisingGauge = ({
             </div>)}
           <div>{formatCurrency(goalAmount)}</div>
           
-          {/* Add "To the Moon!" text below the $1.11M mark - Adjusted vertical positioning */}
-          <div className="text-xs font-medium text-gray-600 text-center whitespace-nowrap absolute right-0 transform -translate-x-1/2 mt-10">
+          {/* Add "To the Moon!" text below the $1.11M mark - Perfectly aligned with other sub-labels */}
+          <div className="text-xs font-medium text-gray-600 text-center whitespace-nowrap absolute right-0 transform -translate-x-1/2 mt-4">
             To the Moon!
           </div>
         </div>
