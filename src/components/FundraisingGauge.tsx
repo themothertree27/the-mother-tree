@@ -104,8 +104,8 @@ const FundraisingGauge = ({
             </div>)}
           <div>{formatCurrency(goalAmount)}</div>
           
-          {/* Add "To the Moon!" text below the $1.11M mark - Aligned with other sub-labels */}
-          <div className="absolute right-0 text-xs font-medium text-gray-600 text-center whitespace-nowrap mt-4">
+          {/* Add "To the Moon!" text below the $1.11M mark - Moved down with increased margin-top */}
+          <div className="absolute right-0 text-xs font-medium text-gray-600 text-center whitespace-nowrap mt-8">
             To the Moon!
           </div>
         </div>
