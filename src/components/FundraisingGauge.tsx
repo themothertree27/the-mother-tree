@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Progress } from "@/components/ui/progress";
 import { Leaf, Moon, Sprout, DollarSign, TreeDeciduous } from 'lucide-react';
@@ -99,7 +100,7 @@ const FundraisingGauge = ({
         </div>
       </div>
       
-      <div className="mt-16 mx-auto max-w-md bg-white/80 rounded-lg p-4 border border-nature-leaf/20">
+      <div className="mt-24 mx-auto max-w-md bg-white/80 rounded-lg p-4 border border-nature-leaf/20">
         <h4 className="text-center text-sm font-medium mb-3 text-gray-700">Fundraising Milestones</h4>
         <div className="space-y-2">
           <div className="flex items-center gap-3">
