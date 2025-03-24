@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Progress } from "@/components/ui/progress";
 import { Leaf, Moon, Sprout, DollarSign, TreeDeciduous } from 'lucide-react';
@@ -111,6 +112,25 @@ const FundraisingGauge = ({
               To the Moon!
             </div>
           )}
+        </div>
+      </div>
+      
+      {/* Legend table */}
+      <div className="mt-8 mx-auto max-w-md bg-white/80 rounded-lg p-4 border border-nature-leaf/20">
+        <h4 className="text-center text-sm font-medium mb-3 text-gray-700">Fundraising Milestones</h4>
+        <div className="space-y-2">
+          <div className="flex items-center gap-3">
+            <Leaf className="h-5 w-5 text-nature-leaf" />
+            <span className="text-sm text-gray-600">Family &amp; Friends Goal</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <TreeDeciduous className="h-5 w-5 text-nature-leaf" />
+            <span className="text-sm text-gray-600">The Mother Tree Home is Secured!</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <Moon className="h-5 w-5 text-nature-leaf" />
+            <span className="text-sm text-gray-600">To the Moon!</span>
+          </div>
         </div>
       </div>
     </div>;
