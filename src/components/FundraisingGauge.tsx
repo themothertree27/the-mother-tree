@@ -75,6 +75,13 @@ const FundraisingGauge = ({
               ) : (
                 <Leaf className="h-6 w-6 text-nature-leaf" />
               )}
+              
+              {/* Add "Family & Friends Goal" label below the $272K mark */}
+              {checkpoints[index] === 272000 && (
+                <div className="absolute top-8 whitespace-nowrap text-xs font-medium text-gray-600" style={{ transform: 'translateX(-50%)' }}>
+                  Family &amp; Friends Goal
+                </div>
+              )}
             </div>
           ))}
           
