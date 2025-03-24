@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Progress } from "@/components/ui/progress";
 import { Leaf, Moon, Sprout, DollarSign, TreeDeciduous } from 'lucide-react';
@@ -15,13 +14,10 @@ const FundraisingGauge = ({
   goalAmount,
   checkpoints
 }: FundraisingGaugeProps) => {
-  // Calculate progress percentage
   const progressPercentage = Math.min(100, currentAmount / goalAmount * 100);
   const isMobile = useIsMobile();
 
-  // Format currency values
   const formatCurrency = (amount: number) => {
-    // Special case for goal amount - always show as $1.11M
     if (amount === 1111111) {
       return "$1.11M";
     }
@@ -33,7 +29,6 @@ const FundraisingGauge = ({
     }).format(amount);
   };
 
-  // Calculate checkpoint positions as percentages
   const checkpointPositions = checkpoints.map(checkpoint => checkpoint / goalAmount * 100);
 
   return <div className="w-full space-y-6">
@@ -47,31 +42,24 @@ const FundraisingGauge = ({
       </div>
       
       <div className="relative pt-8 pb-4">
-        {/* Progress bar */}
         <Progress value={progressPercentage} className="h-8 bg-nature-leaf/10" />
         
-        {/* Forest decorations on top of progress bar */}
         <div className="absolute top-0 left-0 w-full">
-          {/* Left decoration (starting point) */}
           <div className="absolute -top-6 left-0">
             <Sprout className="h-6 w-6 text-nature-leaf" />
           </div>
           
-          {/* Middle checkpoint decorations */}
           {checkpointPositions.map((position, index) => <div key={index} className="absolute -top-6" style={{
           left: `${position}%`,
           transform: 'translateX(-50%)'
         }}>
-              {/* Use TreeDeciduous icon for the first checkpoint ($727K) with the same green color */}
               {checkpoints[index] === 727000 ? <TreeDeciduous className="h-6 w-6 text-nature-leaf" /> : <Leaf className="h-6 w-6 text-nature-leaf" />}
             </div>)}
           
-          {/* Right decoration (goal) - Moon icon */}
           <div className="absolute -top-6 right-0">
             <Moon className="h-6 w-6 text-nature-leaf" />
           </div>
           
-          {/* Current progress indicator */}
           <div className="absolute -top-8" style={{
           left: `${progressPercentage}%`,
           transform: 'translateX(-50%)'
@@ -85,7 +73,6 @@ const FundraisingGauge = ({
           </div>
         </div>
         
-        {/* Amount labels below */}
         <div className="flex justify-between mt-2 text-sm text-gray-600">
           <div>$0</div>
           {checkpoints.map((checkpoint, index) => <div key={index} className="absolute" style={{
@@ -94,19 +81,16 @@ const FundraisingGauge = ({
         }}>
               {formatCurrency(checkpoint)}
               
-              {/* Add "Family & Friends Goal" label below the $272K mark - Only show on non-mobile */}
               {checkpoint === 272000 && !isMobile && <div className="text-xs font-medium text-gray-600 text-center whitespace-nowrap absolute left-1/2 transform -translate-x-1/2 mt-4">
                   Family &amp; Friends Goal
                 </div>}
               
-              {/* Add "The Mother Tree Home is Secured!" label below the $727K mark - Only show on non-mobile */}
               {checkpoint === 727000 && !isMobile && <div className="text-xs font-medium text-gray-600 text-center whitespace-nowrap absolute left-1/2 transform -translate-x-1/2 mt-4">
                   The Mother Tree Home is Secured!
                 </div>}
             </div>)}
           <div>{formatCurrency(goalAmount)}</div>
           
-          {/* Add "To the Moon!" text below the $1.11M mark - Only show on non-mobile */}
           {!isMobile && (
             <div className="absolute right-0 text-xs font-medium text-gray-600 text-center whitespace-nowrap mt-9">
               To the Moon!
@@ -115,8 +99,7 @@ const FundraisingGauge = ({
         </div>
       </div>
       
-      {/* Legend table */}
-      <div className="mt-8 mx-auto max-w-md bg-white/80 rounded-lg p-4 border border-nature-leaf/20">
+      <div className="mt-16 mx-auto max-w-md bg-white/80 rounded-lg p-4 border border-nature-leaf/20">
         <h4 className="text-center text-sm font-medium mb-3 text-gray-700">Fundraising Milestones</h4>
         <div className="space-y-2">
           <div className="flex items-center gap-3">
