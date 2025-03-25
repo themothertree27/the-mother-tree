@@ -85,19 +85,33 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
           document.body.removeChild(modalContainer);
         };
         
-        // Widget container
+        // Widget container - Updated dimensions to fit widget better
         const widgetContainer = document.createElement('div');
         widgetContainer.style.backgroundColor = 'white';
         widgetContainer.style.borderRadius = '10px';
-        widgetContainer.style.padding = '20px';
-        widgetContainer.style.maxWidth = '800px';
-        widgetContainer.style.width = '90%';
+        widgetContainer.style.padding = '10px';
+        widgetContainer.style.maxWidth = '500px'; // Reduced from 800px
+        widgetContainer.style.width = 'auto'; // Changed from 90% to auto
         widgetContainer.style.maxHeight = '90vh';
-        widgetContainer.style.overflow = 'auto';
+        widgetContainer.style.overflow = 'hidden'; // Changed from auto to hidden
         
         // Add the Givebutter widget
         const widget = document.createElement('givebutter-widget');
         widget.setAttribute('id', 'j1kk5g');
+        
+        // Let the widget adjust the container's size once loaded
+        widget.addEventListener('load', () => {
+          // Slight delay to allow widget to render fully
+          setTimeout(() => {
+            // Adjust container size to match widget content
+            const widgetContent = widget.shadowRoot?.querySelector('.givebutter-widget-content');
+            if (widgetContent) {
+              const rect = widgetContent.getBoundingClientRect();
+              widgetContainer.style.width = `${rect.width + 20}px`; // Add padding
+              widgetContainer.style.height = `${rect.height + 20}px`; // Add padding
+            }
+          }, 300);
+        });
         
         widgetContainer.appendChild(widget);
         modalContainer.appendChild(closeButton);
