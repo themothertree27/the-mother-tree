@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Check, X } from 'lucide-react';
 
@@ -37,53 +36,6 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
   buttonBgColor,
   clarificationText
 }) => {
-  // Function to open specialized widget for Be-leave button or regular GiveButter for others
-  const handleButtonClick = () => {
-    // Special case for Be-leave button (Level 1)
-    if (tier === "LEVEL 1") {
-      // Check if specialized widget is loaded
-      if (window.hasOwnProperty('Givebutter')) {
-        // @ts-ignore - Givebutter widget API
-        window.Givebutter.createCheckout({
-          amount: 222,
-          metadata: {
-            tier: name
-          }
-        });
-      } else {
-        console.error('Specialized Givebutter widget not loaded');
-        // Fallback to regular GiveButter as backup
-        openRegularGiveButterWidget();
-      }
-    } else {
-      // For other tiers, use the regular GiveButter widget
-      openRegularGiveButterWidget();
-    }
-  };
-
-  // Original GiveButter widget function for other tiers
-  const openRegularGiveButterWidget = () => {
-    // Check if GiveButter widget is loaded
-    if (window.hasOwnProperty('GiveButter')) {
-      // Open widget with appropriate tier-based parameters
-      const tierAmount = tier === "LEVEL 1" ? 222 : tier === "LEVEL 2" ? 777 : 1111;
-      const tierName = name;
-      
-      // @ts-ignore - GiveButter is loaded through external script
-      window.GiveButter('open', {
-        amount: tierAmount,
-        donationType: tier === "LEVEL 2" ? 'recurring' : 'one-time',
-        donationMeta: {
-          tier: tierName
-        }
-      });
-    } else {
-      console.error('GiveButter widget not loaded');
-      // Fallback to direct link if widget not loaded
-      window.open('https://givebutter.com/mothertreenyc', '_blank');
-    }
-  };
-
   return <div className={`membership-card group z-10 ${popular ? 'scale-105 shadow-xl' : ''}`}>
       {popular && <div className="absolute top-0 right-0 bg-nature-leaf text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-xl z-20">Popular</div>}
       
@@ -129,7 +81,6 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
           
           <div className="mt-8">
             <button 
-              onClick={handleButtonClick}
               className={`w-full py-3 rounded-full font-medium text-white transition-all duration-300 transform hover:scale-105 ${
                 buttonBgColor ? buttonBgColor : 
                   popular 

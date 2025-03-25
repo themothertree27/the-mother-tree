@@ -1,48 +1,8 @@
-
-import React, { useEffect } from 'react';
+import React from 'react';
 import MembershipCard from './MembershipCard';
 import { Leaf, TreePine, Sprout, X } from 'lucide-react';
 import FundraisingGauge from './FundraisingGauge';
-
 const MembershipTiers = () => {
-  // Add GiveButter scripts when component mounts
-  useEffect(() => {
-    // Add regular GiveButter widget
-    if (!document.getElementById('givebutter-script')) {
-      const script = document.createElement('script');
-      script.id = 'givebutter-script';
-      script.src = 'https://givebutter.com/js/widget.js';
-      script.async = true;
-      document.body.appendChild(script);
-      
-      // Optional: Initialize campaign ID if needed
-      script.onload = () => {
-        // @ts-ignore - GiveButter is loaded through external script
-        window.GiveButter && window.GiveButter('initialize', {
-          campaignId: 'mothertreenyc'  // Replace with your actual campaign ID
-        });
-      };
-    }
-    
-    // Add special widget for "Be-leave" button
-    if (!document.getElementById('givebutter-specialized-script')) {
-      const specialScript = document.createElement('script');
-      specialScript.id = 'givebutter-specialized-script';
-      specialScript.src = 'https://widgets.givebutter.com/latest.umd.cjs?acct=jPj6c0yePfoJ9f8L&p=other';
-      specialScript.async = true;
-      document.body.appendChild(specialScript);
-    }
-    
-    // Cleanup function to remove scripts
-    return () => {
-      // Optional: Cleanup only if component is the only one using GiveButter
-      // const script = document.getElementById('givebutter-script');
-      // if (script) document.body.removeChild(script);
-      // const specialScript = document.getElementById('givebutter-specialized-script');
-      // if (specialScript) document.body.removeChild(specialScript);
-    };
-  }, []);
-
   return <section id="membership" className="section-padding pb-10 relative overflow-hidden bg-gray-50/50">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
