@@ -2,6 +2,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Check, X } from 'lucide-react';
 import { Dialog, DialogContent, DialogClose } from './ui/dialog';
+import { RadioGroup, RadioGroupItem } from './ui/radio-group';
+import { Label } from './ui/label';
 
 interface MembershipCardProps {
   tier: string;
@@ -42,6 +44,7 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
   const [showSquareModal, setShowSquareModal] = useState(false);
   // For Givebutter modal
   const givebutterModalRef = useRef<HTMLDivElement | null>(null);
+  const [showMommyMeDiscount, setShowMommyMeDiscount] = useState(false);
 
   useEffect(() => {
     // Load Givebutter widget script if it doesn't exist
@@ -203,6 +206,26 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
             </div>
             
             <div className="mt-8">
+              {/* Radio button for "The Mother Board" */}
+              {name === "The Mother Board" && (
+                <div className="mb-4">
+                  <div className="flex items-center space-x-2">
+                    <RadioGroup
+                      value={showMommyMeDiscount ? "discount" : "regular"}
+                      onValueChange={(value) => setShowMommyMeDiscount(value === "discount")}
+                      className="flex items-center space-x-2"
+                    >
+                      <div className="flex items-center space-x-2">
+                        <RadioGroupItem value="discount" id="discount" />
+                        <Label htmlFor="discount" className="text-sm cursor-pointer">
+                          Mommy & Me Discount (Rooted Membership & The Mother Board)
+                        </Label>
+                      </div>
+                    </RadioGroup>
+                  </div>
+                </div>
+              )}
+              
               <button 
                 onClick={handleButtonClick}
                 className={`w-full py-3 rounded-full font-medium text-white transition-all duration-300 transform hover:scale-105 ${
