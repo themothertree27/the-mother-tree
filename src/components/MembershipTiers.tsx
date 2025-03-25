@@ -5,9 +5,9 @@ import { Leaf, TreePine, Sprout, X } from 'lucide-react';
 import FundraisingGauge from './FundraisingGauge';
 
 const MembershipTiers = () => {
-  // Add GiveButter script when component mounts
+  // Add GiveButter scripts when component mounts
   useEffect(() => {
-    // Check if script already exists
+    // Add regular GiveButter widget
     if (!document.getElementById('givebutter-script')) {
       const script = document.createElement('script');
       script.id = 'givebutter-script';
@@ -24,11 +24,22 @@ const MembershipTiers = () => {
       };
     }
     
-    // Cleanup function to remove script
+    // Add special widget for "Be-leave" button
+    if (!document.getElementById('givebutter-specialized-script')) {
+      const specialScript = document.createElement('script');
+      specialScript.id = 'givebutter-specialized-script';
+      specialScript.src = 'https://widgets.givebutter.com/latest.umd.cjs?acct=jPj6c0yePfoJ9f8L&p=other';
+      specialScript.async = true;
+      document.body.appendChild(specialScript);
+    }
+    
+    // Cleanup function to remove scripts
     return () => {
       // Optional: Cleanup only if component is the only one using GiveButter
       // const script = document.getElementById('givebutter-script');
       // if (script) document.body.removeChild(script);
+      // const specialScript = document.getElementById('givebutter-specialized-script');
+      // if (specialScript) document.body.removeChild(specialScript);
     };
   }, []);
 

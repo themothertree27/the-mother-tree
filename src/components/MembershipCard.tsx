@@ -37,8 +37,32 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
   buttonBgColor,
   clarificationText
 }) => {
-  // Function to open GiveButter widget based on tier
-  const openGiveButterWidget = () => {
+  // Function to open specialized widget for Be-leave button or regular GiveButter for others
+  const handleButtonClick = () => {
+    // Special case for Be-leave button (Level 1)
+    if (tier === "LEVEL 1") {
+      // Check if specialized widget is loaded
+      if (window.hasOwnProperty('Givebutter')) {
+        // @ts-ignore - Givebutter widget API
+        window.Givebutter.createCheckout({
+          amount: 222,
+          metadata: {
+            tier: name
+          }
+        });
+      } else {
+        console.error('Specialized Givebutter widget not loaded');
+        // Fallback to regular GiveButter as backup
+        openRegularGiveButterWidget();
+      }
+    } else {
+      // For other tiers, use the regular GiveButter widget
+      openRegularGiveButterWidget();
+    }
+  };
+
+  // Original GiveButter widget function for other tiers
+  const openRegularGiveButterWidget = () => {
     // Check if GiveButter widget is loaded
     if (window.hasOwnProperty('GiveButter')) {
       // Open widget with appropriate tier-based parameters
@@ -105,7 +129,7 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
           
           <div className="mt-8">
             <button 
-              onClick={openGiveButterWidget}
+              onClick={handleButtonClick}
               className={`w-full py-3 rounded-full font-medium text-white transition-all duration-300 transform hover:scale-105 ${
                 buttonBgColor ? buttonBgColor : 
                   popular 
