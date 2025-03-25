@@ -4,6 +4,14 @@ import { Check, X } from 'lucide-react';
 import { Dialog, DialogContent, DialogClose } from './ui/dialog';
 import { RadioGroup, RadioGroupItem } from './ui/radio-group';
 import { Label } from './ui/label';
+import { Input } from './ui/input';
+import { Button } from './ui/button';
+import { Form, FormControl, FormField, FormItem, FormLabel } from './ui/form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import * as z from 'zod';
+import { supabase } from '@/integrations/supabase/client';
+import { useToast } from '@/hooks/use-toast';
 
 interface MembershipCardProps {
   tier: string;
@@ -22,6 +30,17 @@ interface MembershipCardProps {
   buttonBgColor?: string;
   clarificationText?: string;
 }
+
+// Form schema
+const formSchema = z.object({
+  firstName: z.string().min(1, { message: "First name is required" }),
+  lastName: z.string().min(1, { message: "Last name is required" }),
+  email: z.string().email({ message: "Valid email is required" }),
+  phone: z.string().optional(),
+  mommyMeDiscount: z.boolean().default(false)
+});
+
+type FormValues = z.infer<typeof formSchema>;
 
 const MembershipCard: React.FC<MembershipCardProps> = ({
   tier,
@@ -45,6 +64,22 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
   // For Givebutter modal
   const givebutterModalRef = useRef<HTMLDivElement | null>(null);
   const [showMommyMeDiscount, setShowMommyMeDiscount] = useState(false);
+  
+  // For Mother Board form modal
+  const [showMotherBoardForm, setShowMotherBoardForm] = useState(false);
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const { toast } = useToast();
+  
+  const form = useForm<FormValues>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: '',
+      mommyMeDiscount: false
+    }
+  });
 
   useEffect(() => {
     // Load Givebutter widget script if it doesn't exist
@@ -56,6 +91,13 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
       document.body.appendChild(script);
     }
   }, []);
+
+  // Update form value when radio button changes
+  useEffect(() => {
+    if (name === "The Mother Board") {
+      form.setValue('mommyMeDiscount', showMommyMeDiscount);
+    }
+  }, [showMommyMeDiscount, form, name]);
 
   const handleButtonClick = () => {
     // Handle different button actions based on buttonText
@@ -140,12 +182,54 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
     } else if (buttonText === "Rooted") {
       // For the "Rooted" button, open the Square modal
       setShowSquareModal(true);
+    } else if (buttonText === "The Mother Board") {
+      // For "The Mother Board" button, open the form modal
+      setShowMotherBoardForm(true);
+      setFormSubmitted(false); // Reset the form submission state
     } else {
       // For other buttons, use the previously configured Givebutter behavior (if any)
       const gbLink = document.createElement('a');
       gbLink.href = 'https://givebutter.com/mothertreenyc';
       gbLink.target = '_blank';
       gbLink.click();
+    }
+  };
+
+  const onSubmit = async (data: FormValues) => {
+    try {
+      // Insert form data into Supabase
+      const { error } = await supabase
+        .from('mother_board_submissions')
+        .insert({
+          first_name: data.firstName,
+          last_name: data.lastName,
+          email: data.email,
+          phone: data.phone || null,
+          mommy_me_discount: data.mommyMeDiscount
+        });
+
+      if (error) {
+        console.error('Error submitting form:', error);
+        toast({
+          title: "Submission Error",
+          description: "There was an error submitting your information. Please try again.",
+          variant: "destructive"
+        });
+      } else {
+        setFormSubmitted(true);
+        form.reset();
+        toast({
+          title: "Submission Successful",
+          description: "Your information has been recorded. We'll be in touch shortly.",
+        });
+      }
+    } catch (error) {
+      console.error('Error in form submission:', error);
+      toast({
+        title: "Submission Error",
+        description: "There was an error submitting your information. Please try again.",
+        variant: "destructive"
+      });
     }
   };
 
@@ -277,6 +361,126 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
               }}
             />
           </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* The Mother Board Form Modal */}
+      <Dialog open={showMotherBoardForm} onOpenChange={setShowMotherBoardForm}>
+        <DialogContent className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto">
+          <DialogClose className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
+            <X className="h-5 w-5" />
+            <span className="sr-only">Close</span>
+          </DialogClose>
+          
+          {formSubmitted ? (
+            <div className="text-center py-8">
+              <h2 className="text-2xl font-semibold mb-4">Thank You!</h2>
+              <p className="text-lg mb-6">Your information has been recorded.</p>
+              <Button 
+                onClick={() => setShowMotherBoardForm(false)}
+                className="bg-nature-leaf hover:bg-nature-leaf/90"
+              >
+                Close
+              </Button>
+            </div>
+          ) : (
+            <>
+              <div className="text-center mb-6">
+                <h2 className="text-xl font-semibold mb-2">The Mother Board</h2>
+                <p className="text-gray-600">
+                  Thank you for wanting to be part of something special. Please fill out the form below and we will be in touch shortly.
+                </p>
+              </div>
+              
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+                  <FormField
+                    control={form.control}
+                    name="firstName"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>First Name</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Enter your first name" {...field} />
+                        </FormControl>
+                      </FormItem>
+                    )}
+                  />
+                  
+                  <FormField
+                    control={form.control}
+                    name="lastName"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Last Name</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Enter your last name" {...field} />
+                        </FormControl>
+                      </FormItem>
+                    )}
+                  />
+                  
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Email</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Enter your email" type="email" {...field} />
+                        </FormControl>
+                      </FormItem>
+                    )}
+                  />
+                  
+                  <FormField
+                    control={form.control}
+                    name="phone"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Phone Number (Optional)</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Enter your phone number" type="tel" {...field} />
+                        </FormControl>
+                      </FormItem>
+                    )}
+                  />
+                  
+                  <FormField
+                    control={form.control}
+                    name="mommyMeDiscount"
+                    render={({ field }) => (
+                      <FormItem className="flex flex-row items-start space-x-3 space-y-0 mt-4">
+                        <FormControl>
+                          <div className="flex items-center space-x-2">
+                            <RadioGroup
+                              value={field.value ? "discount" : "regular"}
+                              onValueChange={(value) => field.onChange(value === "discount")}
+                              className="flex items-center space-x-2"
+                            >
+                              <div className="flex items-center space-x-2">
+                                <RadioGroupItem value="discount" id="form-discount" />
+                                <Label htmlFor="form-discount" className="text-sm cursor-pointer">
+                                  Mommy & Me Discount (Rooted Membership & The Mother Board)
+                                </Label>
+                              </div>
+                            </RadioGroup>
+                          </div>
+                        </FormControl>
+                      </FormItem>
+                    )}
+                  />
+                  
+                  <Button 
+                    type="submit" 
+                    className="w-full bg-nature-leaf hover:bg-nature-leaf/90 mt-6"
+                  >
+                    Submit
+                  </Button>
+                </form>
+              </Form>
+            </>
+          )}
         </DialogContent>
       </Dialog>
     </>
