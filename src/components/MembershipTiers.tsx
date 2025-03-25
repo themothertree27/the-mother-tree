@@ -17,9 +17,7 @@ const MembershipTiers = () => {
           <div className="inline-flex items-center justify-center rounded-full bg-nature-leaf/10 px-3 py-1 text-sm font-medium text-nature-leaf mb-4">Giving Options</div>
           <h2 className="text-3xl md:text-4xl font-serif font-medium tracking-tight mb-4">Choose Your Seed</h2>
           <p className="text-gray-600 text-center">We kindly ask to support us in any which way you can. Whether its through financial means or showing up with a hammer when it's time to build, The Mother Tree is not possible without your help! Below are the various levels of contributions we are asking during this 'Seed Money' fundraising round of Family & Friends. We provided these three levels to simplify the process, but please feel free to give the amount you are fiscally able to and feel called to do so. If you want to invest or donate a specific amount without following the guidelines below, we are happy to sway however your winds are blowing. Also, the links below are connected to Stripe (who takes a 3% cut), so if you want to send funds directly to The Mother Tree's bank account to avoid any fees, please reach out to us; we would appreciate it immensely. 
-
-
- We will not let you down. Thank you. Tiocfaidh ár lá ☘️</p>
+We will not let you down. Thank you. Tiocfaidh ár lá ☘️</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
