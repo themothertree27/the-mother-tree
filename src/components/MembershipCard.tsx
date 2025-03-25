@@ -49,7 +49,7 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
   }, []);
 
   const handleButtonClick = () => {
-    // Only for the "Be-leave" button
+    // Handle different button actions based on buttonText
     if (buttonText === "Be-leave") {
       // Create modal container if it doesn't exist
       let modalContainer = document.getElementById('givebutter-modal-container');
@@ -127,9 +127,11 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
       } else {
         modalContainer.style.display = 'flex';
       }
+    } else if (buttonText === "Rooted") {
+      // Specifically for the "Rooted" button, redirect to Square payment link
+      window.open('https://square.link/u/spVxxpMm', '_blank');
     } else {
       // For other buttons, use the previously configured Givebutter behavior (if any)
-      // This part can be customized based on your existing implementation
       const gbLink = document.createElement('a');
       gbLink.href = 'https://givebutter.com/mothertreenyc';
       gbLink.target = '_blank';
