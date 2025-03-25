@@ -1,4 +1,5 @@
-import React from 'react';
+
+import React, { useEffect } from 'react';
 import { Check, X } from 'lucide-react';
 
 interface MembershipCardProps {
@@ -36,6 +37,85 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
   buttonBgColor,
   clarificationText
 }) => {
+  useEffect(() => {
+    // Load Givebutter widget script if it doesn't exist
+    if (!document.getElementById('givebutter-widget-script-j1kk5g')) {
+      const script = document.createElement('script');
+      script.id = 'givebutter-widget-script-j1kk5g';
+      script.src = "https://widgets.givebutter.com/latest.umd.cjs?acct=jPj6c0yePfoJ9f8L&p=other";
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  }, []);
+
+  const handleButtonClick = () => {
+    // Only for the "Be-leave" button
+    if (buttonText === "Be-leave") {
+      // Create modal container if it doesn't exist
+      let modalContainer = document.getElementById('givebutter-modal-container');
+      if (!modalContainer) {
+        modalContainer = document.createElement('div');
+        modalContainer.id = 'givebutter-modal-container';
+        modalContainer.style.position = 'fixed';
+        modalContainer.style.top = '0';
+        modalContainer.style.left = '0';
+        modalContainer.style.width = '100%';
+        modalContainer.style.height = '100%';
+        modalContainer.style.backgroundColor = 'rgba(0,0,0,0.7)';
+        modalContainer.style.display = 'flex';
+        modalContainer.style.justifyContent = 'center';
+        modalContainer.style.alignItems = 'center';
+        modalContainer.style.zIndex = '9999';
+        
+        // Add close button
+        const closeButton = document.createElement('button');
+        closeButton.textContent = 'X';
+        closeButton.style.position = 'absolute';
+        closeButton.style.top = '20px';
+        closeButton.style.right = '20px';
+        closeButton.style.backgroundColor = 'white';
+        closeButton.style.color = 'black';
+        closeButton.style.border = 'none';
+        closeButton.style.borderRadius = '50%';
+        closeButton.style.width = '40px';
+        closeButton.style.height = '40px';
+        closeButton.style.fontSize = '20px';
+        closeButton.style.cursor = 'pointer';
+        closeButton.onclick = () => {
+          document.body.removeChild(modalContainer);
+        };
+        
+        // Widget container
+        const widgetContainer = document.createElement('div');
+        widgetContainer.style.backgroundColor = 'white';
+        widgetContainer.style.borderRadius = '10px';
+        widgetContainer.style.padding = '20px';
+        widgetContainer.style.maxWidth = '800px';
+        widgetContainer.style.width = '90%';
+        widgetContainer.style.maxHeight = '90vh';
+        widgetContainer.style.overflow = 'auto';
+        
+        // Add the Givebutter widget
+        const widget = document.createElement('givebutter-widget');
+        widget.setAttribute('id', 'j1kk5g');
+        
+        widgetContainer.appendChild(widget);
+        modalContainer.appendChild(closeButton);
+        modalContainer.appendChild(widgetContainer);
+        document.body.appendChild(modalContainer);
+      } else {
+        modalContainer.style.display = 'flex';
+      }
+    } else {
+      // For other buttons, use the previously configured Givebutter behavior (if any)
+      // This part can be customized based on your existing implementation
+      const gbLink = document.createElement('a');
+      gbLink.href = 'https://givebutter.com/mothertreenyc';
+      gbLink.target = '_blank';
+      gbLink.click();
+    }
+  };
+
   return <div className={`membership-card group z-10 ${popular ? 'scale-105 shadow-xl' : ''}`}>
       {popular && <div className="absolute top-0 right-0 bg-nature-leaf text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-xl z-20">Popular</div>}
       
@@ -81,6 +161,7 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
           
           <div className="mt-8">
             <button 
+              onClick={handleButtonClick}
               className={`w-full py-3 rounded-full font-medium text-white transition-all duration-300 transform hover:scale-105 ${
                 buttonBgColor ? buttonBgColor : 
                   popular 
