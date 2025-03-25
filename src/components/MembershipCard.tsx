@@ -85,15 +85,15 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
           document.body.removeChild(modalContainer);
         };
         
-        // Widget container - Updated dimensions to fit widget better
+        // Widget container - Updated to allow scrolling
         const widgetContainer = document.createElement('div');
         widgetContainer.style.backgroundColor = 'white';
         widgetContainer.style.borderRadius = '10px';
         widgetContainer.style.padding = '10px';
-        widgetContainer.style.maxWidth = '500px'; // Reduced from 800px
-        widgetContainer.style.width = 'auto'; // Changed from 90% to auto
+        widgetContainer.style.maxWidth = '500px';
+        widgetContainer.style.width = 'auto';
         widgetContainer.style.maxHeight = '90vh';
-        widgetContainer.style.overflow = 'hidden'; // Changed from auto to hidden
+        widgetContainer.style.overflow = 'auto'; // Changed from 'hidden' to 'auto' to enable scrolling
         
         // Add the Givebutter widget
         const widget = document.createElement('givebutter-widget');
@@ -108,7 +108,14 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
             if (widgetContent) {
               const rect = widgetContent.getBoundingClientRect();
               widgetContainer.style.width = `${rect.width + 20}px`; // Add padding
-              widgetContainer.style.height = `${rect.height + 20}px`; // Add padding
+              
+              // Set a maximum height with scrolling instead of exact height
+              const maxHeight = window.innerHeight * 0.9; // 90% of viewport height
+              if (rect.height + 20 > maxHeight) {
+                widgetContainer.style.height = `${maxHeight}px`;
+              } else {
+                widgetContainer.style.height = `${rect.height + 20}px`;
+              }
             }
           }, 300);
         });
