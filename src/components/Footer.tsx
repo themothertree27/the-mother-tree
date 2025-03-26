@@ -54,7 +54,12 @@ const Footer = () => {
               <a href="https://www.instagram.com/themothertree.nyc/?igsh=MWo2bjFoemxsNWdndA%3D%3D&utm_source=qr#" className="p-2 rounded-full bg-gray-100 text-gray-600 hover:bg-nature-leaf hover:text-white transition-colors duration-300">
                 <Instagram className="h-5 w-5" />
               </a>
-              
+              <button 
+                onClick={handleCopyEmail}
+                className="text-nature-leaf hover:underline font-medium cursor-pointer"
+              >
+                finding@themothertreenyc.org
+              </button>
             </div>
           </div>
           
