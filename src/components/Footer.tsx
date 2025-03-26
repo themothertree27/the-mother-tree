@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { TreeDeciduous, Mail, Instagram, Twitter, Text } from 'lucide-react';
+import { TreeDeciduous, Mail, Instagram, Text } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
