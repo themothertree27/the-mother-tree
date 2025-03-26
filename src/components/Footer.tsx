@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { TreeDeciduous, Mail, Instagram, Twitter } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -72,11 +71,8 @@ const Footer = () => {
           <p className="text-gray-500 text-sm mb-4 md:mb-0">
             &copy; {new Date().getFullYear()} <span className="text-nature-leaf">The Mother Tree</span>. All rights reserved.
           </p>
-          <div className="flex flex-col items-center md:items-end space-y-3">
-            <h4 className="font-medium text-sm uppercase tracking-wider text-gray-900">Stay Connected</h4>
-            <div className="flex space-x-4">
-              {/* Social media icons would go here */}
-            </div>
+          <div className="flex space-x-6">
+            
           </div>
         </div>
       </div>
