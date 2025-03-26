@@ -63,7 +63,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li><a href="#" onClick={(e) => scrollToMembershipLevel('be-leavers', e)} className="text-gray-600 hover:text-nature-leaf transition-colors duration-300">Be-leave'rs</a></li>
               <li><a href="#" onClick={(e) => scrollToMembershipLevel('rootedmembership', e)} className="text-gray-600 hover:text-nature-leaf transition-colors duration-300">Rooted Membership</a></li>
-              <li><a href="#" onClick={(e) => scrollToMembershipLevel('motherboard', e)} className="text-gray-600 hover:text-nature-leaf transition-colors duration-300">The Mother Board</a></li>
+              <li><a href="#" onClick={(e) => scrollToMembershipLevel('themotherboard', e)} className="text-gray-600 hover:text-nature-leaf transition-colors duration-300">The Mother Board</a></li>
             </ul>
           </div>
           

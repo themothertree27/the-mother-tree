@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 import { Check, X, ToggleLeft, ToggleRight } from 'lucide-react';
 import { Dialog, DialogContent, DialogClose } from './ui/dialog';
@@ -276,7 +277,7 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
                       onCheckedChange={setShowMommyMeDiscount}
                     />
                     <Label htmlFor="mommy-me-discount" className="text-sm cursor-pointer">
-                      Mommy & Me Discount (Rooted Membership & The Mother Board)
+                      Mommy & Me Discount (Rooted Membership & The Mother Board): 27% SAFE Discount Rate
                     </Label>
                   </div>
                 </div>
