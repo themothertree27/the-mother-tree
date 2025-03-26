@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { Check, X, ToggleLeft, ToggleRight } from 'lucide-react';
 import { Dialog, DialogContent, DialogClose } from './ui/dialog';
@@ -121,7 +120,6 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
         widgetContainer.style.overflow = 'auto';
         widgetContainer.style.position = 'relative';
         
-        // Create circular close button that matches other dialogs
         const closeButton = document.createElement('button');
         closeButton.style.position = 'absolute';
         closeButton.style.right = '4px';
@@ -137,7 +135,7 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
         closeButton.style.display = 'flex';
         closeButton.style.alignItems = 'center';
         closeButton.style.justifyContent = 'center';
-        closeButton.style.borderRadius = '9999px'; // Make it circular
+        closeButton.style.borderRadius = '9999px';
         closeButton.setAttribute('aria-label', 'Close');
         
         closeButton.onmouseover = () => {
@@ -148,7 +146,6 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
           closeButton.style.opacity = '0.7';
         };
         
-        // Create circular background
         const circleDiv = document.createElement('div');
         circleDiv.style.width = '24px';
         circleDiv.style.height = '24px';
@@ -367,7 +364,7 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
               
               {clarificationText && (
                 <div className="text-xs text-gray-500 text-center mt-2">
-                  {clarificationText}
+                  *Mother, Mother-Figure, or Angel Mom (Rest in Peace <3)
                 </div>
               )}
             </div>
