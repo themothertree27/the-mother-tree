@@ -56,9 +56,9 @@ const Footer = () => {
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <a href={isMobile ? "https://sltxt.io/ah6" : "https://bit.ly/ForestFairiesNYC"} className="p-2 rounded-full bg-gray-100 text-gray-600 hover:bg-nature-leaf hover:text-white transition-colors duration-300">
+                      <button className="p-2 rounded-full bg-gray-100 text-gray-600 hover:bg-nature-leaf hover:text-white transition-colors duration-300">
                         <MessageSquare className="h-5 w-5" />
-                      </a>
+                      </button>
                     </TooltipTrigger>
                     <TooltipContent>
                       <p>Need to click with a mobile device</p>
