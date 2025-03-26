@@ -1,5 +1,6 @@
+
 import React, { useState } from 'react';
-import { TreeDeciduous, Mail, Instagram, Text } from 'lucide-react';
+import { TreeDeciduous, Mail, Instagram, Phone } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
@@ -47,7 +48,7 @@ const Footer = () => {
                 <Instagram className="h-5 w-5" />
               </a>
               <a href="https://sltxt.io/ah6" className="p-2 rounded-full bg-gray-100 text-gray-600 hover:bg-nature-leaf hover:text-white transition-colors duration-300" title="Text us">
-                <Text className="h-5 w-5" />
+                <Phone className="h-5 w-5" />
               </a>
             </div>
           </div>
