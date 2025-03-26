@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
-import { TreeDeciduous, Mail, Instagram } from 'lucide-react';
+import { TreeDeciduous, Mail, Instagram, Twitter } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
-
 const Footer = () => {
   const {
     toast
   } = useToast();
   const [copying, setCopying] = useState(false);
-
   const handleCopyEmail = () => {
     const email = "finding@themothertreenyc.org";
     navigator.clipboard.writeText(email).then(() => {
@@ -27,27 +26,6 @@ const Footer = () => {
       });
     });
   };
-
-  const scrollToMembershipLevel = (levelId: string, e: React.MouseEvent) => {
-    e.preventDefault();
-    const element = document.getElementById(levelId);
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
-  };
-
-  const scrollToBusinessPlan = (e: React.MouseEvent) => {
-    e.preventDefault();
-    const element = document.querySelector('[data-business-plan]');
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
-  };
-
   return <footer id="contact" className="bg-white pt-20 pb-10 border-t border-gray-100">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
@@ -57,11 +35,7 @@ const Footer = () => {
               <span className="font-serif text-xl font-medium text-nature-leaf">The Mother Tree</span>
             </div>
             <p className="text-gray-600 mb-6 max-w-md">Our vision is to regrow a forest of Mother Trees, inspiring communities across the world that empower co-creation and collaboration for the posterity of our people and the planet.</p>
-            <h4 className="font-medium text-sm uppercase tracking-wider text-gray-900 mb-4">
-              <button onClick={scrollToBusinessPlan} className="text-gray-600 hover:text-nature-leaf transition-colors duration-300 cursor-pointer flex items-center">
-                The Business Plan
-              </button>
-            </h4>
+            <h4 className="font-medium text-sm uppercase tracking-wider text-gray-900 mb-4">Contact Us</h4>
             <div className="flex space-x-4">
               <button onClick={handleCopyEmail} className={cn("p-2 rounded-full text-gray-600 transition-colors duration-300", copying ? "bg-nature-leaf text-white" : "bg-gray-100 hover:bg-nature-leaf hover:text-white")} title="Click to copy finding@themothertreenyc.org">
                 <Mail className="h-5 w-5" />
@@ -69,15 +43,16 @@ const Footer = () => {
               <a href="https://www.instagram.com/themothertree.nyc/?igsh=MWo2bjFoemxsNWdndA%3D%3D&utm_source=qr#" className="p-2 rounded-full bg-gray-100 text-gray-600 hover:bg-nature-leaf hover:text-white transition-colors duration-300">
                 <Instagram className="h-5 w-5" />
               </a>
+              
             </div>
           </div>
           
           <div>
             <h4 className="font-medium text-sm uppercase tracking-wider text-gray-900 mb-4">Membership</h4>
             <ul className="space-y-3">
-              <li><a href="#" onClick={e => scrollToMembershipLevel('be-leavers', e)} className="text-gray-600 hover:text-nature-leaf transition-colors duration-300">Be-leave'rs</a></li>
-              <li><a href="#" onClick={e => scrollToMembershipLevel('rootedmembership', e)} className="text-gray-600 hover:text-nature-leaf transition-colors duration-300">Rooted Membership</a></li>
-              <li><a href="#" onClick={e => scrollToMembershipLevel('themotherboard', e)} className="text-gray-600 hover:text-nature-leaf transition-colors duration-300">The Mother Board</a></li>
+              <li><a href="#membership" className="text-gray-600 hover:text-nature-leaf transition-colors duration-300">Be-leave'rs</a></li>
+              <li><a href="#membership" className="text-gray-600 hover:text-nature-leaf transition-colors duration-300">Rooted Membership</a></li>
+              <li><a href="#membership" className="text-gray-600 hover:text-nature-leaf transition-colors duration-300">The Mother Board</a></li>
             </ul>
           </div>
           
@@ -85,9 +60,8 @@ const Footer = () => {
             <h4 className="font-medium text-sm uppercase tracking-wider text-gray-900 mb-4">Resources</h4>
             <ul className="space-y-3">
               <li><a href="#about" className="text-gray-600 hover:text-nature-leaf transition-colors duration-300">Our Mission</a></li>
-              <li><a href="#spaces" className="text-gray-600 hover:text-nature-leaf transition-colors duration-300">Our Space</a></li>
-              <li><span className="text-gray-600">The Business Plan</span></li>
-              <li><a href="https://www.canva.com/design/DAGiGvPJRPQ/yjS8URyxxNsprdj9hglhMg/view?utm_content=DAGiGvPJRPQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hefd7476819" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-nature-leaf transition-colors duration-300">Mycelium Roots Campaign</a></li>
+              <li><a href="#contact" className="text-gray-600 hover:text-nature-leaf transition-colors duration-300">Contact Us</a></li>
+              
             </ul>
           </div>
         </div>
@@ -97,10 +71,12 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} <span className="text-nature-leaf">The Mother Tree</span>. All rights reserved.
           </p>
           <div className="flex space-x-6">
+            
+            
+            
           </div>
         </div>
       </div>
     </footer>;
 };
-
 export default Footer;
