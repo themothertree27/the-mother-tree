@@ -46,7 +46,11 @@ const Footer = () => {
               <span className="font-serif text-xl font-medium text-nature-leaf">The Mother Tree</span>
             </div>
             <p className="text-gray-600 mb-6 max-w-md">Our vision is to regrow a forest of Mother Trees, inspiring communities across the world that empower co-creation and collaboration for the posterity of our people and the planet.</p>
-            <h4 className="font-medium text-sm uppercase tracking-wider text-gray-900 mb-4">Contact Us</h4>
+            <h4 className="font-medium text-sm uppercase tracking-wider text-gray-900 mb-4">
+              <button onClick={handleCopyEmail} className="text-gray-600 hover:text-nature-leaf transition-colors duration-300 cursor-pointer flex items-center">
+                Contact Us <Mail className="h-4 w-4 ml-1" />
+              </button>
+            </h4>
             <div className="flex space-x-4">
               <button onClick={handleCopyEmail} className={cn("p-2 rounded-full text-gray-600 transition-colors duration-300", copying ? "bg-nature-leaf text-white" : "bg-gray-100 hover:bg-nature-leaf hover:text-white")} title="Click to copy finding@themothertreenyc.org">
                 <Mail className="h-5 w-5" />
