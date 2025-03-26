@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { Check, X, ToggleLeft, ToggleRight } from 'lucide-react';
 import { Dialog, DialogContent, DialogClose } from './ui/dialog';
@@ -123,22 +122,31 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
         
         const closeButton = document.createElement('button');
         closeButton.style.position = 'absolute';
-        closeButton.style.right = '10px';
-        closeButton.style.top = '10px';
+        closeButton.style.right = '4px';
+        closeButton.style.top = '4px';
         closeButton.style.backgroundColor = 'transparent';
         closeButton.style.border = 'none';
-        closeButton.style.color = '#333';
+        closeButton.style.color = '#666';
         closeButton.style.width = '30px';
         closeButton.style.height = '30px';
         closeButton.style.cursor = 'pointer';
-        closeButton.style.borderRadius = '50%';
+        closeButton.style.borderRadius = '4px';
         closeButton.style.display = 'flex';
         closeButton.style.alignItems = 'center';
         closeButton.style.justifyContent = 'center';
         closeButton.style.zIndex = '10';
+        closeButton.style.opacity = '0.7';
+        closeButton.style.transition = 'opacity 150ms ease';
         closeButton.setAttribute('aria-label', 'Close');
         
-        // Create SVG X icon similar to the one used in other dialogs
+        closeButton.onmouseover = () => {
+          closeButton.style.opacity = '1';
+        };
+        
+        closeButton.onmouseleave = () => {
+          closeButton.style.opacity = '0.7';
+        };
+        
         const svgX = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         svgX.setAttribute('width', '16');
         svgX.setAttribute('height', '16');
@@ -164,6 +172,19 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
         svgX.appendChild(line1);
         svgX.appendChild(line2);
         closeButton.appendChild(svgX);
+        
+        const srText = document.createElement('span');
+        srText.textContent = 'Close';
+        srText.style.position = 'absolute';
+        srText.style.width = '1px';
+        srText.style.height = '1px';
+        srText.style.padding = '0';
+        srText.style.margin = '-1px';
+        srText.style.overflow = 'hidden';
+        srText.style.clip = 'rect(0, 0, 0, 0)';
+        srText.style.whiteSpace = 'nowrap';
+        srText.style.borderWidth = '0';
+        closeButton.appendChild(srText);
         
         closeButton.onclick = () => {
           document.body.removeChild(modalContainer);
@@ -345,7 +366,7 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
       <Dialog open={showSquareModal} onOpenChange={setShowSquareModal}>
         <DialogContent className="sm:max-w-[500px] p-0 bg-white overflow-hidden border-none">
           <DialogClose className="absolute z-10 right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
-            <X className="h-5 w-5" />
+            <X className="h-4 w-4" />
             <span className="sr-only">Close</span>
           </DialogClose>
           
@@ -371,7 +392,7 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
       <Dialog open={showMotherBoardForm} onOpenChange={setShowMotherBoardForm}>
         <DialogContent className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto">
           <DialogClose className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
-            <X className="h-5 w-5" />
+            <X className="h-4 w-4" />
             <span className="sr-only">Close</span>
           </DialogClose>
           
