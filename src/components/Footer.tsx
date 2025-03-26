@@ -66,7 +66,7 @@ const Footer = () => {
               <li><a href="#about" className="text-gray-600 hover:text-nature-leaf transition-colors duration-300">Our Mission</a></li>
               <li><a href="#spaces" className="text-gray-600 hover:text-nature-leaf transition-colors duration-300">Our Space</a></li>
               <li><a href="#grow-community" className="text-gray-600 hover:text-nature-leaf transition-colors duration-300">Mycelium Roots Campaign</a></li>
-              <li><a href="#contact" className="text-gray-600 hover:text-nature-leaf transition-colors duration-300">Stay Connected</a></li>
+              <li><a href="#connect" className="text-gray-600 hover:text-nature-leaf transition-colors duration-300">Stay Connected</a></li>
             </ul>
           </div>
         </div>
