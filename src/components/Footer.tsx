@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { TreeDeciduous, Mail, Instagram, Twitter } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -60,8 +61,12 @@ const Footer = () => {
             <h4 className="font-medium text-sm uppercase tracking-wider text-gray-900 mb-4">Resources</h4>
             <ul className="space-y-3">
               <li><a href="#about" className="text-gray-600 hover:text-nature-leaf transition-colors duration-300">Our Mission</a></li>
-              
-              
+              <li><a href="#spaces" className="text-gray-600 hover:text-nature-leaf transition-colors duration-300">Our Space</a></li>
+              <li><a href="#spaces" className="text-gray-600 hover:text-nature-leaf transition-colors duration-300 flex items-center">
+                Business Plan
+              </a></li>
+              <li><a href="#membership" className="text-gray-600 hover:text-nature-leaf transition-colors duration-300">Mycelium Roots Campaign</a></li>
+              <li><a href="#contact" className="text-gray-600 hover:text-nature-leaf transition-colors duration-300">Stay Connected</a></li>
             </ul>
           </div>
         </div>
