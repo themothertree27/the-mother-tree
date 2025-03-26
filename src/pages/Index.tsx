@@ -7,10 +7,8 @@ import Footer from '../components/Footer';
 import { Leaf, Heart, TreeDeciduous, Mountain, Sprout, Coffee, Mic, BookOpen, Home, Users, PenTool, Sun, Utensils, Music, ArrowRight } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { useIsMobile } from '../hooks/use-mobile';
-
 const Index = () => {
   const isMobile = useIsMobile();
-
   useEffect(() => {
     const animateElements = () => {
       const observer = new IntersectionObserver(entries => {
@@ -30,7 +28,6 @@ const Index = () => {
     };
     animateElements();
   }, []);
-
   return <div className="flex flex-col min-h-screen">
       <Header />
       <Hero />
@@ -49,7 +46,7 @@ const Index = () => {
                 Growing in Community
               </h2>
               <p className="mb-6 text-left text-gray-600">Rooted in the power of presence, The Mother Tree plants the dreaming seed in each of us, helping us find our truest selves, reconnecting us back to nature, and creating a community dedicated to art, activism, and ancestral wisdom. The Mother Tree is our way home.</p>
-              <p className="text-gray-600 mb-8">The Mother Tree represents the interconnected network that sustains old growth forests. Like these natural systems, our community thrives through connection, mutual support, and the sharing of resources. The Mother Tree is a convergence of culture and trust, where ideas and creations of a better today begin to grow.</p>
+              <p className="text-gray-600 mb-8">The Mother Tree represents the interconnected network that sustains old growth forests. Like these natural systems, our community thrives through connection, mutual support, and the sharing of resources. The Mother Tree is a convergence of culture and trust, where ideas and creations for a better today begin to grow.</p>
               
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex items-start space-x-3">
@@ -130,16 +127,12 @@ const Index = () => {
             <div className="inline-flex items-center justify-center rounded-full bg-nature-soil/10 px-3 py-1 text-sm font-medium text-nature-soil mb-4">
               Our Space
             </div>
-            {isMobile ? (
-              <h2 className="text-3xl md:text-4xl font-serif font-medium tracking-tight mb-6">
+            {isMobile ? <h2 className="text-3xl md:text-4xl font-serif font-medium tracking-tight mb-6">
                 What is<br />
                 <span className="text-nature-leaf">The Mother Tree?</span>
-              </h2>
-            ) : (
-              <h2 className="text-3xl md:text-4xl font-serif font-medium tracking-tight mb-6">
+              </h2> : <h2 className="text-3xl md:text-4xl font-serif font-medium tracking-tight mb-6">
                 What is <span className="text-nature-leaf">The Mother Tree?</span>
-              </h2>
-            )}
+              </h2>}
             <p className="text-gray-600 mx-auto max-w-2xl">
               The Mother Tree is a vibrant Membership Community Center that serves as a nurturing environment for creativity, wellness, education, and social enterprise.
             </p>
@@ -262,7 +255,9 @@ Wellness Space</h3>
             </div>
           </div>
           
-          <div id="business-plan" className="mt-12 text-center animate-scroll-in" style={{ transitionDelay: '0.5s' }}>
+          <div id="business-plan" className="mt-12 text-center animate-scroll-in" style={{
+          transitionDelay: '0.5s'
+        }}>
             <p className="text-lg mb-4">Want to read The Mother Tree Business Plan?</p>
             <a href="https://www.canva.com/design/DAGdakwqMGg/KyerA8gnLjdSWCRfueavwA/view?utm_content=DAGdakwqMGg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h120a346822" target="_blank" rel="noopener noreferrer">
               <Button variant="default" className="bg-nature-leaf hover:bg-nature-leaf/90">
@@ -278,16 +273,12 @@ Wellness Space</h3>
         <div className="container mx-auto relative z-10">
           <div className="max-w-4xl mx-auto text-center animate-scroll-in">
             <div className="inline-flex items-center justify-center rounded-full bg-nature-sunlight/20 px-3 py-1 text-sm font-medium text-nature-soil mb-4">Grow Our Community</div>
-            {isMobile ? (
-              <h2 className="text-3xl md:text-5xl font-serif font-medium tracking-tight mb-6">
+            {isMobile ? <h2 className="text-3xl md:text-5xl font-serif font-medium tracking-tight mb-6">
                 Help Grow<br />
                 <span className="text-nature-leaf block">The Mother Tree</span>
-              </h2>
-            ) : (
-              <h2 className="text-3xl md:text-5xl font-serif font-medium tracking-tight mb-6">
+              </h2> : <h2 className="text-3xl md:text-5xl font-serif font-medium tracking-tight mb-6">
                 Help Grow <span className="text-nature-leaf">The Mother Tree</span>
-              </h2>
-            )}
+              </h2>}
             <p className="text-gray-600 mb-8 max-w-2xl mx-auto">All levels of giving support our mission to nurture connections between people and the natural world. Thank you for joining us in creating a more sustainable, conscious community.</p>
             
             <p className="text-lg mb-4">Check out our Mycelium Roots Campaign Strategy</p>
@@ -319,5 +310,4 @@ Wellness Space</h3>
       </a>
     </div>;
 };
-
 export default Index;
