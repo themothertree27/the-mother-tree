@@ -1,14 +1,15 @@
-
 import React, { useState } from 'react';
 import { TreeDeciduous, Mail, Instagram, Twitter } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
+
 const Footer = () => {
   const {
     toast
   } = useToast();
   const [copying, setCopying] = useState(false);
+
   const handleCopyEmail = () => {
     const email = "finding@themothertreenyc.org";
     navigator.clipboard.writeText(email).then(() => {
@@ -27,6 +28,7 @@ const Footer = () => {
       });
     });
   };
+
   return <footer id="contact" className="bg-white pt-20 pb-10 border-t border-gray-100">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
@@ -44,7 +46,6 @@ const Footer = () => {
               <a href="https://www.instagram.com/themothertree.nyc/?igsh=MWo2bjFoemxsNWdndA%3D%3D&utm_source=qr#" className="p-2 rounded-full bg-gray-100 text-gray-600 hover:bg-nature-leaf hover:text-white transition-colors duration-300">
                 <Instagram className="h-5 w-5" />
               </a>
-              
             </div>
           </div>
           
@@ -59,8 +60,9 @@ const Footer = () => {
             <h4 className="font-medium text-sm uppercase tracking-wider text-gray-900 mb-4">Resources</h4>
             <ul className="space-y-3">
               <li><a href="#about" className="text-gray-600 hover:text-nature-leaf transition-colors duration-300">Our Mission</a></li>
-              
-              
+              <li><a href="#spaces" className="text-gray-600 hover:text-nature-leaf transition-colors duration-300">Our Space</a></li>
+              <li><a href="https://www.canva.com/design/DAGdakwqMGg/KyerA8gnLjdSWCRfueavwA/view?utm_content=DAGdakwqMGg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h120a346822" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-nature-leaf transition-colors duration-300">Business Plan</a></li>
+              <li><a href="https://www.canva.com/design/DAGiGvPJRPQ/yjS8URyxxNsprdj9hglhMg/view?utm_content=DAGiGvPJRPQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hefd7476819" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-nature-leaf transition-colors duration-300">Mycelium Roots Campaign</a></li>
             </ul>
           </div>
         </div>
@@ -71,11 +73,10 @@ const Footer = () => {
           </p>
           <div className="flex space-x-6">
             
-            
-            
           </div>
         </div>
       </div>
     </footer>;
 };
+
 export default Footer;
