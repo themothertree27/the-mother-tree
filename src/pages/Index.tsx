@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
@@ -264,7 +265,7 @@ Wellness Space</h3>
           </div>
           
           {/* Business Plan Button */}
-          <div className="mt-12 text-center animate-scroll-in" style={{ transitionDelay: '0.5s' }}>
+          <div className="mt-12 text-center animate-scroll-in" style={{ transitionDelay: '0.5s' }} data-business-plan>
             <p className="text-lg mb-4">Want to read The Mother Tree Business Plan?</p>
             <a href="https://www.canva.com/design/DAGdakwqMGg/KyerA8gnLjdSWCRfueavwA/view?utm_content=DAGdakwqMGg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h120a346822" target="_blank" rel="noopener noreferrer">
               <Button variant="default" className="bg-nature-leaf hover:bg-nature-leaf/90">
