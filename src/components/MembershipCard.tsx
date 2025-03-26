@@ -1,6 +1,5 @@
-
 import React, { useEffect, useRef, useState } from 'react';
-import { Check, X } from 'lucide-react';
+import { Check, X, ToggleLeft, ToggleRight } from 'lucide-react';
 import { Dialog, DialogContent, DialogClose } from './ui/dialog';
 import { RadioGroup, RadioGroupItem } from './ui/radio-group';
 import { Label } from './ui/label';
@@ -12,6 +11,7 @@ import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
+import { Switch } from './ui/switch';
 
 interface MembershipCardProps {
   tier: string;
@@ -92,7 +92,7 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
     }
   }, []);
 
-  // Update form value when radio button changes
+  // Update form value when toggle changes
   useEffect(() => {
     if (name === "The Mother Board") {
       form.setValue('mommyMeDiscount', showMommyMeDiscount);
@@ -290,22 +290,18 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
             </div>
             
             <div className="mt-8">
-              {/* Radio button for "The Mother Board" */}
+              {/* Toggle switch for "The Mother Board" instead of radio button */}
               {name === "The Mother Board" && (
                 <div className="mb-4">
-                  <div className="flex items-center space-x-2">
-                    <RadioGroup
-                      value={showMommyMeDiscount ? "discount" : "regular"}
-                      onValueChange={(value) => setShowMommyMeDiscount(value === "discount")}
-                      className="flex items-center space-x-2"
-                    >
-                      <div className="flex items-center space-x-2">
-                        <RadioGroupItem value="discount" id="discount" />
-                        <Label htmlFor="discount" className="text-sm cursor-pointer">
-                          Mommy & Me Discount (Rooted Membership & The Mother Board)
-                        </Label>
-                      </div>
-                    </RadioGroup>
+                  <div className="flex items-center justify-between space-x-2">
+                    <Label htmlFor="mommy-me-discount" className="text-sm cursor-pointer">
+                      Mommy & Me Discount (Rooted Membership & The Mother Board)
+                    </Label>
+                    <Switch
+                      id="mommy-me-discount"
+                      checked={showMommyMeDiscount}
+                      onCheckedChange={setShowMommyMeDiscount}
+                    />
                   </div>
                 </div>
               )}
@@ -364,7 +360,7 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
         </DialogContent>
       </Dialog>
 
-      {/* The Mother Board Form Modal */}
+      {/* The Mother Board Form Modal with Toggle instead of Radio */}
       <Dialog open={showMotherBoardForm} onOpenChange={setShowMotherBoardForm}>
         <DialogContent className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto">
           <DialogClose className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
@@ -450,22 +446,15 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
                     control={form.control}
                     name="mommyMeDiscount"
                     render={({ field }) => (
-                      <FormItem className="flex flex-row items-start space-x-3 space-y-0 mt-4">
+                      <FormItem className="flex flex-row items-center justify-between space-x-3 space-y-0 mt-4">
+                        <FormLabel className="text-sm cursor-pointer">
+                          Mommy & Me Discount (Rooted Membership & The Mother Board)
+                        </FormLabel>
                         <FormControl>
-                          <div className="flex items-center space-x-2">
-                            <RadioGroup
-                              value={field.value ? "discount" : "regular"}
-                              onValueChange={(value) => field.onChange(value === "discount")}
-                              className="flex items-center space-x-2"
-                            >
-                              <div className="flex items-center space-x-2">
-                                <RadioGroupItem value="discount" id="form-discount" />
-                                <Label htmlFor="form-discount" className="text-sm cursor-pointer">
-                                  Mommy & Me Discount (Rooted Membership & The Mother Board)
-                                </Label>
-                              </div>
-                            </RadioGroup>
-                          </div>
+                          <Switch
+                            checked={field.value}
+                            onCheckedChange={field.onChange}
+                          />
                         </FormControl>
                       </FormItem>
                     )}
