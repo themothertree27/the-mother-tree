@@ -61,7 +61,7 @@ const Footer = () => {
                       </button>
                     </TooltipTrigger>
                     <TooltipContent>
-                      <p>Need to click with a mobile device</p>
+                      <p>Need to click with a mobile device. Text "The Mother Tree" to 888-438-1012</p>
                     </TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
