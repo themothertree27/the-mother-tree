@@ -3,12 +3,12 @@ import { TreeDeciduous, Mail, Instagram, MessageSquare } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Footer = () => {
-  const {
-    toast
-  } = useToast();
+  const { toast } = useToast();
   const [copying, setCopying] = useState(false);
+  const isMobile = useIsMobile();
   
   const handleCopyEmail = () => {
     const email = "finding@themothertreenyc.org";
@@ -46,7 +46,7 @@ const Footer = () => {
               <a href="https://www.instagram.com/themothertree.nyc/?igsh=MWo2bjFoemxsNWdndA%3D%3D&utm_source=qr#" className="p-2 rounded-full bg-gray-100 text-gray-600 hover:bg-nature-leaf hover:text-white transition-colors duration-300">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="https://sltxt.io/ah6" className="p-2 rounded-full bg-gray-100 text-gray-600 hover:bg-nature-leaf hover:text-white transition-colors duration-300" title="Text us">
+              <a href={isMobile ? "https://sltxt.io/ah6" : "https://bit.ly/ForestFairiesNYC"} className="p-2 rounded-full bg-gray-100 text-gray-600 hover:bg-nature-leaf hover:text-white transition-colors duration-300" title="Text us">
                 <MessageSquare className="h-5 w-5" />
               </a>
             </div>
