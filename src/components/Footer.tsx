@@ -1,13 +1,16 @@
+
 import React, { useState } from 'react';
 import { TreeDeciduous, Mail, Instagram, Twitter } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
+
 const Footer = () => {
   const {
     toast
   } = useToast();
   const [copying, setCopying] = useState(false);
+  
   const handleCopyEmail = () => {
     const email = "finding@themothertreenyc.org";
     navigator.clipboard.writeText(email).then(() => {
@@ -26,6 +29,7 @@ const Footer = () => {
       });
     });
   };
+  
   return <footer id="contact" className="bg-white pt-20 pb-10 border-t border-gray-100">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
@@ -61,8 +65,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li><a href="#about" className="text-gray-600 hover:text-nature-leaf transition-colors duration-300">Our Mission</a></li>
               <li><a href="#spaces" className="text-gray-600 hover:text-nature-leaf transition-colors duration-300">Our Space</a></li>
-              
-              <li><a href="#membership" className="text-gray-600 hover:text-nature-leaf transition-colors duration-300">Mycelium Roots Campaign</a></li>
+              <li><a href="#grow-community" className="text-gray-600 hover:text-nature-leaf transition-colors duration-300">Mycelium Roots Campaign</a></li>
               <li><a href="#contact" className="text-gray-600 hover:text-nature-leaf transition-colors duration-300">Stay Connected</a></li>
             </ul>
           </div>
@@ -81,4 +84,5 @@ const Footer = () => {
       </div>
     </footer>;
 };
+
 export default Footer;

@@ -123,7 +123,7 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Spaces & Features Section - Reduced top padding */}
+      {/* Spaces & Features Section */}
       <section id="spaces" className="pb-20 pt-10 px-6 md:px-12 lg:px-24 relative overflow-hidden bg-gradient-to-b from-white to-nature-leaf/5">
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto text-center mb-12 animate-scroll-in">
@@ -145,7 +145,6 @@ const Index = () => {
             </p>
           </div>
           
-          {/* Main Features */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 animate-scroll-in" style={{
           transitionDelay: '0.2s'
         }}>
@@ -203,7 +202,6 @@ Wellness Space</h3>
           transitionDelay: '0.3s'
         }}>Our Four-Floor Shared Space Features</h3>
           
-          {/* Space Features - Rearranged and recolored as requested */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 animate-scroll-in" style={{
           transitionDelay: '0.4s'
         }}>
@@ -264,7 +262,6 @@ Wellness Space</h3>
             </div>
           </div>
           
-          {/* Business Plan Button */}
           <div id="business-plan" className="mt-12 text-center animate-scroll-in" style={{ transitionDelay: '0.5s' }}>
             <p className="text-lg mb-4">Want to read The Mother Tree Business Plan?</p>
             <a href="https://www.canva.com/design/DAGdakwqMGg/KyerA8gnLjdSWCRfueavwA/view?utm_content=DAGdakwqMGg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h120a346822" target="_blank" rel="noopener noreferrer">
@@ -277,7 +274,7 @@ Wellness Space</h3>
       </section>
       
       {/* Help Grow Section - Moved before Membership Tiers Section */}
-      <section className="section-padding relative overflow-hidden">
+      <section id="grow-community" className="section-padding relative overflow-hidden">
         <div className="container mx-auto relative z-10">
           <div className="max-w-4xl mx-auto text-center animate-scroll-in">
             <div className="inline-flex items-center justify-center rounded-full bg-nature-sunlight/20 px-3 py-1 text-sm font-medium text-nature-soil mb-4">Grow Our Community</div>
