@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 import { Check, X, ToggleLeft, ToggleRight } from 'lucide-react';
 import { Dialog, DialogContent, DialogClose } from './ui/dialog';
@@ -290,18 +291,18 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
             </div>
             
             <div className="mt-8">
-              {/* Toggle switch for "The Mother Board" instead of radio button */}
+              {/* Toggle switch for "The Mother Board" with toggle on the left side of text */}
               {name === "The Mother Board" && (
                 <div className="mb-4">
-                  <div className="flex items-center justify-between space-x-2">
-                    <Label htmlFor="mommy-me-discount" className="text-sm cursor-pointer">
-                      Mommy & Me Discount (Rooted Membership & The Mother Board)
-                    </Label>
+                  <div className="flex items-center space-x-2">
                     <Switch
                       id="mommy-me-discount"
                       checked={showMommyMeDiscount}
                       onCheckedChange={setShowMommyMeDiscount}
                     />
+                    <Label htmlFor="mommy-me-discount" className="text-sm cursor-pointer">
+                      Mommy & Me Discount (Rooted Membership & The Mother Board)
+                    </Label>
                   </div>
                 </div>
               )}
@@ -360,7 +361,7 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
         </DialogContent>
       </Dialog>
 
-      {/* The Mother Board Form Modal with Toggle instead of Radio */}
+      {/* The Mother Board Form Modal with Toggle on left side */}
       <Dialog open={showMotherBoardForm} onOpenChange={setShowMotherBoardForm}>
         <DialogContent className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto">
           <DialogClose className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
@@ -446,16 +447,16 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
                     control={form.control}
                     name="mommyMeDiscount"
                     render={({ field }) => (
-                      <FormItem className="flex flex-row items-center justify-between space-x-3 space-y-0 mt-4">
-                        <FormLabel className="text-sm cursor-pointer">
-                          Mommy & Me Discount (Rooted Membership & The Mother Board)
-                        </FormLabel>
+                      <FormItem className="flex flex-row items-center space-x-3 space-y-0 mt-4">
                         <FormControl>
                           <Switch
                             checked={field.value}
                             onCheckedChange={field.onChange}
                           />
                         </FormControl>
+                        <FormLabel className="text-sm cursor-pointer">
+                          Mommy & Me Discount (Rooted Membership & The Mother Board)
+                        </FormLabel>
                       </FormItem>
                     )}
                   />
