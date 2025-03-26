@@ -117,7 +117,7 @@ const ConnectWithUs = () => {
               <div className="space-y-2">
                 <Label htmlFor="phone" className="text-left block">
                   {isMobile 
-                    ? "Phone # (optional - for WhatsApp group)" 
+                    ? "Phone # (optional - for WhatsApp)" 
                     : "Phone number (optional - for our WhatsApp group)"}
                 </Label>
                 <Input 
