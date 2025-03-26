@@ -12,6 +12,7 @@ import * as z from 'zod';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { Switch } from './ui/switch';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface MembershipCardProps {
   tier: string;
@@ -58,6 +59,7 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
   buttonBgColor,
   clarificationText
 }) => {
+  const isMobile = useIsMobile();
   const squareCheckoutRef = useRef<HTMLDivElement>(null);
   const [showSquareModal, setShowSquareModal] = useState(false);
   const givebutterModalRef = useRef<HTMLElement | null>(null);
@@ -364,7 +366,13 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
               
               {clarificationText && (
                 <div className="text-xs text-gray-500 text-center mt-2">
-                  {clarificationText.replace("Angel Mother", "Angel Mom")}
+                  {clarificationText.replace(
+                    "Angel Mother", 
+                    "Angel Mom"
+                  ).replace(
+                    isMobile ? "Rest in Peace <3" : "Rest in Peace <3", 
+                    isMobile ? "Rest in Peace <3" : "RIP <3"
+                  )}
                 </div>
               )}
             </div>
