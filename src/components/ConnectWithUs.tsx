@@ -113,7 +113,7 @@ const ConnectWithUs = () => {
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="phone" className="text-left block">Phone number (optional)</Label>
+                <Label htmlFor="phone" className="text-left block">Phone number (optional - for our WhatsApp group)</Label>
                 <Input 
                   id="phone" 
                   type="tel" 
