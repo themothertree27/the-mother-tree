@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 import { Check, X, ToggleLeft, ToggleRight } from 'lucide-react';
 import { Dialog, DialogContent, DialogClose } from './ui/dialog';
@@ -136,7 +137,7 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
         widgetContainer.style.maxHeight = '90vh';
         widgetContainer.style.overflow = 'auto';
         
-        const widget = document.createElement('givebutter-widget');
+        const widget = document.createElement('givebutter-widget') as HTMLElement;
         widget.setAttribute('id', 'j1kk5g');
         
         widget.addEventListener('load', () => {
