@@ -48,7 +48,7 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="font-medium text-sm uppercase tracking-wider text-gray-900 mb-4">Membership</h4>
+            <h4 className="font-medium text-sm uppercase tracking-wider text-gray-900 mb-4">THE GIVING BACK TREE</h4>
             <ul className="space-y-3">
               <li><a href="#membership" className="text-gray-600 hover:text-nature-leaf transition-colors duration-300">Be-leave'rs</a></li>
               <li><a href="#membership" className="text-gray-600 hover:text-nature-leaf transition-colors duration-300">Rooted Membership</a></li>
