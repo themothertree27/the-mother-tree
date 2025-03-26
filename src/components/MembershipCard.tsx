@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 import { Check, X, ToggleLeft, ToggleRight } from 'lucide-react';
 import { Dialog, DialogContent, DialogClose } from './ui/dialog';
@@ -110,23 +111,6 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
         modalContainer.style.alignItems = 'center';
         modalContainer.style.zIndex = '9999';
         
-        const closeButton = document.createElement('button');
-        closeButton.textContent = 'X';
-        closeButton.style.position = 'absolute';
-        closeButton.style.top = '20px';
-        closeButton.style.right = '20px';
-        closeButton.style.backgroundColor = 'white';
-        closeButton.style.color = 'black';
-        closeButton.style.border = 'none';
-        closeButton.style.borderRadius = '50%';
-        closeButton.style.width = '40px';
-        closeButton.style.height = '40px';
-        closeButton.style.fontSize = '20px';
-        closeButton.style.cursor = 'pointer';
-        closeButton.onclick = () => {
-          document.body.removeChild(modalContainer);
-        };
-        
         const widgetContainer = document.createElement('div');
         widgetContainer.style.backgroundColor = 'white';
         widgetContainer.style.borderRadius = '10px';
@@ -135,13 +119,62 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
         widgetContainer.style.width = 'auto';
         widgetContainer.style.maxHeight = '90vh';
         widgetContainer.style.overflow = 'auto';
+        widgetContainer.style.position = 'relative';
+        
+        const closeButton = document.createElement('button');
+        closeButton.style.position = 'absolute';
+        closeButton.style.right = '10px';
+        closeButton.style.top = '10px';
+        closeButton.style.backgroundColor = 'transparent';
+        closeButton.style.border = 'none';
+        closeButton.style.color = '#333';
+        closeButton.style.width = '30px';
+        closeButton.style.height = '30px';
+        closeButton.style.cursor = 'pointer';
+        closeButton.style.borderRadius = '50%';
+        closeButton.style.display = 'flex';
+        closeButton.style.alignItems = 'center';
+        closeButton.style.justifyContent = 'center';
+        closeButton.style.zIndex = '10';
+        closeButton.setAttribute('aria-label', 'Close');
+        
+        // Create SVG X icon similar to the one used in other dialogs
+        const svgX = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        svgX.setAttribute('width', '16');
+        svgX.setAttribute('height', '16');
+        svgX.setAttribute('viewBox', '0 0 24 24');
+        svgX.setAttribute('fill', 'none');
+        svgX.setAttribute('stroke', 'currentColor');
+        svgX.setAttribute('stroke-width', '2');
+        svgX.setAttribute('stroke-linecap', 'round');
+        svgX.setAttribute('stroke-linejoin', 'round');
+        
+        const line1 = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line1.setAttribute('x1', '18');
+        line1.setAttribute('y1', '6');
+        line1.setAttribute('x2', '6');
+        line1.setAttribute('y2', '18');
+        
+        const line2 = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line2.setAttribute('x1', '6');
+        line2.setAttribute('y1', '6');
+        line2.setAttribute('x2', '18');
+        line2.setAttribute('y2', '18');
+        
+        svgX.appendChild(line1);
+        svgX.appendChild(line2);
+        closeButton.appendChild(svgX);
+        
+        closeButton.onclick = () => {
+          document.body.removeChild(modalContainer);
+        };
         
         const widget = document.createElement('givebutter-widget');
         widget.setAttribute('id', 'j1kk5g');
         
         widget.addEventListener('load', () => {
           setTimeout(() => {
-            const widgetContent = (widget as any).shadowRoot?.querySelector('.givebutter-widget-content');
+            const widgetContent = widget.shadowRoot?.querySelector('.givebutter-widget-content');
             if (widgetContent) {
               const rect = widgetContent.getBoundingClientRect();
               widgetContainer.style.width = `${rect.width + 20}px`;
@@ -156,8 +189,8 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
           }, 300);
         });
         
+        widgetContainer.appendChild(closeButton);
         widgetContainer.appendChild(widget);
-        modalContainer.appendChild(closeButton);
         modalContainer.appendChild(widgetContainer);
         document.body.appendChild(modalContainer);
         givebutterModalRef.current = modalContainer;
