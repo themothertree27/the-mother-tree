@@ -6,12 +6,14 @@ import { Label } from "@/components/ui/label";
 import { Send, Check } from 'lucide-react';
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const ConnectWithUs = () => {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const isMobile = useIsMobile();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -113,7 +115,11 @@ const ConnectWithUs = () => {
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="phone" className="text-left block">Phone number (optional - for our WhatsApp group)</Label>
+                <Label htmlFor="phone" className="text-left block">
+                  {isMobile 
+                    ? "Phone # (optional - for WhatsApp group)" 
+                    : "Phone number (optional - for our WhatsApp group)"}
+                </Label>
                 <Input 
                   id="phone" 
                   type="tel" 
