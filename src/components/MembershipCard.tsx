@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { Check, X, ToggleLeft, ToggleRight } from 'lucide-react';
 import { Dialog, DialogContent, DialogClose } from './ui/dialog';
@@ -32,7 +31,6 @@ interface MembershipCardProps {
   clarificationText?: string;
 }
 
-// Form schema
 const formSchema = z.object({
   firstName: z.string().min(1, { message: "First name is required" }),
   lastName: z.string().min(1, { message: "Last name is required" }),
@@ -62,15 +60,12 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
 }) => {
   const squareCheckoutRef = useRef<HTMLDivElement>(null);
   const [showSquareModal, setShowSquareModal] = useState(false);
-  // For Givebutter modal
   const givebutterModalRef = useRef<HTMLDivElement | null>(null);
   const [showMommyMeDiscount, setShowMommyMeDiscount] = useState(false);
-  
-  // For Mother Board form modal
   const [showMotherBoardForm, setShowMotherBoardForm] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const { toast } = useToast();
-  
+
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -83,7 +78,6 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
   });
 
   useEffect(() => {
-    // Load Givebutter widget script if it doesn't exist
     if (!document.getElementById('givebutter-widget-script-j1kk5g')) {
       const script = document.createElement('script');
       script.id = 'givebutter-widget-script-j1kk5g';
@@ -93,7 +87,6 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
     }
   }, []);
 
-  // Update form value when toggle changes
   useEffect(() => {
     if (name === "The Mother Board") {
       form.setValue('mommyMeDiscount', showMommyMeDiscount);
@@ -101,9 +94,7 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
   }, [showMommyMeDiscount, form, name]);
 
   const handleButtonClick = () => {
-    // Handle different button actions based on buttonText
     if (buttonText === "Be-leave") {
-      // Create modal container if it doesn't exist
       let modalContainer = document.getElementById('givebutter-modal-container');
       if (!modalContainer) {
         modalContainer = document.createElement('div');
@@ -119,7 +110,6 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
         modalContainer.style.alignItems = 'center';
         modalContainer.style.zIndex = '9999';
         
-        // Add close button
         const closeButton = document.createElement('button');
         closeButton.textContent = 'X';
         closeButton.style.position = 'absolute';
@@ -137,7 +127,6 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
           document.body.removeChild(modalContainer);
         };
         
-        // Widget container - Updated to allow scrolling
         const widgetContainer = document.createElement('div');
         widgetContainer.style.backgroundColor = 'white';
         widgetContainer.style.borderRadius = '10px';
@@ -145,24 +134,19 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
         widgetContainer.style.maxWidth = '500px';
         widgetContainer.style.width = 'auto';
         widgetContainer.style.maxHeight = '90vh';
-        widgetContainer.style.overflow = 'auto'; // Changed from 'hidden' to 'auto' to enable scrolling
+        widgetContainer.style.overflow = 'auto';
         
-        // Add the Givebutter widget
         const widget = document.createElement('givebutter-widget');
         widget.setAttribute('id', 'j1kk5g');
         
-        // Let the widget adjust the container's size once loaded
         widget.addEventListener('load', () => {
-          // Slight delay to allow widget to render fully
           setTimeout(() => {
-            // Adjust container size to match widget content
             const widgetContent = widget.shadowRoot?.querySelector('.givebutter-widget-content');
             if (widgetContent) {
               const rect = widgetContent.getBoundingClientRect();
-              widgetContainer.style.width = `${rect.width + 20}px`; // Add padding
+              widgetContainer.style.width = `${rect.width + 20}px`;
               
-              // Set a maximum height with scrolling instead of exact height
-              const maxHeight = window.innerHeight * 0.9; // 90% of viewport height
+              const maxHeight = window.innerHeight * 0.9;
               if (rect.height + 20 > maxHeight) {
                 widgetContainer.style.height = `${maxHeight}px`;
               } else {
@@ -181,14 +165,11 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
         modalContainer.style.display = 'flex';
       }
     } else if (buttonText === "Rooted") {
-      // For the "Rooted" button, open the Square modal
       setShowSquareModal(true);
     } else if (buttonText === "The Mother Board") {
-      // For "The Mother Board" button, open the form modal
       setShowMotherBoardForm(true);
-      setFormSubmitted(false); // Reset the form submission state
+      setFormSubmitted(false);
     } else {
-      // For other buttons, use the previously configured Givebutter behavior (if any)
       const gbLink = document.createElement('a');
       gbLink.href = 'https://givebutter.com/mothertreenyc';
       gbLink.target = '_blank';
@@ -198,7 +179,6 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
 
   const onSubmit = async (data: FormValues) => {
     try {
-      // Insert form data into Supabase
       const { error } = await supabase
         .from('mother_board_submissions')
         .insert({
@@ -234,10 +214,8 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
     }
   };
 
-  // Cleanup function for removing modals when component unmounts
   useEffect(() => {
     return () => {
-      // Clean up Givebutter modal if it exists
       const givebutterModal = document.getElementById('givebutter-modal-container');
       if (givebutterModal) {
         document.body.removeChild(givebutterModal);
@@ -251,7 +229,6 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
         {popular && <div className="absolute top-0 right-0 bg-nature-leaf text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-xl z-20">Popular</div>}
         
         <div className={`flex flex-col h-full overflow-hidden rounded-3xl border bg-white ${popular ? 'border-nature-leaf' : 'border-gray-100'}`}>
-          {/* Card header with gradient */}
           <div className={`px-6 py-8 ${bgGradient}`}>
             <div className="flex justify-between items-start">
               <div>
@@ -274,7 +251,6 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
             </div>
           </div>
           
-          {/* Card content */}
           <div className="flex flex-col flex-1 p-6">
             <p className="text-gray-500 mb-6">{description}</p>
             
@@ -291,7 +267,6 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
             </div>
             
             <div className="mt-8">
-              {/* Toggle switch for "The Mother Board" with toggle on the left side of text */}
               {name === "The Mother Board" && (
                 <div className="mb-4">
                   <div className="flex items-center space-x-2">
@@ -334,7 +309,6 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
         </div>
       </div>
 
-      {/* Square Checkout Modal */}
       <Dialog open={showSquareModal} onOpenChange={setShowSquareModal}>
         <DialogContent className="sm:max-w-[500px] p-0 bg-white overflow-hidden border-none">
           <DialogClose className="absolute z-10 right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
@@ -361,7 +335,6 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
         </DialogContent>
       </Dialog>
 
-      {/* The Mother Board Form Modal with Toggle on left side */}
       <Dialog open={showMotherBoardForm} onOpenChange={setShowMotherBoardForm}>
         <DialogContent className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto">
           <DialogClose className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
@@ -455,7 +428,7 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
                           />
                         </FormControl>
                         <FormLabel className="text-sm cursor-pointer">
-                          Mommy & Me Discount (Rooted Membership & The Mother Board)
+                          Mommy & Me Discount (Rooted Membership & The Mother Board): 27% SAFE Discount Rate
                         </FormLabel>
                       </FormItem>
                     )}
