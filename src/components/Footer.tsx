@@ -1,13 +1,10 @@
-
 import React, { useState } from 'react';
 import { TreeDeciduous, Mail, Instagram } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useToast } from '@/components/ui/use-toast';
 
 const Footer = () => {
-  const {
-    toast
-  } = useToast();
+  const { toast } = useToast();
   const [copying, setCopying] = useState(false);
   
   const handleCopyEmail = () => {
@@ -36,6 +33,14 @@ const Footer = () => {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  const scrollToBusinessPlan = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const element = document.querySelector('[data-business-plan]');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   
   return <footer id="contact" className="bg-white pt-20 pb-10 border-t border-gray-100">
       <div className="container mx-auto px-6">
@@ -47,8 +52,8 @@ const Footer = () => {
             </div>
             <p className="text-gray-600 mb-6 max-w-md">Our vision is to regrow a forest of Mother Trees, inspiring communities across the world that empower co-creation and collaboration for the posterity of our people and the planet.</p>
             <h4 className="font-medium text-sm uppercase tracking-wider text-gray-900 mb-4">
-              <button onClick={handleCopyEmail} className="text-gray-600 hover:text-nature-leaf transition-colors duration-300 cursor-pointer flex items-center">
-                Contact Us <Mail className="h-4 w-4 ml-1" />
+              <button onClick={scrollToBusinessPlan} className="text-gray-600 hover:text-nature-leaf transition-colors duration-300 cursor-pointer flex items-center">
+                The Business Plan
               </button>
             </h4>
             <div className="flex space-x-4">
@@ -58,7 +63,6 @@ const Footer = () => {
               <a href="https://www.instagram.com/themothertree.nyc/?igsh=MWo2bjFoemxsNWdndA%3D%3D&utm_source=qr#" className="p-2 rounded-full bg-gray-100 text-gray-600 hover:bg-nature-leaf hover:text-white transition-colors duration-300">
                 <Instagram className="h-5 w-5" />
               </a>
-              
             </div>
           </div>
           
