@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 import { Check, X, ToggleLeft, ToggleRight } from 'lucide-react';
 import { Dialog, DialogContent, DialogClose } from './ui/dialog';
@@ -120,23 +121,23 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
         widgetContainer.style.overflow = 'auto';
         widgetContainer.style.position = 'relative';
         
+        // Create circular close button that matches other dialogs
         const closeButton = document.createElement('button');
         closeButton.style.position = 'absolute';
         closeButton.style.right = '4px';
         closeButton.style.top = '4px';
         closeButton.style.backgroundColor = 'transparent';
         closeButton.style.border = 'none';
-        closeButton.style.color = '#666';
-        closeButton.style.width = '30px';
-        closeButton.style.height = '30px';
+        closeButton.style.width = '24px';
+        closeButton.style.height = '24px';
         closeButton.style.cursor = 'pointer';
-        closeButton.style.borderRadius = '4px';
+        closeButton.style.opacity = '0.7';
+        closeButton.style.transition = 'opacity 150ms ease';
+        closeButton.style.zIndex = '10';
         closeButton.style.display = 'flex';
         closeButton.style.alignItems = 'center';
         closeButton.style.justifyContent = 'center';
-        closeButton.style.zIndex = '10';
-        closeButton.style.opacity = '0.7';
-        closeButton.style.transition = 'opacity 150ms ease';
+        closeButton.style.borderRadius = '9999px'; // Make it circular
         closeButton.setAttribute('aria-label', 'Close');
         
         closeButton.onmouseover = () => {
@@ -147,12 +148,22 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
           closeButton.style.opacity = '0.7';
         };
         
+        // Create circular background
+        const circleDiv = document.createElement('div');
+        circleDiv.style.width = '24px';
+        circleDiv.style.height = '24px';
+        circleDiv.style.borderRadius = '50%';
+        circleDiv.style.backgroundColor = '#f2f2f2';
+        circleDiv.style.display = 'flex';
+        circleDiv.style.alignItems = 'center';
+        circleDiv.style.justifyContent = 'center';
+        
         const svgX = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-        svgX.setAttribute('width', '16');
-        svgX.setAttribute('height', '16');
+        svgX.setAttribute('width', '14');
+        svgX.setAttribute('height', '14');
         svgX.setAttribute('viewBox', '0 0 24 24');
         svgX.setAttribute('fill', 'none');
-        svgX.setAttribute('stroke', 'currentColor');
+        svgX.setAttribute('stroke', '#666');
         svgX.setAttribute('stroke-width', '2');
         svgX.setAttribute('stroke-linecap', 'round');
         svgX.setAttribute('stroke-linejoin', 'round');
@@ -171,7 +182,8 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
         
         svgX.appendChild(line1);
         svgX.appendChild(line2);
-        closeButton.appendChild(svgX);
+        circleDiv.appendChild(svgX);
+        closeButton.appendChild(circleDiv);
         
         const srText = document.createElement('span');
         srText.textContent = 'Close';
