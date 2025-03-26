@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { TreeDeciduous, Mail, Instagram, Twitter } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -50,9 +51,7 @@ const Footer = () => {
           <div>
             <h4 className="font-medium text-sm uppercase tracking-wider text-gray-900 mb-4">THE GIVING BACK TREE</h4>
             <ul className="space-y-3">
-              
-              
-              
+              <li><a href="#membership" className="text-gray-600 hover:text-nature-leaf transition-colors duration-300">Giving Options</a></li>
             </ul>
           </div>
           
