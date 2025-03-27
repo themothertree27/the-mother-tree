@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { TreeDeciduous, Mail, Instagram, MessageSquare, ExternalLink } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -6,12 +5,12 @@ import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
-
 const Footer = () => {
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [copying, setCopying] = useState(false);
   const isMobile = useIsMobile();
-  
   const handleCopyEmail = () => {
     const email = "finding@themothertreenyc.org";
     navigator.clipboard.writeText(email).then(() => {
@@ -30,7 +29,6 @@ const Footer = () => {
       });
     });
   };
-  
   return <footer id="contact" className="bg-white pt-20 pb-10 border-t border-gray-100">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
@@ -48,12 +46,9 @@ const Footer = () => {
               <a href="https://www.instagram.com/themothertree.nyc/?igsh=MWo2bjFoemxsNWdndA%3D%3D&utm_source=qr#" className="p-2 rounded-full bg-gray-100 text-gray-600 hover:bg-nature-leaf hover:text-white transition-colors duration-300">
                 <Instagram className="h-5 w-5" />
               </a>
-              {isMobile ? (
-                <a href="https://sltxt.io/ah6" className="p-2 rounded-full bg-gray-100 text-gray-600 hover:bg-nature-leaf hover:text-white transition-colors duration-300" title="Text us">
+              {isMobile ? <a href="https://sltxt.io/ah6" className="p-2 rounded-full bg-gray-100 text-gray-600 hover:bg-nature-leaf hover:text-white transition-colors duration-300" title="Text us">
                   <MessageSquare className="h-5 w-5" />
-                </a>
-              ) : (
-                <TooltipProvider>
+                </a> : <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <button className="p-2 rounded-full bg-gray-100 text-gray-600 hover:bg-nature-leaf hover:text-white transition-colors duration-300">
@@ -64,11 +59,8 @@ const Footer = () => {
                       <p>Need to click with a mobile device. Text "The Mother Tree" to 888-438-1012</p>
                     </TooltipContent>
                   </Tooltip>
-                </TooltipProvider>
-              )}
-              <a href="https://bit.ly/FellowshipoftheRings" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-gray-100 text-gray-600 hover:bg-nature-leaf hover:text-white transition-colors duration-300" title="Fellowship of the Rings">
-                <img src="/lovable-uploads/15fc61a4-8bad-4e9a-a643-b241bc06b226.png" alt="WhatsApp" className="h-5 w-5 invert-[.4] hover:invert-[1] transition-all" />
-              </a>
+                </TooltipProvider>}
+              
             </div>
           </div>
           
@@ -105,5 +97,4 @@ const Footer = () => {
       </div>
     </footer>;
 };
-
 export default Footer;
