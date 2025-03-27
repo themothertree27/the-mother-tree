@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { TreeDeciduous, Mail, Instagram, MessageSquare, ExternalLink } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -66,7 +67,7 @@ const Footer = () => {
                 </TooltipProvider>
               )}
               <a href="https://bit.ly/FellowshipoftheRings" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-gray-100 text-gray-600 hover:bg-nature-leaf hover:text-white transition-colors duration-300" title="Fellowship of the Rings">
-                <img src="/lovable-uploads/2302ae9a-b8bf-4677-9423-e2b87cafcb61.png" alt="Fellowship of the Rings" className="h-5 w-5 invert-[.4] hover:invert-[1] transition-all" />
+                <img src="/lovable-uploads/15fc61a4-8bad-4e9a-a643-b241bc06b226.png" alt="WhatsApp" className="h-5 w-5 invert-[.4] hover:invert-[1] transition-all" />
               </a>
             </div>
           </div>
