@@ -137,7 +137,7 @@ const ConnectWithUs = () => {
                   className="bg-nature-leaf hover:bg-nature-leaf/90 w-full sm:w-auto"
                   disabled={isSubmitting}
                 >
-                  {isSubmitted ? <Check className="h-4 w-4" /> : isSubmitting ? "Subscribing..." : <Send className="h-4 w-4" />}
+                  {isSubmitted ? <Check className="h-4 w-4" /> : isSubmitting ? "" : <Send className="h-4 w-4" />}
                   <span className="ml-2">{isSubmitted ? 'Sent!' : isSubmitting ? 'Subscribing...' : 'Subscribe'}</span>
                 </Button>
               </div>
