@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { Check, X, ToggleLeft, ToggleRight } from 'lucide-react';
 import { Dialog, DialogContent, DialogClose } from './ui/dialog';
@@ -312,7 +311,7 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
             
             <div className="mt-6">
               <div className="flex items-baseline">
-                <span className="text-3xl font-bold text-white">{price === "$777 annual membership" ? "$777 membership add-on" : price}</span>
+                <span className="text-3xl font-bold text-white">{price === "$777 annual membership" ? "$777 add-on membership" : price}</span>
               </div>
             </div>
           </div>
