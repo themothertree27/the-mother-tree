@@ -311,7 +311,7 @@ const MembershipCard: React.FC<MembershipCardProps> = ({
             
             <div className="mt-6">
               <div className="flex items-baseline">
-                <span className="text-3xl font-bold text-white">{price === "$777 annual membership" ? "$777 add-on membership" : price}</span>
+                <span className="text-3xl font-bold text-white">{price === "$777 annual membership" ? "$777 add-on to membership" : price}</span>
               </div>
             </div>
           </div>
