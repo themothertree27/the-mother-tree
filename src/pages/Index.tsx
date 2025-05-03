@@ -133,7 +133,7 @@ const Index = () => {
               </h2> : <h2 className="text-3xl md:text-4xl font-serif font-medium tracking-tight mb-6">
                 What is <span className="text-nature-leaf">The Mother Tree?</span>
               </h2>}
-            <p className="text-gray-600 mx-auto max-w-2xl">The Mother Tree is the brick &amp; mortar headquarters for the convergence of its members artistic, communal, societal, political, and entrepreneurial endeavors. It is is the epicenter for economic envisioning, entertainment creation, and technological invention &amp; adaptation that will bring us all closer to nature.</p>
+            <p className="text-gray-600 mx-auto max-w-2xl">The Mother Tree is the brick & mortar headquarters for the convergence of its member's artistic, communal, societal, political, and entrepreneurial endeavors. It is the epicenter for economic envisioning, entertainment creation, and technological invention & adaptation that will bring us all closer to nature. The Mother Tree is a vibrant membership community center that serves as a nurturing environment for creativity, wellness, education, and social enterprise.</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 animate-scroll-in" style={{
